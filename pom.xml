@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.extrawest</groupId>
 	<artifactId>Extrawest-OCPI-2.2.1-EMSP-Client</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 
 	<name>Extrawest-OCPI-2.2.1-EMSP-Client</name>
 	<description>Extrawest-OCPI-2.2.1-EMSP-Client</description>
@@ -54,11 +54,11 @@
 		<dependency>
 			<groupId>com.extrawest</groupId>
 			<artifactId>Extrawest-OCPI-2.2.1-EMSP-Server</artifactId>
-			<version>0.0.1</version>
+			<version>2023.7.12</version>
 		</dependency>
 
 
-<!--_________________________________________________________________________________________________________________-->
+		<!--_________________________________________________________________________________________________________________-->
 		<!-- dependencies are needed for the client being generated -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -104,11 +104,11 @@
 			<artifactId>jackson-jaxrs-base</artifactId>
 			<version>2.15.1</version>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>com.fasterxml.jackson.core</groupId>-->
-<!--			<artifactId>jackson-core</artifactId>-->
-<!--			<version>2.14.2</version>-->
-<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>com.fasterxml.jackson.core</groupId>-->
+		<!--			<artifactId>jackson-core</artifactId>-->
+		<!--			<version>2.14.2</version>-->
+		<!--		</dependency>-->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
@@ -180,7 +180,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.0.2</version>
 				<configuration>
-					<skip>true</skip>
+					<!--					<skip>true</skip>-->
 					<classifier>exec</classifier>
 					<excludes>
 						<exclude>
@@ -190,15 +190,15 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>com/extrawest/ocpi221emsp_client/service/**</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
+			<!--			<plugin>-->
+			<!--				<groupId>org.apache.maven.plugins</groupId>-->
+			<!--				<artifactId>maven-compiler-plugin</artifactId>-->
+			<!--				<configuration>-->
+			<!--					<excludes>-->
+			<!--						<exclude>com/extrawest/ocpi221emsp_client/service/**</exclude>-->
+			<!--					</excludes>-->
+			<!--				</configuration>-->
+			<!--			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -246,65 +246,6 @@
 					</jreleaser>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.openapitools</groupId>
-				<artifactId>openapi-generator-maven-plugin</artifactId>
-				<version>5.4.0</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<inputSpec>
-								${project.basedir}/src/main/resources/swagger/swagger.json
-							</inputSpec>
-							<generatorName>java</generatorName>
-							<library>resttemplate</library>
-							<apiPackage>com.openapi.generated.springboot.api</apiPackage>
-							<modelPackage>com.openapi.generated.springboot.dto</modelPackage>
-							<supportingFilesToGenerate>
-								ApiCallback.java,ApiClient.java,ApiException.java,ApiResponse.java,Configuration.java,Pair.java,ProgressRequestBody.java,ProgressResponseBody.java,StringUtil.java,ApiKeyAuth.java,Authentication.java,HttpBasicAuth.java,JSON.java,OAuth.java,EncodingUtils.java,JavaTimeFormatter.java,RFC3339DateFormat.java,<!--CustomInstantDeserializer.java-->
-							</supportingFilesToGenerate>
-							<configOptions>
-								<generateSupportingFiles>true</generateSupportingFiles>
-								<!--                                <generateApis>false</generateApis>-->
-								<!--                                <delegatePattern>true</delegatePattern>-->
-								<!--                                <serializableModel>true</serializableModel>-->
-								<sourceFolder>src/main/java</sourceFolder>
-								<dateLibrary>java8</dateLibrary>
-							</configOptions>
-							<typeMappings>
-								<typeMapping>OffsetDateTime=java.time.LocalDateTime</typeMapping>
-							</typeMappings>
-							<importMappings>
-								<importMapping>org.threeten.bp.OffsetDateTime=java.time.LocalDateTime</importMapping>
-							</importMappings>
-						</configuration>
-					</execution>
-				</executions>
-				<dependencies>
-				</dependencies>
-			</plugin>
-<!--			<plugin>-->
-<!--				<groupId>org.springdoc</groupId>-->
-<!--				<artifactId>springdoc-openapi-maven-plugin</artifactId>-->
-<!--				<version>1.4</version>-->
-<!--				<executions>-->
-<!--					<execution>-->
-<!--						<phase>compile</phase>-->
-<!--						<goals>-->
-<!--							<goal>generate</goal>-->
-<!--						</goals>-->
-<!--					</execution>-->
-<!--				</executions>-->
-<!--				<configuration>-->
-<!--					<apiDocsUrl>http://localhost:8080/v3/api-docs</apiDocsUrl>-->
-<!--					<outputFileName>openapi.json</outputFileName>-->
-<!--					<outputDir>${project.build.directory}</outputDir>-->
-<!--					&lt;!&ndash;                    <outputDir>com.openapi.generated.springboot</outputDir>&ndash;&gt;-->
-<!--				</configuration>-->
-<!--			</plugin>-->
 		</plugins>
 	</build>
 
@@ -328,6 +269,53 @@
 								</goals>
 							</execution>
 						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>client-generation</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.openapitools</groupId>
+						<artifactId>openapi-generator-maven-plugin</artifactId>
+						<version>5.4.0</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+								<configuration>
+									<inputSpec>
+										downloaded_file.json
+									</inputSpec>
+									<generatorName>java</generatorName>
+									<library>resttemplate</library>
+									<apiPackage>com.openapi.generated.springboot.api</apiPackage>
+									<modelPackage>com.openapi.generated.springboot.dto</modelPackage>
+									<supportingFilesToGenerate>
+										ApiCallback.java,ApiClient.java,ApiException.java,ApiResponse.java,Configuration.java,Pair.java,ProgressRequestBody.java,ProgressResponseBody.java,StringUtil.java,ApiKeyAuth.java,Authentication.java,HttpBasicAuth.java,JSON.java,OAuth.java,EncodingUtils.java,JavaTimeFormatter.java,RFC3339DateFormat.java,<!--CustomInstantDeserializer.java-->
+									</supportingFilesToGenerate>
+									<configOptions>
+										<generateSupportingFiles>true</generateSupportingFiles>
+										<!--                                <generateApis>false</generateApis>-->
+										<!--                                <delegatePattern>true</delegatePattern>-->
+										<!--                                <serializableModel>true</serializableModel>-->
+										<sourceFolder>src/main/java</sourceFolder>
+										<dateLibrary>java8</dateLibrary>
+									</configOptions>
+									<typeMappings>
+										<typeMapping>OffsetDateTime=java.time.LocalDateTime</typeMapping>
+									</typeMappings>
+									<importMappings>
+										<importMapping>org.threeten.bp.OffsetDateTime=java.time.LocalDateTime</importMapping>
+									</importMappings>
+								</configuration>
+							</execution>
+						</executions>
+						<dependencies>
+						</dependencies>
 					</plugin>
 				</plugins>
 			</build>
