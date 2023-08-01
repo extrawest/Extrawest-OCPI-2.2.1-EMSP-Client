@@ -1,4 +1,4 @@
-package com.extrawest.ocpi221emsp_client;
+package com.extrawest.ocpi221emsp_client.service;
 
 import com.extrawest.ocpi.model.dto.ClientInfoDTO;
 import com.extrawest.ocpi.service.ClientInfoService;
