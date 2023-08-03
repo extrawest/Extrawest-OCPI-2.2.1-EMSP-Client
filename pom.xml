@@ -285,7 +285,8 @@
 						<version>3.3.0</version>
 						<configuration>
 							<excludes>
-								<exclude>**/ocpi221emsp_client/*</exclude>
+<!--								<exclude>**/ocpi221emsp_client/*</exclude>-->
+								<exclude>**/service/*</exclude>
 							</excludes>
 						</configuration>
 					</plugin>
