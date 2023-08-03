@@ -180,21 +180,21 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.0.2</version>
 				<configuration>
-					<skip>true</skip>
+<!--					<skip>true</skip>-->
 					<classifier>exec</classifier>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
-						<exclude>
-							<groupId>org.springdoc</groupId>
-							<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-						</exclude>
-						<exclude>
-							<groupId>org.springdoc</groupId>
-							<artifactId>springdoc-openapi-ui</artifactId>
-						</exclude>
+<!--						<exclude>-->
+<!--							<groupId>org.springdoc</groupId>-->
+<!--							<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
+<!--						</exclude>-->
+<!--						<exclude>-->
+<!--							<groupId>org.springdoc</groupId>-->
+<!--							<artifactId>springdoc-openapi-ui</artifactId>-->
+<!--						</exclude>-->
 					</excludes>
 				</configuration>
 			</plugin>
