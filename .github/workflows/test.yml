@@ -24,6 +24,7 @@ jobs:
       - name: Wait for Java application to start
         run: sleep 30
 
+#trigger-github-actions
       - name: Download file
         run: |
           wget http://localhost:8080/v3/api-docs -O downloaded_file.json
