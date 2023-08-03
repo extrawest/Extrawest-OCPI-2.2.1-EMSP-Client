@@ -19,8 +19,8 @@
 	</licenses>
 	<developers>
 		<developer>
-			<name>Vladyslav Tertyshnyi</name>
-			<email>vladyslav.tertyshnyi@extrawest.com</email>
+			<name>Galyna Klymenko</name>
+			<email>galyna.klymenko@extrawest.com</email>
 			<organization>extrawest</organization>
 			<organizationUrl>https://www.extrawest.com/</organizationUrl>
 		</developer>
@@ -180,12 +180,20 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.0.2</version>
 				<configuration>
-					<!--					<skip>true</skip>-->
+					<skip>true</skip>
 					<classifier>exec</classifier>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+						</exclude>
+						<exclude>
+							<groupId>org.springdoc</groupId>
+							<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+						</exclude>
+						<exclude>
+							<groupId>org.springdoc</groupId>
+							<artifactId>springdoc-openapi-ui</artifactId>
 						</exclude>
 					</excludes>
 				</configuration>
@@ -277,7 +285,7 @@
 						<version>3.3.0</version>
 						<configuration>
 							<excludes>
-								<exclude>**/service/*</exclude>
+								<exclude>**/ocpi221emsp_client/*</exclude>
 							</excludes>
 						</configuration>
 					</plugin>
