@@ -180,7 +180,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.0.2</version>
 				<configuration>
-<!--					<skip>true</skip>-->
+					<skip>true</skip>
 					<classifier>exec</classifier>
 					<excludes>
 						<exclude>
@@ -285,8 +285,8 @@
 						<version>3.3.0</version>
 						<configuration>
 							<excludes>
-<!--								<exclude>**/ocpi221emsp_client/*</exclude>-->
-								<exclude>**/service/*</exclude>
+								<exclude>**/ocpi221emsp_client/*</exclude>
+<!--								<exclude>**/service/*</exclude>-->
 							</excludes>
 						</configuration>
 					</plugin>
