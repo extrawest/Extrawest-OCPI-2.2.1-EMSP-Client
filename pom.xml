@@ -3,13 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.extrawest</groupId>
-	<artifactId>extrawest-ocpi-2.2.1-emsp-client</artifactId>
-	<version>0.0.1</version>
+	<artifactId>Extrawest-OCPI-2.2.1-EMSP-Client</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<name>Extrawest-OCPI-2.2.1-EMSP-Client</name>
 	<description>Extrawest-OCPI-2.2.1-EMSP-Client</description>
 	<url>https://github.com/extrawest/Extrawest-OCPI-2.2.1-EMSP-Client</url>
-
 	<inceptionYear>2023</inceptionYear>
 	<licenses>
 		<license>
