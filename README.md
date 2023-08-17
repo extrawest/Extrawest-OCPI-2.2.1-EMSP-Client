@@ -13,6 +13,22 @@
 ![JDK](https://img.shields.io/badge/JDK-17-yellow?style=for-the-badge)
 ![social](https://img.shields.io/github/forks/extrawest/Extrawest-OCPI-2.2.1-EMSP-Client?style=for-the-badge)
 
+## Table of Contents
+
+- [Field of use](#field-of-use)
+- [Description](#description)
+- [Maven](#maven)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [Use in Spring Boot App](#using-extrawest-ocpi-221-emsp-client-in-spring-boot-application)
+- [Documentation for API Endpoints](#documentation-for-api-endpoints)
+- [Documentation for Models](#documentation-for-models) 
+- [Documentation for Authorization](#documentation-for-authorization)
+- [Recommendation](#recommendation)
+- [License](#license)
+- [About Extrawest.com](#about-extrawestcom)
+
 ## Field of use
 This API exposes endpoints to manage OCPI entities. Open Charge Point Interface (OCPI) is an open protocol used for connections between charging station operators and service providers. Simply put, this protocol facilitates automated roaming for EV drivers between different EV charging networks.
 
@@ -33,9 +49,6 @@ Maven
 =====
 
 Find the maven repo here: https://mvnrepository.com/artifact/com.extrawest
-
-Dependencies
-============
 
 ## Requirements
 
@@ -120,7 +133,7 @@ public class ClientInfoControllerApiExample {
 public class EmspClientConfig {
 
     @Bean
-    public EmspTariffControllerApi petApi() {
+    public EmspTariffControllerApi emspTariffApi() {
         return new EmspTariffControllerApi(apiClient());
     }
 
@@ -284,13 +297,13 @@ All endpoints do not require authorization.
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
-License
-=======
+## License
+
 
 [MIT License](LICENSE)
 
-About Extrawest.com
-=======
+## About Extrawest.com
+
 
 We are devoted to push the marked for vehicles charging forward.
 There are many standards out there, we intend to implement and share them. Any help is much appreciated!
