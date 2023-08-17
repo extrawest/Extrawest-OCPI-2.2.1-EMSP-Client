@@ -112,6 +112,64 @@ public class ClientInfoControllerApiExample {
 }
 
 ```
+### Using Extrawest-OCPI-2.2.1-EMSP-Client in Spring Boot Application
+
+1. To access the EMSP API classes, we need to configure them as beans:
+```java
+@Configuration
+public class EmspClientConfig {
+
+    @Bean
+    public EmspTariffControllerApi petApi() {
+        return new EmspTariffControllerApi(apiClient());
+    }
+
+    @Bean
+    public ApiClient apiClient() {
+        return new ApiClient();
+    }
+}
+```
+
+2. Since we configured our API classes as beans, we can freely inject them in our Spring-managed classes:
+```java
+
+@Service
+public class EmspTariffServiceImpl implements  EmspTariffService {
+    @Autowired
+    private EmspTariffControllerApi emspTariffControllerApi;
+
+    @Override
+    public TariffDTO getTariff() {
+        try {
+            return emspTariffControllerApi.getTariff("countryCode", "partyId", "tariffId");
+        } catch (RestClientException e) {
+            throw new RuntimeException();
+        }
+    }
+}
+
+```
+
+Spring Boot application, where we have tested Extrawest-OCPI-2.2.1-EMSP-Client, has below Spring dependencies. In case of library and your project dependencies versions incompatibility, try to add next spring versions into you projects:
+```java
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.3.24</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.24</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.3.24</version>
+        </dependency>
+```
 
 ## Documentation for API Endpoints
 
