@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
@@ -25,7 +24,7 @@ import java.util.Objects;
   ChargingProfileResponseDTO.JSON_PROPERTY_RESULT,
   ChargingProfileResponseDTO.JSON_PROPERTY_TIMEOUT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class ChargingProfileResponseDTO {
   /**
    * Gets or Sets result
@@ -88,7 +87,6 @@ public class ChargingProfileResponseDTO {
    * @return result
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_RESULT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -115,7 +113,6 @@ public class ChargingProfileResponseDTO {
    * @return timeout
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_TIMEOUT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -129,7 +126,6 @@ public class ChargingProfileResponseDTO {
   public void setTimeout(Integer timeout) {
     this.timeout = timeout;
   }
-
 
   @Override
   public boolean equals(Object o) {

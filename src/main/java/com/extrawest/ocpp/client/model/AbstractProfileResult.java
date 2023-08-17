@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
@@ -24,7 +23,7 @@ import java.util.Objects;
 @JsonPropertyOrder({
   AbstractProfileResult.JSON_PROPERTY_RESULT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class AbstractProfileResult {
   /**
    * Gets or Sets result
@@ -80,7 +79,6 @@ public class AbstractProfileResult {
    * @return result
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_RESULT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -94,7 +92,6 @@ public class AbstractProfileResult {
   public void setResult(ResultEnum result) {
     this.result = result;
   }
-
 
   @Override
   public boolean equals(Object o) {

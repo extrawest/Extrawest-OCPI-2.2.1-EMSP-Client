@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
@@ -27,7 +26,7 @@ import java.util.Objects;
   Price.JSON_PROPERTY_EXCL_VAT,
   Price.JSON_PROPERTY_INCL_VAT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class Price {
   public static final String JSON_PROPERTY_EXCL_VAT = "exclVat";
   private Float exclVat;
@@ -49,7 +48,6 @@ public class Price {
    * @return exclVat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EXCL_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -76,7 +74,6 @@ public class Price {
    * @return inclVat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_INCL_VAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -90,7 +87,6 @@ public class Price {
   public void setInclVat(Float inclVat) {
     this.inclVat = inclVat;
   }
-
 
   @Override
   public boolean equals(Object o) {

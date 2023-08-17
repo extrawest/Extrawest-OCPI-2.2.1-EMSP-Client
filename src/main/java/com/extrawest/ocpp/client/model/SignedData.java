@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +31,7 @@ import java.util.Objects;
   SignedData.JSON_PROPERTY_SIGNED_VALUES,
   SignedData.JSON_PROPERTY_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class SignedData {
   public static final String JSON_PROPERTY_ENCODING_METHOD = "encoding_method";
   private String encodingMethod;
@@ -44,7 +43,7 @@ public class SignedData {
   private String publicKey;
 
   public static final String JSON_PROPERTY_SIGNED_VALUES = "signed_values";
-  private List<SignedValue> signedValues = null;
+  private List<SignedValue> signedValues;
 
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
@@ -63,7 +62,6 @@ public class SignedData {
    * @return encodingMethod
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENCODING_METHOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -90,7 +88,6 @@ public class SignedData {
    * @return encodingMethodVersion
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENCODING_METHOD_VERSION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -117,7 +114,6 @@ public class SignedData {
    * @return publicKey
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUBLIC_KEY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -152,7 +148,6 @@ public class SignedData {
    * @return signedValues
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SIGNED_VALUES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -179,7 +174,6 @@ public class SignedData {
    * @return url
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -193,7 +187,6 @@ public class SignedData {
   public void setUrl(String url) {
     this.url = url;
   }
-
 
   @Override
   public boolean equals(Object o) {

@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
@@ -28,7 +27,7 @@ import java.util.Objects;
   AuthorizationInfoResponseDTO.JSON_PROPERTY_AUTHORIZATION_REFERENCE,
   AuthorizationInfoResponseDTO.JSON_PROPERTY_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class AuthorizationInfoResponseDTO {
   /**
    * Gets or Sets allowed
@@ -100,7 +99,6 @@ public class AuthorizationInfoResponseDTO {
    * @return allowed
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_ALLOWED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -127,7 +125,6 @@ public class AuthorizationInfoResponseDTO {
    * @return token
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -154,7 +151,6 @@ public class AuthorizationInfoResponseDTO {
    * @return location
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_LOCATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -181,7 +177,6 @@ public class AuthorizationInfoResponseDTO {
    * @return authorizationReference
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_AUTHORIZATION_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -208,7 +203,6 @@ public class AuthorizationInfoResponseDTO {
    * @return info
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_INFO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -222,7 +216,6 @@ public class AuthorizationInfoResponseDTO {
   public void setInfo(DisplayText info) {
     this.info = info;
   }
-
 
   @Override
   public boolean equals(Object o) {

@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -52,7 +51,7 @@ import java.util.Objects;
   LocationDTO.JSON_PROPERTY_ENERGY_MIX,
   LocationDTO.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class LocationDTO {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -79,10 +78,10 @@ public class LocationDTO {
   private GeoLocation coordinates;
 
   public static final String JSON_PROPERTY_EVSES = "evses";
-  private List<EVSE> evses = null;
+  private List<EVSE> evses;
 
   public static final String JSON_PROPERTY_DIRECTIONS = "directions";
-  private List<DisplayText> directions = null;
+  private List<DisplayText> directions;
 
   public static final String JSON_PROPERTY_OPERATOR = "operator";
   private BusinessDetails operator;
@@ -165,10 +164,10 @@ public class LocationDTO {
   }
 
   public static final String JSON_PROPERTY_FACILITIES = "facilities";
-  private List<FacilitiesEnum> facilities = null;
+  private List<FacilitiesEnum> facilities;
 
   public static final String JSON_PROPERTY_IMAGES = "images";
-  private List<Image> images = null;
+  private List<Image> images;
 
   public static final String JSON_PROPERTY_COUNTRY_CODE = "country_code";
   private String countryCode;
@@ -177,13 +176,13 @@ public class LocationDTO {
   private String partyId;
 
   public static final String JSON_PROPERTY_PUBLISH_ALLOWED_TO = "publish_allowed_to";
-  private List<PublishTokenType> publishAllowedTo = null;
+  private List<PublishTokenType> publishAllowedTo;
 
   public static final String JSON_PROPERTY_POSTAL_CODE = "postal_code";
   private String postalCode;
 
   public static final String JSON_PROPERTY_RELATED_LOCATIONS = "related_locations";
-  private List<AdditionalGeoLocation> relatedLocations = null;
+  private List<AdditionalGeoLocation> relatedLocations;
 
   /**
    * Gets or Sets parkingType
@@ -260,7 +259,6 @@ public class LocationDTO {
    * @return id
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -287,7 +285,6 @@ public class LocationDTO {
    * @return publish
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_PUBLISH)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -314,7 +311,6 @@ public class LocationDTO {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -341,7 +337,6 @@ public class LocationDTO {
    * @return address
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -368,7 +363,6 @@ public class LocationDTO {
    * @return city
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -395,7 +389,6 @@ public class LocationDTO {
    * @return state
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -422,7 +415,6 @@ public class LocationDTO {
    * @return country
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -449,7 +441,6 @@ public class LocationDTO {
    * @return coordinates
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_COORDINATES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -484,7 +475,6 @@ public class LocationDTO {
    * @return evses
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EVSES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -519,7 +509,6 @@ public class LocationDTO {
    * @return directions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DIRECTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -546,7 +535,6 @@ public class LocationDTO {
    * @return operator
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPERATOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -573,7 +561,6 @@ public class LocationDTO {
    * @return subOperator
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SUB_OPERATOR)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -600,7 +587,6 @@ public class LocationDTO {
    * @return owner
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OWNER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -635,7 +621,6 @@ public class LocationDTO {
    * @return facilities
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FACILITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -670,7 +655,6 @@ public class LocationDTO {
    * @return images
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IMAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -697,7 +681,6 @@ public class LocationDTO {
    * @return countryCode
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -724,7 +707,6 @@ public class LocationDTO {
    * @return partyId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_PARTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -759,7 +741,6 @@ public class LocationDTO {
    * @return publishAllowedTo
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PUBLISH_ALLOWED_TO)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -786,7 +767,6 @@ public class LocationDTO {
    * @return postalCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -821,7 +801,6 @@ public class LocationDTO {
    * @return relatedLocations
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_RELATED_LOCATIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -848,7 +827,6 @@ public class LocationDTO {
    * @return parkingType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PARKING_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -875,7 +853,6 @@ public class LocationDTO {
    * @return timeZone
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_TIME_ZONE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -902,7 +879,6 @@ public class LocationDTO {
    * @return openingTimes
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_OPENING_TIMES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -929,7 +905,6 @@ public class LocationDTO {
    * @return chargingWhenClosed
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHARGING_WHEN_CLOSED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -956,7 +931,6 @@ public class LocationDTO {
    * @return energyMix
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENERGY_MIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -983,7 +957,6 @@ public class LocationDTO {
    * @return lastUpdated
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -997,7 +970,6 @@ public class LocationDTO {
   public void setLastUpdated(OffsetDateTime lastUpdated) {
     this.lastUpdated = lastUpdated;
   }
-
 
   @Override
   public boolean equals(Object o) {

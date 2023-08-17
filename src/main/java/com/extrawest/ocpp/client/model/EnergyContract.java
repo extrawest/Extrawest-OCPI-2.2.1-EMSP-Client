@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
@@ -27,7 +26,7 @@ import java.util.Objects;
   EnergyContract.JSON_PROPERTY_SUPPLIER_NAME,
   EnergyContract.JSON_PROPERTY_CONTRACT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class EnergyContract {
   public static final String JSON_PROPERTY_SUPPLIER_NAME = "supplier_name";
   private String supplierName;
@@ -49,7 +48,6 @@ public class EnergyContract {
    * @return supplierName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SUPPLIER_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -76,7 +74,6 @@ public class EnergyContract {
    * @return contractId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -90,7 +87,6 @@ public class EnergyContract {
   public void setContractId(String contractId) {
     this.contractId = contractId;
   }
-
 
   @Override
   public boolean equals(Object o) {

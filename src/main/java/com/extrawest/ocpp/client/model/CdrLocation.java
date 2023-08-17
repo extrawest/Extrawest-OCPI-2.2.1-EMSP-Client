@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
@@ -37,7 +36,7 @@ import java.util.Objects;
   CdrLocation.JSON_PROPERTY_CONNECTOR_FORMAT,
   CdrLocation.JSON_PROPERTY_CONNECTOR_POWER_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class CdrLocation {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -282,7 +281,6 @@ public class CdrLocation {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -309,7 +307,6 @@ public class CdrLocation {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -336,7 +333,6 @@ public class CdrLocation {
    * @return address
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -363,7 +359,6 @@ public class CdrLocation {
    * @return city
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CITY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -390,7 +385,6 @@ public class CdrLocation {
    * @return postalCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_POSTAL_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -417,7 +411,6 @@ public class CdrLocation {
    * @return state
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -444,7 +437,6 @@ public class CdrLocation {
    * @return country
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COUNTRY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -471,7 +463,6 @@ public class CdrLocation {
    * @return coordinates
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COORDINATES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -498,7 +489,6 @@ public class CdrLocation {
    * @return evseUid
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EVSE_UID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -525,7 +515,6 @@ public class CdrLocation {
    * @return evseId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EVSE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -552,7 +541,6 @@ public class CdrLocation {
    * @return connectorId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CONNECTOR_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -579,7 +567,6 @@ public class CdrLocation {
    * @return connectorStandard
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CONNECTOR_STANDARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -606,7 +593,6 @@ public class CdrLocation {
    * @return connectorFormat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CONNECTOR_FORMAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -633,7 +619,6 @@ public class CdrLocation {
    * @return connectorPowerType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CONNECTOR_POWER_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -647,7 +632,6 @@ public class CdrLocation {
   public void setConnectorPowerType(ConnectorPowerTypeEnum connectorPowerType) {
     this.connectorPowerType = connectorPowerType;
   }
-
 
   @Override
   public boolean equals(Object o) {

@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,16 +31,16 @@ import java.util.Objects;
   EnergyMix.JSON_PROPERTY_SUPPLIER_NAME,
   EnergyMix.JSON_PROPERTY_ENERGY_PRODUCT_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class EnergyMix {
   public static final String JSON_PROPERTY_IS_GREEN_ENERGY = "is_green_energy";
   private Boolean isGreenEnergy;
 
   public static final String JSON_PROPERTY_ENERGY_SOURCES = "energy_sources";
-  private List<EnergySource> energySources = null;
+  private List<EnergySource> energySources;
 
   public static final String JSON_PROPERTY_ENVIRON_IMPACT = "environ_impact";
-  private List<EnvironmentalImpact> environImpact = null;
+  private List<EnvironmentalImpact> environImpact;
 
   public static final String JSON_PROPERTY_SUPPLIER_NAME = "supplier_name";
   private String supplierName;
@@ -63,7 +62,6 @@ public class EnergyMix {
    * @return isGreenEnergy
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IS_GREEN_ENERGY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -98,7 +96,6 @@ public class EnergyMix {
    * @return energySources
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENERGY_SOURCES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -133,7 +130,6 @@ public class EnergyMix {
    * @return environImpact
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENVIRON_IMPACT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -160,7 +156,6 @@ public class EnergyMix {
    * @return supplierName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SUPPLIER_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -187,7 +182,6 @@ public class EnergyMix {
    * @return energyProductName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENERGY_PRODUCT_NAME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -201,7 +195,6 @@ public class EnergyMix {
   public void setEnergyProductName(String energyProductName) {
     this.energyProductName = energyProductName;
   }
-
 
   @Override
   public boolean equals(Object o) {

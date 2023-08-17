@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +29,7 @@ import java.util.Objects;
   CredentialsDTO.JSON_PROPERTY_URL,
   CredentialsDTO.JSON_PROPERTY_ROLES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class CredentialsDTO {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private String token;
@@ -55,7 +54,6 @@ public class CredentialsDTO {
    * @return token
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_TOKEN)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -82,7 +80,6 @@ public class CredentialsDTO {
    * @return url
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -105,6 +102,9 @@ public class CredentialsDTO {
   }
 
   public CredentialsDTO addRolesItem(CredentialsRole rolesItem) {
+    if (this.roles == null) {
+      this.roles = new ArrayList<>();
+    }
     this.roles.add(rolesItem);
     return this;
   }
@@ -114,7 +114,6 @@ public class CredentialsDTO {
    * @return roles
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_ROLES)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -128,7 +127,6 @@ public class CredentialsDTO {
   public void setRoles(List<CredentialsRole> roles) {
     this.roles = roles;
   }
-
 
   @Override
   public boolean equals(Object o) {

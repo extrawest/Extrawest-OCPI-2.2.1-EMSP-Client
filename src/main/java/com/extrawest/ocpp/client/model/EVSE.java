@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -39,7 +38,7 @@ import java.util.Objects;
   EVSE.JSON_PROPERTY_IMAGES,
   EVSE.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class EVSE {
   public static final String JSON_PROPERTY_UID = "uid";
   private String uid;
@@ -100,7 +99,7 @@ public class EVSE {
   private StatusEnum status;
 
   public static final String JSON_PROPERTY_STATUS_SCHEDULE = "status_schedule";
-  private List<StatusSchedule> statusSchedule = null;
+  private List<StatusSchedule> statusSchedule;
 
   /**
    * Gets or Sets capabilities
@@ -160,10 +159,10 @@ public class EVSE {
   }
 
   public static final String JSON_PROPERTY_CAPABILITIES = "capabilities";
-  private List<CapabilitiesEnum> capabilities = null;
+  private List<CapabilitiesEnum> capabilities;
 
   public static final String JSON_PROPERTY_CONNECTORS = "connectors";
-  private List<Connector> connectors = null;
+  private List<Connector> connectors;
 
   public static final String JSON_PROPERTY_FLOOR_LEVEL = "floor_level";
   private String floorLevel;
@@ -175,7 +174,7 @@ public class EVSE {
   private String physicalReference;
 
   public static final String JSON_PROPERTY_DIRECTIONS = "directions";
-  private List<DisplayText> directions = null;
+  private List<DisplayText> directions;
 
   /**
    * Gets or Sets parkingRestrictions
@@ -219,10 +218,10 @@ public class EVSE {
   }
 
   public static final String JSON_PROPERTY_PARKING_RESTRICTIONS = "parking_restrictions";
-  private List<ParkingRestrictionsEnum> parkingRestrictions = null;
+  private List<ParkingRestrictionsEnum> parkingRestrictions;
 
   public static final String JSON_PROPERTY_IMAGES = "images";
-  private List<Image> images = null;
+  private List<Image> images;
 
   public static final String JSON_PROPERTY_LAST_UPDATED = "last_updated";
   private OffsetDateTime lastUpdated;
@@ -241,7 +240,6 @@ public class EVSE {
    * @return uid
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_UID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -268,7 +266,6 @@ public class EVSE {
    * @return evseId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EVSE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -295,7 +292,6 @@ public class EVSE {
    * @return status
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -330,7 +326,6 @@ public class EVSE {
    * @return statusSchedule
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STATUS_SCHEDULE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -365,7 +360,6 @@ public class EVSE {
    * @return capabilities
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CAPABILITIES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -400,7 +394,6 @@ public class EVSE {
    * @return connectors
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CONNECTORS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -427,7 +420,6 @@ public class EVSE {
    * @return floorLevel
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FLOOR_LEVEL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -454,7 +446,6 @@ public class EVSE {
    * @return coordinates
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COORDINATES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -481,7 +472,6 @@ public class EVSE {
    * @return physicalReference
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PHYSICAL_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -516,7 +506,6 @@ public class EVSE {
    * @return directions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DIRECTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -551,7 +540,6 @@ public class EVSE {
    * @return parkingRestrictions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PARKING_RESTRICTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -586,7 +574,6 @@ public class EVSE {
    * @return images
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_IMAGES)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -613,7 +600,6 @@ public class EVSE {
    * @return lastUpdated
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -627,7 +613,6 @@ public class EVSE {
   public void setLastUpdated(OffsetDateTime lastUpdated) {
     this.lastUpdated = lastUpdated;
   }
-
 
   @Override
   public boolean equals(Object o) {

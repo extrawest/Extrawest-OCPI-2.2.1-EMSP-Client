@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
@@ -25,7 +24,7 @@ import java.util.Objects;
   EnergySource.JSON_PROPERTY_SOURCE,
   EnergySource.JSON_PROPERTY_PERCENTAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class EnergySource {
   /**
    * Gets or Sets source
@@ -94,7 +93,6 @@ public class EnergySource {
    * @return source
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SOURCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -121,7 +119,6 @@ public class EnergySource {
    * @return percentage
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PERCENTAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -135,7 +132,6 @@ public class EnergySource {
   public void setPercentage(Float percentage) {
     this.percentage = percentage;
   }
-
 
   @Override
   public boolean equals(Object o) {

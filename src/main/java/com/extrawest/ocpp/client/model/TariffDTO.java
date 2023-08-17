@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -40,7 +39,7 @@ import java.util.Objects;
   TariffDTO.JSON_PROPERTY_ENERGY_MIX,
   TariffDTO.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class TariffDTO {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -102,7 +101,7 @@ public class TariffDTO {
   private String partyId;
 
   public static final String JSON_PROPERTY_TARIFF_ALT_TEXT = "tariff_alt_text";
-  private List<DisplayText> tariffAltText = null;
+  private List<DisplayText> tariffAltText;
 
   public static final String JSON_PROPERTY_TARIFF_ALT_URL = "tariff_alt_url";
   private String tariffAltUrl;
@@ -139,7 +138,6 @@ public class TariffDTO {
    * @return id
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -166,7 +164,6 @@ public class TariffDTO {
    * @return currency
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -193,7 +190,6 @@ public class TariffDTO {
    * @return type
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -216,6 +212,9 @@ public class TariffDTO {
   }
 
   public TariffDTO addElementsItem(TariffElement elementsItem) {
+    if (this.elements == null) {
+      this.elements = new ArrayList<>();
+    }
     this.elements.add(elementsItem);
     return this;
   }
@@ -225,7 +224,6 @@ public class TariffDTO {
    * @return elements
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_ELEMENTS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -252,7 +250,6 @@ public class TariffDTO {
    * @return countryCode
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -279,7 +276,6 @@ public class TariffDTO {
    * @return partyId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_PARTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -314,7 +310,6 @@ public class TariffDTO {
    * @return tariffAltText
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARIFF_ALT_TEXT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -341,7 +336,6 @@ public class TariffDTO {
    * @return tariffAltUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARIFF_ALT_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -368,7 +362,6 @@ public class TariffDTO {
    * @return minPrice
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MIN_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -395,7 +388,6 @@ public class TariffDTO {
    * @return maxPrice
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAX_PRICE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -422,7 +414,6 @@ public class TariffDTO {
    * @return startDateTime
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -449,7 +440,6 @@ public class TariffDTO {
    * @return endDateTime
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -476,7 +466,6 @@ public class TariffDTO {
    * @return energyMix
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENERGY_MIX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -503,7 +492,6 @@ public class TariffDTO {
    * @return lastUpdated
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -517,7 +505,6 @@ public class TariffDTO {
   public void setLastUpdated(OffsetDateTime lastUpdated) {
     this.lastUpdated = lastUpdated;
   }
-
 
   @Override
   public boolean equals(Object o) {

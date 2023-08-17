@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +38,7 @@ import java.util.Objects;
   TariffRestrictions.JSON_PROPERTY_MAX_DURATION,
   TariffRestrictions.JSON_PROPERTY_DAY_OF_WEEK
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class TariffRestrictions {
   /**
    * Gets or Sets reservation
@@ -161,7 +160,7 @@ public class TariffRestrictions {
   }
 
   public static final String JSON_PROPERTY_DAY_OF_WEEK = "day_of_week";
-  private List<DayOfWeekEnum> dayOfWeek = null;
+  private List<DayOfWeekEnum> dayOfWeek;
 
   public TariffRestrictions() {
   }
@@ -177,7 +176,6 @@ public class TariffRestrictions {
    * @return reservation
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_RESERVATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -204,7 +202,6 @@ public class TariffRestrictions {
    * @return startTime
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -231,7 +228,6 @@ public class TariffRestrictions {
    * @return endTime
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -258,7 +254,6 @@ public class TariffRestrictions {
    * @return startDate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -285,7 +280,6 @@ public class TariffRestrictions {
    * @return endDate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_DATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -312,7 +306,6 @@ public class TariffRestrictions {
    * @return minKwh
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MIN_KWH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -339,7 +332,6 @@ public class TariffRestrictions {
    * @return maxKwh
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAX_KWH)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -366,7 +358,6 @@ public class TariffRestrictions {
    * @return minCurrent
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MIN_CURRENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -393,7 +384,6 @@ public class TariffRestrictions {
    * @return maxCurrent
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAX_CURRENT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -420,7 +410,6 @@ public class TariffRestrictions {
    * @return minPower
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MIN_POWER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -447,7 +436,6 @@ public class TariffRestrictions {
    * @return maxPower
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAX_POWER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -474,7 +462,6 @@ public class TariffRestrictions {
    * @return minDuration
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MIN_DURATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -501,7 +488,6 @@ public class TariffRestrictions {
    * @return maxDuration
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAX_DURATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -536,7 +522,6 @@ public class TariffRestrictions {
    * @return dayOfWeek
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DAY_OF_WEEK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -550,7 +535,6 @@ public class TariffRestrictions {
   public void setDayOfWeek(List<DayOfWeekEnum> dayOfWeek) {
     this.dayOfWeek = dayOfWeek;
   }
-
 
   @Override
   public boolean equals(Object o) {

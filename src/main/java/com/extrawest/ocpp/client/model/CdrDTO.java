@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -56,7 +55,7 @@ import java.util.Objects;
   CdrDTO.JSON_PROPERTY_HOME_CHARGING_COMPENSATION,
   CdrDTO.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class CdrDTO {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -65,7 +64,7 @@ public class CdrDTO {
   private String currency;
 
   public static final String JSON_PROPERTY_TARIFFS = "tariffs";
-  private List<Tariff> tariffs = null;
+  private List<Tariff> tariffs;
 
   public static final String JSON_PROPERTY_REMARK = "remark";
   private String remark;
@@ -199,7 +198,6 @@ public class CdrDTO {
    * @return id
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -226,7 +224,6 @@ public class CdrDTO {
    * @return currency
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -261,7 +258,6 @@ public class CdrDTO {
    * @return tariffs
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARIFFS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -288,7 +284,6 @@ public class CdrDTO {
    * @return remark
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REMARK)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -315,7 +310,6 @@ public class CdrDTO {
    * @return credit
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREDIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -342,7 +336,6 @@ public class CdrDTO {
    * @return countryCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -369,7 +362,6 @@ public class CdrDTO {
    * @return partyId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PARTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -396,7 +388,6 @@ public class CdrDTO {
    * @return startDateTime
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -423,7 +414,6 @@ public class CdrDTO {
    * @return endDateTime
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_END_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -450,7 +440,6 @@ public class CdrDTO {
    * @return sessionId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SESSION_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -477,7 +466,6 @@ public class CdrDTO {
    * @return cdrToken
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_CDR_TOKEN)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -504,7 +492,6 @@ public class CdrDTO {
    * @return authMethod
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_AUTH_METHOD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -531,7 +518,6 @@ public class CdrDTO {
    * @return authorizationReference
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_AUTHORIZATION_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -558,7 +544,6 @@ public class CdrDTO {
    * @return cdrLocation
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_CDR_LOCATION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -585,7 +570,6 @@ public class CdrDTO {
    * @return meterId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_METER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -608,6 +592,9 @@ public class CdrDTO {
   }
 
   public CdrDTO addChargingPeriodsItem(ChargingPeriod chargingPeriodsItem) {
+    if (this.chargingPeriods == null) {
+      this.chargingPeriods = new ArrayList<>();
+    }
     this.chargingPeriods.add(chargingPeriodsItem);
     return this;
   }
@@ -617,7 +604,6 @@ public class CdrDTO {
    * @return chargingPeriods
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_CHARGING_PERIODS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -644,7 +630,6 @@ public class CdrDTO {
    * @return signedData
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_SIGNED_DATA)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -671,7 +656,6 @@ public class CdrDTO {
    * @return totalCost
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_COST)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -698,7 +682,6 @@ public class CdrDTO {
    * @return totalFixedCost
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_FIXED_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -725,7 +708,6 @@ public class CdrDTO {
    * @return totalEnergy
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_ENERGY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -752,7 +734,6 @@ public class CdrDTO {
    * @return totalEnergyCost
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_ENERGY_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -779,7 +760,6 @@ public class CdrDTO {
    * @return totalTime
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_TIME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -806,7 +786,6 @@ public class CdrDTO {
    * @return totalTimeCost
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_TIME_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -833,7 +812,6 @@ public class CdrDTO {
    * @return totalParkingTime
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_PARKING_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -860,7 +838,6 @@ public class CdrDTO {
    * @return totalParkingCost
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_PARKING_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -887,7 +864,6 @@ public class CdrDTO {
    * @return totalReservationCost
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_RESERVATION_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -914,7 +890,6 @@ public class CdrDTO {
    * @return invoiceReferenceId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_INVOICE_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -941,7 +916,6 @@ public class CdrDTO {
    * @return creditReferenceId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CREDIT_REFERENCE_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -968,7 +942,6 @@ public class CdrDTO {
    * @return homeChargingCompensation
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_HOME_CHARGING_COMPENSATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -995,7 +968,6 @@ public class CdrDTO {
    * @return lastUpdated
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -1009,7 +981,6 @@ public class CdrDTO {
   public void setLastUpdated(OffsetDateTime lastUpdated) {
     this.lastUpdated = lastUpdated;
   }
-
 
   @Override
   public boolean equals(Object o) {

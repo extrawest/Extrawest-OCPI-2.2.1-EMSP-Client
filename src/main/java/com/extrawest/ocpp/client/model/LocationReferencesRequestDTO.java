@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,13 +28,13 @@ import java.util.Objects;
   LocationReferencesRequestDTO.JSON_PROPERTY_LOCATION_ID,
   LocationReferencesRequestDTO.JSON_PROPERTY_EVSE_UIDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class LocationReferencesRequestDTO {
   public static final String JSON_PROPERTY_LOCATION_ID = "location_id";
   private String locationId;
 
   public static final String JSON_PROPERTY_EVSE_UIDS = "evse_uids";
-  private List<String> evseUids = null;
+  private List<String> evseUids;
 
   public LocationReferencesRequestDTO() {
   }
@@ -51,7 +50,6 @@ public class LocationReferencesRequestDTO {
    * @return locationId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_LOCATION_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -86,7 +84,6 @@ public class LocationReferencesRequestDTO {
    * @return evseUids
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EVSE_UIDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -100,7 +97,6 @@ public class LocationReferencesRequestDTO {
   public void setEvseUids(List<String> evseUids) {
     this.evseUids = evseUids;
   }
-
 
   @Override
   public boolean equals(Object o) {

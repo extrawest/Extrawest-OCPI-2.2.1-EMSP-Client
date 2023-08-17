@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,10 +28,10 @@ import java.util.Objects;
   TariffElement.JSON_PROPERTY_PRICE_COMPONENTS,
   TariffElement.JSON_PROPERTY_RESTRICTIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class TariffElement {
   public static final String JSON_PROPERTY_PRICE_COMPONENTS = "price_components";
-  private List<PriceComponent> priceComponents = null;
+  private List<PriceComponent> priceComponents;
 
   public static final String JSON_PROPERTY_RESTRICTIONS = "restrictions";
   private TariffRestrictions restrictions;
@@ -59,7 +58,6 @@ public class TariffElement {
    * @return priceComponents
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PRICE_COMPONENTS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -86,7 +84,6 @@ public class TariffElement {
    * @return restrictions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_RESTRICTIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -100,7 +97,6 @@ public class TariffElement {
   public void setRestrictions(TariffRestrictions restrictions) {
     this.restrictions = restrictions;
   }
-
 
   @Override
   public boolean equals(Object o) {

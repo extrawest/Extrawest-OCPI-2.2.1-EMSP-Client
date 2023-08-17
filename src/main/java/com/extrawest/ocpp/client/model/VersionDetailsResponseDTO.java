@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ import java.util.Objects;
   VersionDetailsResponseDTO.JSON_PROPERTY_VERSION,
   VersionDetailsResponseDTO.JSON_PROPERTY_ENDPOINTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class VersionDetailsResponseDTO {
   /**
    * Gets or Sets version
@@ -90,7 +89,6 @@ public class VersionDetailsResponseDTO {
    * @return version
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_VERSION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -113,6 +111,9 @@ public class VersionDetailsResponseDTO {
   }
 
   public VersionDetailsResponseDTO addEndpointsItem(Endpoint endpointsItem) {
+    if (this.endpoints == null) {
+      this.endpoints = new ArrayList<>();
+    }
     this.endpoints.add(endpointsItem);
     return this;
   }
@@ -122,7 +123,6 @@ public class VersionDetailsResponseDTO {
    * @return endpoints
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_ENDPOINTS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -136,7 +136,6 @@ public class VersionDetailsResponseDTO {
   public void setEndpoints(List<Endpoint> endpoints) {
     this.endpoints = endpoints;
   }
-
 
   @Override
   public boolean equals(Object o) {

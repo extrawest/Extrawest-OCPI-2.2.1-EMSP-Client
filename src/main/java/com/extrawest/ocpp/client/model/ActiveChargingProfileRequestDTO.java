@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -28,7 +27,7 @@ import java.util.Objects;
   ActiveChargingProfileRequestDTO.JSON_PROPERTY_START_DATE_TIME,
   ActiveChargingProfileRequestDTO.JSON_PROPERTY_CHARGING_PROFILE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class ActiveChargingProfileRequestDTO {
   public static final String JSON_PROPERTY_START_DATE_TIME = "start_date_time";
   private OffsetDateTime startDateTime;
@@ -50,7 +49,6 @@ public class ActiveChargingProfileRequestDTO {
    * @return startDateTime
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -77,7 +75,6 @@ public class ActiveChargingProfileRequestDTO {
    * @return chargingProfile
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_CHARGING_PROFILE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -91,7 +88,6 @@ public class ActiveChargingProfileRequestDTO {
   public void setChargingProfile(ChargingProfile chargingProfile) {
     this.chargingProfile = chargingProfile;
   }
-
 
   @Override
   public boolean equals(Object o) {

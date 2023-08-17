@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
@@ -28,7 +27,7 @@ import java.util.Objects;
   RegularHours.JSON_PROPERTY_PERIOD_BEGIN,
   RegularHours.JSON_PROPERTY_PERIOD_END
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class RegularHours {
   public static final String JSON_PROPERTY_WEEKDAY = "weekday";
   private Integer weekday;
@@ -53,7 +52,6 @@ public class RegularHours {
    * @return weekday
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_WEEKDAY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -80,7 +78,6 @@ public class RegularHours {
    * @return periodBegin
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -107,7 +104,6 @@ public class RegularHours {
    * @return periodEnd
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_PERIOD_END)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -121,7 +117,6 @@ public class RegularHours {
   public void setPeriodEnd(String periodEnd) {
     this.periodEnd = periodEnd;
   }
-
 
   @Override
   public boolean equals(Object o) {

@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
@@ -27,7 +26,7 @@ import java.util.Objects;
   SetChargingProfileRequestDTO.JSON_PROPERTY_CHARGING_PROFILE,
   SetChargingProfileRequestDTO.JSON_PROPERTY_RESPONSE_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class SetChargingProfileRequestDTO {
   public static final String JSON_PROPERTY_CHARGING_PROFILE = "charging_profile";
   private ChargingProfile chargingProfile;
@@ -49,7 +48,6 @@ public class SetChargingProfileRequestDTO {
    * @return chargingProfile
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_CHARGING_PROFILE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -76,7 +74,6 @@ public class SetChargingProfileRequestDTO {
    * @return responseUrl
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_RESPONSE_URL)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -90,7 +87,6 @@ public class SetChargingProfileRequestDTO {
   public void setResponseUrl(String responseUrl) {
     this.responseUrl = responseUrl;
   }
-
 
   @Override
   public boolean equals(Object o) {

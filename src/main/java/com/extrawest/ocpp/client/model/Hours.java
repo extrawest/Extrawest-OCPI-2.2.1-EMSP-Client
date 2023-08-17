@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,19 +30,19 @@ import java.util.Objects;
   Hours.JSON_PROPERTY_EXCEPTIONAL_OPENINGS,
   Hours.JSON_PROPERTY_EXCEPTIONAL_CLOSINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class Hours {
   public static final String JSON_PROPERTY_TWENTYFOURSEVEN = "twentyfourseven";
   private Boolean twentyfourseven;
 
   public static final String JSON_PROPERTY_REGULAR_HOURS = "regular_hours";
-  private List<RegularHours> regularHours = null;
+  private List<RegularHours> regularHours;
 
   public static final String JSON_PROPERTY_EXCEPTIONAL_OPENINGS = "exceptional_openings";
-  private List<ExceptionalPeriod> exceptionalOpenings = null;
+  private List<ExceptionalPeriod> exceptionalOpenings;
 
   public static final String JSON_PROPERTY_EXCEPTIONAL_CLOSINGS = "exceptional_closings";
-  private List<ExceptionalPeriod> exceptionalClosings = null;
+  private List<ExceptionalPeriod> exceptionalClosings;
 
   public Hours() {
   }
@@ -59,7 +58,6 @@ public class Hours {
    * @return twentyfourseven
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TWENTYFOURSEVEN)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -94,7 +92,6 @@ public class Hours {
    * @return regularHours
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_REGULAR_HOURS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -129,7 +126,6 @@ public class Hours {
    * @return exceptionalOpenings
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EXCEPTIONAL_OPENINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -164,7 +160,6 @@ public class Hours {
    * @return exceptionalClosings
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_EXCEPTIONAL_CLOSINGS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -178,7 +173,6 @@ public class Hours {
   public void setExceptionalClosings(List<ExceptionalPeriod> exceptionalClosings) {
     this.exceptionalClosings = exceptionalClosings;
   }
-
 
   @Override
   public boolean equals(Object o) {

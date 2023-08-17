@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -31,7 +30,7 @@ import java.util.Objects;
   ChargingProfile.JSON_PROPERTY_MIN_CHARGING_RATE,
   ChargingProfile.JSON_PROPERTY_CHARGING_PROFILE_PERIOD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class ChargingProfile {
   public static final String JSON_PROPERTY_START_DATE_TIME = "start_date_time";
   private OffsetDateTime startDateTime;
@@ -81,7 +80,7 @@ public class ChargingProfile {
   private Float minChargingRate;
 
   public static final String JSON_PROPERTY_CHARGING_PROFILE_PERIOD = "charging_profile_period";
-  private List<ChargingProfilePeriod> chargingProfilePeriod = null;
+  private List<ChargingProfilePeriod> chargingProfilePeriod;
 
   public ChargingProfile() {
   }
@@ -97,7 +96,6 @@ public class ChargingProfile {
    * @return startDateTime
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -124,7 +122,6 @@ public class ChargingProfile {
    * @return duration
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DURATION)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -151,7 +148,6 @@ public class ChargingProfile {
    * @return chargingRateUnit
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHARGING_RATE_UNIT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -178,7 +174,6 @@ public class ChargingProfile {
    * @return minChargingRate
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MIN_CHARGING_RATE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -213,7 +208,6 @@ public class ChargingProfile {
    * @return chargingProfilePeriod
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHARGING_PROFILE_PERIOD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -227,7 +221,6 @@ public class ChargingProfile {
   public void setChargingProfilePeriod(List<ChargingProfilePeriod> chargingProfilePeriod) {
     this.chargingProfilePeriod = chargingProfilePeriod;
   }
-
 
   @Override
   public boolean equals(Object o) {

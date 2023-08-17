@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -37,7 +36,7 @@ import java.util.Objects;
   Connector.JSON_PROPERTY_TERMS_AND_CONDITIONS,
   Connector.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class Connector {
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
@@ -251,7 +250,7 @@ public class Connector {
   private Integer maxElectricPower;
 
   public static final String JSON_PROPERTY_TARIFF_IDS = "tariff_ids";
-  private List<String> tariffIds = null;
+  private List<String> tariffIds;
 
   public static final String JSON_PROPERTY_TERMS_AND_CONDITIONS = "terms_and_conditions";
   private String termsAndConditions;
@@ -273,7 +272,6 @@ public class Connector {
    * @return url
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_URL)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -300,7 +298,6 @@ public class Connector {
    * @return id
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -327,7 +324,6 @@ public class Connector {
    * @return standard
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_STANDARD)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -354,7 +350,6 @@ public class Connector {
    * @return format
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_FORMAT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -381,7 +376,6 @@ public class Connector {
    * @return powerType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_POWER_TYPE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -408,7 +402,6 @@ public class Connector {
    * @return maxVoltage
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAX_VOLTAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -435,7 +428,6 @@ public class Connector {
    * @return maxAmperage
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAX_AMPERAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -462,7 +454,6 @@ public class Connector {
    * @return maxElectricPower
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MAX_ELECTRIC_POWER)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -497,7 +488,6 @@ public class Connector {
    * @return tariffIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARIFF_IDS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -524,7 +514,6 @@ public class Connector {
    * @return termsAndConditions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TERMS_AND_CONDITIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -551,7 +540,6 @@ public class Connector {
    * @return lastUpdated
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -565,7 +553,6 @@ public class Connector {
   public void setLastUpdated(OffsetDateTime lastUpdated) {
     this.lastUpdated = lastUpdated;
   }
-
 
   @Override
   public boolean equals(Object o) {

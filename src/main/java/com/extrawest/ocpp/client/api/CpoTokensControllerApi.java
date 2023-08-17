@@ -2,10 +2,8 @@ package com.extrawest.ocpp.client.api;
 
 import com.extrawest.ocpp.client.invoker.ApiClient;
 import com.extrawest.ocpp.client.model.TokenDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
-import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpClientErrorException;
@@ -15,8 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
-@Component("com.extrawest.ocpp.client.api.CpoTokensControllerApi")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class CpoTokensControllerApi {
     private ApiClient apiClient;
 
@@ -24,7 +21,6 @@ public class CpoTokensControllerApi {
         this(new ApiClient());
     }
 
-    @Autowired
     public CpoTokensControllerApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }

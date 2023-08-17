@@ -16,7 +16,6 @@ package com.extrawest.ocpp.client.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -31,13 +30,13 @@ import java.util.Objects;
   ChargingPeriod.JSON_PROPERTY_DIMENSIONS,
   ChargingPeriod.JSON_PROPERTY_TARIFF_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class ChargingPeriod {
   public static final String JSON_PROPERTY_START_DATE_TIME = "start_date_time";
   private OffsetDateTime startDateTime;
 
   public static final String JSON_PROPERTY_DIMENSIONS = "dimensions";
-  private List<CdrDimension> dimensions = null;
+  private List<CdrDimension> dimensions;
 
   public static final String JSON_PROPERTY_TARIFF_ID = "tariff_id";
   private String tariffId;
@@ -56,7 +55,6 @@ public class ChargingPeriod {
    * @return startDateTime
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -91,7 +89,6 @@ public class ChargingPeriod {
    * @return dimensions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DIMENSIONS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -118,7 +115,6 @@ public class ChargingPeriod {
    * @return tariffId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TARIFF_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -132,7 +128,6 @@ public class ChargingPeriod {
   public void setTariffId(String tariffId) {
     this.tariffId = tariffId;
   }
-
 
   @Override
   public boolean equals(Object o) {

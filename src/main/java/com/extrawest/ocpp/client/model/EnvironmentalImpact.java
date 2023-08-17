@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
@@ -25,7 +24,7 @@ import java.util.Objects;
   EnvironmentalImpact.JSON_PROPERTY_CATEGORY,
   EnvironmentalImpact.JSON_PROPERTY_AMOUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class EnvironmentalImpact {
   /**
    * Gets or Sets category
@@ -82,7 +81,6 @@ public class EnvironmentalImpact {
    * @return category
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CATEGORY)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -109,7 +107,6 @@ public class EnvironmentalImpact {
    * @return amount
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_AMOUNT)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -123,7 +120,6 @@ public class EnvironmentalImpact {
   public void setAmount(Float amount) {
     this.amount = amount;
   }
-
 
   @Override
   public boolean equals(Object o) {

@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
@@ -28,7 +27,7 @@ import java.util.Objects;
   ChargingPreferencesDTO.JSON_PROPERTY_ENERGY_NEED,
   ChargingPreferencesDTO.JSON_PROPERTY_DISCHARGE_ALLOWED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class ChargingPreferencesDTO {
   /**
    * Gets or Sets profileType
@@ -95,7 +94,6 @@ public class ChargingPreferencesDTO {
    * @return profileType
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_PROFILE_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -122,7 +120,6 @@ public class ChargingPreferencesDTO {
    * @return departureTime
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DEPARTURE_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -149,7 +146,6 @@ public class ChargingPreferencesDTO {
    * @return energyNeed
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_ENERGY_NEED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -176,7 +172,6 @@ public class ChargingPreferencesDTO {
    * @return dischargeAllowed
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_DISCHARGE_ALLOWED)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -190,7 +185,6 @@ public class ChargingPreferencesDTO {
   public void setDischargeAllowed(Boolean dischargeAllowed) {
     this.dischargeAllowed = dischargeAllowed;
   }
-
 
   @Override
   public boolean equals(Object o) {

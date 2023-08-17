@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ import java.util.Objects;
   CommandResponseDTO.JSON_PROPERTY_TIMEOUT,
   CommandResponseDTO.JSON_PROPERTY_MESSAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class CommandResponseDTO {
   /**
    * Gets or Sets result
@@ -76,7 +75,7 @@ public class CommandResponseDTO {
   private Integer timeout;
 
   public static final String JSON_PROPERTY_MESSAGE = "message";
-  private List<DisplayText> message = null;
+  private List<DisplayText> message;
 
   public CommandResponseDTO() {
   }
@@ -92,7 +91,6 @@ public class CommandResponseDTO {
    * @return result
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_RESULT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -119,7 +117,6 @@ public class CommandResponseDTO {
    * @return timeout
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_TIMEOUT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -154,7 +151,6 @@ public class CommandResponseDTO {
    * @return message
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_MESSAGE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -168,7 +164,6 @@ public class CommandResponseDTO {
   public void setMessage(List<DisplayText> message) {
     this.message = message;
   }
-
 
   @Override
   public boolean equals(Object o) {

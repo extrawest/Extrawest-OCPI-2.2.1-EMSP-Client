@@ -14,7 +14,6 @@
 package com.extrawest.ocpp.client.model;
 
 import com.fasterxml.jackson.annotation.*;
-import io.swagger.annotations.ApiModelProperty;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -44,7 +43,7 @@ import java.util.Objects;
   SessionDTO.JSON_PROPERTY_STATUS,
   SessionDTO.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class SessionDTO {
   public static final String JSON_PROPERTY_COUNTRY_CODE = "country_code";
   private String countryCode;
@@ -126,7 +125,7 @@ public class SessionDTO {
   private String currency;
 
   public static final String JSON_PROPERTY_CHARGING_PERIODS = "charging_periods";
-  private List<ChargingPeriod> chargingPeriods = null;
+  private List<ChargingPeriod> chargingPeriods;
 
   public static final String JSON_PROPERTY_TOTAL_COST = "total_cost";
   private Price totalCost;
@@ -192,7 +191,6 @@ public class SessionDTO {
    * @return countryCode
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -219,7 +217,6 @@ public class SessionDTO {
    * @return partyId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_PARTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -246,7 +243,6 @@ public class SessionDTO {
    * @return id
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -273,7 +269,6 @@ public class SessionDTO {
    * @return startDateTime
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -300,7 +295,6 @@ public class SessionDTO {
    * @return endDateTime
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_END_DATE_TIME)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -327,7 +321,6 @@ public class SessionDTO {
    * @return kwh
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_KWH)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -354,7 +347,6 @@ public class SessionDTO {
    * @return cdrToken
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_CDR_TOKEN)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -381,7 +373,6 @@ public class SessionDTO {
    * @return authMethod
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_AUTH_METHOD)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -408,7 +399,6 @@ public class SessionDTO {
    * @return authorizationReference
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_AUTHORIZATION_REFERENCE)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -435,7 +425,6 @@ public class SessionDTO {
    * @return locationId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_LOCATION_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -462,7 +451,6 @@ public class SessionDTO {
    * @return evseUid
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_EVSE_UID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -489,7 +477,6 @@ public class SessionDTO {
    * @return connectorId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_CONNECTOR_ID)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -516,7 +503,6 @@ public class SessionDTO {
    * @return meterId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_METER_ID)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -543,7 +529,6 @@ public class SessionDTO {
    * @return currency
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_CURRENCY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -578,7 +563,6 @@ public class SessionDTO {
    * @return chargingPeriods
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_CHARGING_PERIODS)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -605,7 +589,6 @@ public class SessionDTO {
    * @return totalCost
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
   @JsonProperty(JSON_PROPERTY_TOTAL_COST)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
@@ -632,7 +615,6 @@ public class SessionDTO {
    * @return status
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_STATUS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -659,7 +641,6 @@ public class SessionDTO {
    * @return lastUpdated
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
   @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
@@ -673,7 +654,6 @@ public class SessionDTO {
   public void setLastUpdated(OffsetDateTime lastUpdated) {
     this.lastUpdated = lastUpdated;
   }
-
 
   @Override
   public boolean equals(Object o) {

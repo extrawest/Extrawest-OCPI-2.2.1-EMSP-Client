@@ -2,10 +2,8 @@ package com.extrawest.ocpp.client.api;
 
 import com.extrawest.ocpp.client.invoker.ApiClient;
 import com.extrawest.ocpp.client.model.SessionDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
-import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpClientErrorException;
@@ -14,8 +12,7 @@ import org.springframework.web.client.RestClientException;
 import java.util.Collections;
 import java.util.List;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T22:04:36.538444+03:00[Europe/Kiev]")
-@Component("com.extrawest.ocpp.client.api.EmspSessionsControllerApi")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T08:21:00.091189+03:00[Europe/Kiev]")
 public class EmspSessionsControllerApi {
     private ApiClient apiClient;
 
@@ -23,7 +20,6 @@ public class EmspSessionsControllerApi {
         this(new ApiClient());
     }
 
-    @Autowired
     public EmspSessionsControllerApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
