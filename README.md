@@ -190,25 +190,6 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ClientInfoControllerApi* | [**getHubClientInfo**](docs/ClientInfoControllerApi.md#getHubClientInfo) | **GET** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |
 *ClientInfoControllerApi* | [**putHubClientInfo**](docs/ClientInfoControllerApi.md#putHubClientInfo) | **PUT** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |
-*CpoCdrControllerApi* | [**getCdr1**](docs/CpoCdrControllerApi.md#getCdr1) | **GET** /cpo/api/2.2.1/cdr |
-*CpoChargingProfilesControllerApi* | [**deleteChargingProfile**](docs/CpoChargingProfilesControllerApi.md#deleteChargingProfile) | **DELETE** /cpo/api/2.2.1/chargingProfiles/{session_id}/{response_url} |
-*CpoChargingProfilesControllerApi* | [**getChargingProfile**](docs/CpoChargingProfilesControllerApi.md#getChargingProfile) | **GET** /cpo/api/2.2.1/chargingProfiles/{session_id}/{duration}/{response_url} |
-*CpoChargingProfilesControllerApi* | [**putChargingProfile1**](docs/CpoChargingProfilesControllerApi.md#putChargingProfile1) | **PUT** /cpo/api/2.2.1/chargingProfiles/{session_id} |
-*CpoCommandsControllerApi* | [**postCommand**](docs/CpoCommandsControllerApi.md#postCommand) | **POST** /cpo/api/2.2.1/commands/{command} |
-*CpoCredentialsControllerApi* | [**deleteCredentials1**](docs/CpoCredentialsControllerApi.md#deleteCredentials1) | **DELETE** /cpo/api/2.2.1/credentials |
-*CpoCredentialsControllerApi* | [**getCredentials1**](docs/CpoCredentialsControllerApi.md#getCredentials1) | **GET** /cpo/api/2.2.1/credentials |
-*CpoCredentialsControllerApi* | [**postCredentials1**](docs/CpoCredentialsControllerApi.md#postCredentials1) | **POST** /cpo/api/2.2.1/credentials |
-*CpoCredentialsControllerApi* | [**putCredentials1**](docs/CpoCredentialsControllerApi.md#putCredentials1) | **PUT** /cpo/api/2.2.1/credentials |
-*CpoLocationControllerApi* | [**getLocationEvseController1**](docs/CpoLocationControllerApi.md#getLocationEvseController1) | **GET** /cpo/api/2.2.1/locations |
-*CpoLocationControllerApi* | [**getLocations**](docs/CpoLocationControllerApi.md#getLocations) | **GET** /cpo/api/2.2.1/locations/getLocations |
-*CpoSessionsControllerApi* | [**getSessions**](docs/CpoSessionsControllerApi.md#getSessions) | **GET** /cpo/api/2.2.1/sessions |
-*CpoSessionsControllerApi* | [**putChargingPreferences**](docs/CpoSessionsControllerApi.md#putChargingPreferences) | **PUT** /cpo/api/2.2.1/sessions |
-*CpoTariffControllerApi* | [**getTariffs**](docs/CpoTariffControllerApi.md#getTariffs) | **GET** /cpo/api/2.2.1/tariffs |
-*CpoTokensControllerApi* | [**getToken1**](docs/CpoTokensControllerApi.md#getToken1) | **GET** /cpo/api/2.2.1/tokens/{country_code}/{party_id}/{token_uid}/{type} |
-*CpoTokensControllerApi* | [**patchToken**](docs/CpoTokensControllerApi.md#patchToken) | **PATCH** /cpo/api/2.2.1/tokens/{country_code}/{party_id}/{token_uid}/{type} |
-*CpoTokensControllerApi* | [**putToken**](docs/CpoTokensControllerApi.md#putToken) | **PUT** /cpo/api/2.2.1/tokens/{country_code}/{party_id}/{token_uid}/{type} |
-*CpoVersionControllerApi* | [**getVersion**](docs/CpoVersionControllerApi.md#getVersion) | **GET** /cpo/api/2.2.1/versions |
-*CpoVersionControllerApi* | [**getVersionDetails1**](docs/CpoVersionControllerApi.md#getVersionDetails1) | **GET** /cpo/api/2.2.1/versions/details/{version} |
 *EmspCdrControllerApi* | [**getCdr**](docs/EmspCdrControllerApi.md#getCdr) | **GET** /emsp/api/2.2.1/cdr/{id} |
 *EmspCdrControllerApi* | [**postCdr**](docs/EmspCdrControllerApi.md#postCdr) | **POST** /emsp/api/2.2.1/cdr |
 *EmspChargingProfilesControllerApi* | [**postChargingProfile**](docs/EmspChargingProfilesControllerApi.md#postChargingProfile) | **POST** /emsp/api/2.2.1/chargingProfiles |
@@ -233,7 +214,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
-- [AbstractCommand](docs/AbstractCommand.md)
 - [AbstractProfileResult](docs/AbstractProfileResult.md)
 - [ActiveChargingProfileRequestDTO](docs/ActiveChargingProfileRequestDTO.md)
 - [AdditionalGeoLocation](docs/AdditionalGeoLocation.md)
@@ -244,12 +224,9 @@ Class | Method | HTTP request | Description
 - [CdrLocation](docs/CdrLocation.md)
 - [CdrToken](docs/CdrToken.md)
 - [ChargingPeriod](docs/ChargingPeriod.md)
-- [ChargingPreferencesDTO](docs/ChargingPreferencesDTO.md)
 - [ChargingProfile](docs/ChargingProfile.md)
 - [ChargingProfilePeriod](docs/ChargingProfilePeriod.md)
-- [ChargingProfileResponseDTO](docs/ChargingProfileResponseDTO.md)
 - [ClientInfoDTO](docs/ClientInfoDTO.md)
-- [CommandResponseDTO](docs/CommandResponseDTO.md)
 - [Connector](docs/Connector.md)
 - [CredentialsDTO](docs/CredentialsDTO.md)
 - [CredentialsRole](docs/CredentialsRole.md)
@@ -273,7 +250,6 @@ Class | Method | HTTP request | Description
 - [RegularHours](docs/RegularHours.md)
 - [ResponseFormat](docs/ResponseFormat.md)
 - [SessionDTO](docs/SessionDTO.md)
-- [SetChargingProfileRequestDTO](docs/SetChargingProfileRequestDTO.md)
 - [SignedData](docs/SignedData.md)
 - [SignedValue](docs/SignedValue.md)
 - [StatusSchedule](docs/StatusSchedule.md)
@@ -284,8 +260,6 @@ Class | Method | HTTP request | Description
 - [Token](docs/Token.md)
 - [TokenDTO](docs/TokenDTO.md)
 - [VersionDetailsResponseDTO](docs/VersionDetailsResponseDTO.md)
-- [VersionResponseDTO](docs/VersionResponseDTO.md)
-
 
 ## Documentation for Authorization
 

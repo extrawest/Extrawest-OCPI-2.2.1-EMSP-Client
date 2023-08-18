@@ -474,313 +474,6 @@ paths:
       - emsp-charging-profiles-controller
       x-content-type: application/json
       x-accepts: '*/*'
-  /cpo/api/2.2.1/tokens/{country_code}/{party_id}/{token_uid}/{type}:
-    get:
-      operationId: getToken_1
-      parameters:
-      - explode: false
-        in: path
-        name: country_code
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: party_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: token_uid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: type
-        required: true
-        schema:
-          enum:
-          - AD_HOC_USER
-          - APP_USER
-          - OTHER
-          - RFID
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/TokenDTO'
-          description: OK
-      tags:
-      - cpo-tokens-controller
-      x-accepts: '*/*'
-    patch:
-      operationId: patchToken
-      parameters:
-      - explode: false
-        in: path
-        name: country_code
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: party_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: token_uid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: type
-        required: true
-        schema:
-          enum:
-          - AD_HOC_USER
-          - APP_USER
-          - OTHER
-          - RFID
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/TokenDTO'
-        required: true
-      responses:
-        "200":
-          description: OK
-      tags:
-      - cpo-tokens-controller
-      x-content-type: application/json
-      x-accepts: application/json
-    put:
-      operationId: putToken
-      parameters:
-      - explode: false
-        in: path
-        name: country_code
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: party_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: token_uid
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: type
-        required: true
-        schema:
-          enum:
-          - AD_HOC_USER
-          - APP_USER
-          - OTHER
-          - RFID
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/TokenDTO'
-        required: true
-      responses:
-        "200":
-          description: OK
-      tags:
-      - cpo-tokens-controller
-      x-content-type: application/json
-      x-accepts: application/json
-  /cpo/api/2.2.1/sessions:
-    get:
-      operationId: getSessions
-      parameters:
-      - explode: true
-        in: query
-        name: date_from
-        required: true
-        schema:
-          format: date-time
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: date_to
-        required: false
-        schema:
-          format: date-time
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: offset
-        required: false
-        schema:
-          default: 0
-          format: int32
-          type: integer
-        style: form
-      - explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                items:
-                  $ref: '#/components/schemas/SessionDTO'
-                type: array
-          description: OK
-      tags:
-      - cpo-sessions-controller
-      x-accepts: '*/*'
-    put:
-      operationId: putChargingPreferences
-      parameters:
-      - explode: true
-        in: query
-        name: session_id
-        required: true
-        schema:
-          type: string
-        style: form
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ChargingPreferencesDTO'
-        required: true
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ChargingPreferencesDTO'
-          description: OK
-      tags:
-      - cpo-sessions-controller
-      x-content-type: application/json
-      x-accepts: '*/*'
-  /cpo/api/2.2.1/credentials:
-    delete:
-      operationId: deleteCredentials_1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CredentialsDTO'
-        required: true
-      responses:
-        "200":
-          description: OK
-      tags:
-      - cpo-credentials-controller
-      x-content-type: application/json
-      x-accepts: application/json
-    get:
-      operationId: getCredentials_1
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/CredentialsDTO'
-          description: OK
-      tags:
-      - cpo-credentials-controller
-      x-accepts: '*/*'
-    post:
-      operationId: postCredentials_1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CredentialsDTO'
-        required: true
-      responses:
-        "200":
-          description: OK
-      tags:
-      - cpo-credentials-controller
-      x-content-type: application/json
-      x-accepts: application/json
-    put:
-      operationId: putCredentials_1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CredentialsDTO'
-        required: true
-      responses:
-        "200":
-          description: OK
-      tags:
-      - cpo-credentials-controller
-      x-content-type: application/json
-      x-accepts: application/json
-  /cpo/api/2.2.1/chargingProfiles/{session_id}:
-    put:
-      operationId: putChargingProfile_1
-      parameters:
-      - explode: false
-        in: path
-        name: session_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SetChargingProfileRequestDTO'
-        required: true
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ChargingProfileResponseDTO'
-          description: OK
-      tags:
-      - cpo-charging-profiles-controller
-      x-content-type: application/json
-      x-accepts: '*/*'
   /api/2.2.1/hubClientInfo/{country_code}/{party_id}:
     get:
       operationId: getHubClientInfo
@@ -911,40 +604,6 @@ paths:
       - emsp-cdr-controller
       x-content-type: application/json
       x-accepts: '*/*'
-  /cpo/api/2.2.1/commands/{command}:
-    post:
-      operationId: postCommand
-      parameters:
-      - explode: false
-        in: path
-        name: command
-        required: true
-        schema:
-          enum:
-          - CANCEL_RESERVATION
-          - RESERVE_NOW
-          - START_SESSION
-          - STOP_SESSION
-          - UNLOCK_CONNECTOR
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AbstractCommand'
-        required: true
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/CommandResponseDTO'
-          description: OK
-      tags:
-      - cpo-commands-controller
-      x-content-type: application/json
-      x-accepts: '*/*'
   /emsp/api/2.2.1/versions/details/{version}:
     get:
       operationId: getVersionDetails
@@ -1040,293 +699,6 @@ paths:
           description: OK
       tags:
       - emsp-cdr-controller
-      x-accepts: '*/*'
-  /cpo/api/2.2.1/versions:
-    get:
-      operationId: getVersion
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                items:
-                  $ref: '#/components/schemas/VersionResponseDTO'
-                type: array
-          description: OK
-      tags:
-      - cpo-version-controller
-      x-accepts: '*/*'
-  /cpo/api/2.2.1/versions/details/{version}:
-    get:
-      operationId: getVersionDetails_1
-      parameters:
-      - explode: false
-        in: path
-        name: version
-        required: true
-        schema:
-          enum:
-          - "2.0"
-          - "2.1"
-          - 2.1.1
-          - "2.2"
-          - 2.2.1
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/VersionDetailsResponseDTO'
-          description: OK
-      tags:
-      - cpo-version-controller
-      x-accepts: '*/*'
-  /cpo/api/2.2.1/tariffs:
-    get:
-      operationId: getTariffs
-      parameters:
-      - explode: true
-        in: query
-        name: date_from
-        required: false
-        schema:
-          format: date-time
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: date_to
-        required: false
-        schema:
-          format: date-time
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: offset
-        required: false
-        schema:
-          default: 0
-          format: int32
-          type: integer
-        style: form
-      - explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                items:
-                  $ref: '#/components/schemas/TariffDTO'
-                type: array
-          description: OK
-      tags:
-      - cpo-tariff-controller
-      x-accepts: '*/*'
-  /cpo/api/2.2.1/locations:
-    get:
-      operationId: getLocationEvseController_1
-      parameters:
-      - explode: true
-        in: query
-        name: location_id
-        required: true
-        schema:
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: evse_uid
-        required: false
-        schema:
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: connector_id
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/AbstractDomainObject'
-          description: OK
-      tags:
-      - cpo-location-controller
-      x-accepts: '*/*'
-  /cpo/api/2.2.1/locations/getLocations:
-    get:
-      operationId: getLocations
-      parameters:
-      - explode: true
-        in: query
-        name: date_from
-        required: false
-        schema:
-          format: date-time
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: date_to
-        required: false
-        schema:
-          format: date-time
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: offset
-        required: false
-        schema:
-          default: 0
-          format: int32
-          type: integer
-        style: form
-      - explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          format: int32
-          type: integer
-        style: form
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                items:
-                  $ref: '#/components/schemas/LocationDTO'
-                type: array
-          description: OK
-      tags:
-      - cpo-location-controller
-      x-accepts: '*/*'
-  /cpo/api/2.2.1/chargingProfiles/{session_id}/{duration}/{response_url}:
-    get:
-      operationId: getChargingProfile
-      parameters:
-      - explode: false
-        in: path
-        name: session_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: duration
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      - explode: false
-        in: path
-        name: response_url
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ChargingProfileResponseDTO'
-          description: OK
-      tags:
-      - cpo-charging-profiles-controller
-      x-accepts: '*/*'
-  /cpo/api/2.2.1/cdr:
-    get:
-      operationId: getCdr_1
-      parameters:
-      - explode: true
-        in: query
-        name: date_from
-        required: true
-        schema:
-          format: date-time
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: date_to
-        required: true
-        schema:
-          format: date-time
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: offset
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: form
-      - explode: true
-        in: query
-        name: limit
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: form
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                items:
-                  $ref: '#/components/schemas/CdrDTO'
-                type: array
-          description: OK
-      tags:
-      - cpo-cdr-controller
-      x-accepts: '*/*'
-  /cpo/api/2.2.1/chargingProfiles/{session_id}/{response_url}:
-    delete:
-      operationId: deleteChargingProfile
-      parameters:
-      - explode: false
-        in: path
-        name: session_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: path
-        name: response_url
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ChargingProfileResponseDTO'
-          description: OK
-      tags:
-      - cpo-charging-profiles-controller
       x-accepts: '*/*'
 components:
   schemas:
@@ -2865,177 +2237,6 @@ components:
         status_message:
           type: string
       type: object
-    EnergyContract:
-      example:
-        contract_id: contract_id
-        supplier_name: supplier_name
-      properties:
-        supplier_name:
-          type: string
-        contract_id:
-          type: string
-      type: object
-    TokenDTO:
-      example:
-        last_updated: 2000-01-23T04:56:07.000+00:00
-        contract_id: contract_id
-        language: language
-        whitelist: ALWAYS
-        type: AD_HOC_USER
-        visual_number: visual_number
-        issuer: issuer
-        valid: true
-        country_code: country_code
-        uid: uid
-        default_profile_type: CHEAP
-        group_id: group_id
-        energy_contract:
-          contract_id: contract_id
-          supplier_name: supplier_name
-        party_id: party_id
-      properties:
-        country_code:
-          maxLength: 2
-          minLength: 1
-          pattern: "/[:ascii:]/i"
-          type: string
-        party_id:
-          maxLength: 3
-          minLength: 1
-          pattern: "/[:ascii:]/i"
-          type: string
-        uid:
-          maxLength: 36
-          minLength: 1
-          pattern: "/[:ascii:]/i"
-          type: string
-        type:
-          enum:
-          - AD_HOC_USER
-          - APP_USER
-          - OTHER
-          - RFID
-          type: string
-        contract_id:
-          maxLength: 36
-          minLength: 1
-          pattern: "/[:ascii:]/i"
-          type: string
-        visual_number:
-          maxLength: 64
-          minLength: 1
-          type: string
-        issuer:
-          maxLength: 64
-          minLength: 1
-          type: string
-        group_id:
-          maxLength: 36
-          minLength: 1
-          type: string
-        valid:
-          type: boolean
-        whitelist:
-          enum:
-          - ALWAYS
-          - ALLOWED
-          - ALLOWED_OFFLINE
-          - NEVER
-          type: string
-        language:
-          maxLength: 2
-          minLength: 1
-          type: string
-        default_profile_type:
-          enum:
-          - CHEAP
-          - FAST
-          - GREEN
-          - REGULAR
-          type: string
-        energy_contract:
-          $ref: '#/components/schemas/EnergyContract'
-        last_updated:
-          format: date-time
-          type: string
-      required:
-      - contract_id
-      - country_code
-      - issuer
-      - last_updated
-      - party_id
-      - type
-      - uid
-      - valid
-      - whitelist
-      type: object
-    ChargingPreferencesDTO:
-      example:
-        energyNeed: 0.8008282
-        profile_type: CHEAP
-        discharge_allowed: true
-        departure_time: 2000-01-23T04:56:07.000+00:00
-      properties:
-        profile_type:
-          enum:
-          - CHEAP
-          - FAST
-          - GREEN
-          - REGULAR
-          type: string
-        departure_time:
-          format: date-time
-          type: string
-        energyNeed:
-          format: float
-          type: number
-        discharge_allowed:
-          type: boolean
-      required:
-      - profile_type
-      type: object
-    SetChargingProfileRequestDTO:
-      example:
-        charging_profile:
-          duration: 0
-          charging_profile_period:
-          - limit: 5.962134
-            start_period: 1
-          - limit: 5.962134
-            start_period: 1
-          charging_rate_unit: W
-          min_charging_rate: 6.0274563
-          start_date_time: 2000-01-23T04:56:07.000+00:00
-        'response_url ': 'response_url '
-      properties:
-        charging_profile:
-          $ref: '#/components/schemas/ChargingProfile'
-        'response_url ':
-          type: string
-      required:
-      - charging_profile
-      - 'response_url '
-      type: object
-    ChargingProfileResponseDTO:
-      example:
-        result: ACCEPTED
-        timeout: 0
-      properties:
-        result:
-          enum:
-          - ACCEPTED
-          - NOT_SUPPORTED
-          - REJECTED
-          - TOO_OFTEN
-          - UNKNOWN_SESSION
-          type: string
-        timeout:
-          format: int32
-          type: integer
-      required:
-      - result
-      - timeout
-      type: object
     LocationReferencesRequestDTO:
       example:
         evse_uids:
@@ -3105,6 +2306,16 @@ components:
       required:
       - allowed
       - token
+      type: object
+    EnergyContract:
+      example:
+        contract_id: contract_id
+        supplier_name: supplier_name
+      properties:
+        supplier_name:
+          type: string
+        contract_id:
+          type: string
       type: object
     LocationReferences:
       example:
@@ -3841,45 +3052,6 @@ components:
           format: date-time
           type: string
       type: object
-    AbstractCommand:
-      example:
-        response_url: response_url
-      properties:
-        response_url:
-          maxLength: 255
-          minLength: 1
-          type: string
-      required:
-      - response_url
-      type: object
-    CommandResponseDTO:
-      example:
-        result: NOT_SUPPORTED
-        message:
-        - language: language
-          text: text
-        - language: language
-          text: text
-        timeout: 0
-      properties:
-        result:
-          enum:
-          - NOT_SUPPORTED
-          - REJECTED
-          - ACCEPTED
-          - UNKNOWN_SESSION
-          type: string
-        timeout:
-          format: int32
-          type: integer
-        message:
-          items:
-            $ref: '#/components/schemas/DisplayText'
-          type: array
-      required:
-      - result
-      - timeout
-      type: object
     Endpoint:
       example:
         identifier: cdrs
@@ -3933,28 +3105,101 @@ components:
       - endpoints
       - version
       type: object
-    AbstractDomainObject:
-      type: object
-    VersionResponseDTO:
+    TokenDTO:
       example:
-        version: "2.0"
-        url: url
+        last_updated: 2000-01-23T04:56:07.000+00:00
+        contract_id: contract_id
+        language: language
+        whitelist: ALWAYS
+        type: AD_HOC_USER
+        visual_number: visual_number
+        issuer: issuer
+        valid: true
+        country_code: country_code
+        uid: uid
+        default_profile_type: CHEAP
+        group_id: group_id
+        energy_contract:
+          contract_id: contract_id
+          supplier_name: supplier_name
+        party_id: party_id
       properties:
-        version:
-          enum:
-          - "2.0"
-          - "2.1"
-          - 2.1.1
-          - "2.2"
-          - 2.2.1
+        country_code:
+          maxLength: 2
+          minLength: 1
+          pattern: "/[:ascii:]/i"
           type: string
-        url:
-          maxLength: 255
-          minLength: 0
+        party_id:
+          maxLength: 3
+          minLength: 1
+          pattern: "/[:ascii:]/i"
+          type: string
+        uid:
+          maxLength: 36
+          minLength: 1
+          pattern: "/[:ascii:]/i"
+          type: string
+        type:
+          enum:
+          - AD_HOC_USER
+          - APP_USER
+          - OTHER
+          - RFID
+          type: string
+        contract_id:
+          maxLength: 36
+          minLength: 1
+          pattern: "/[:ascii:]/i"
+          type: string
+        visual_number:
+          maxLength: 64
+          minLength: 1
+          type: string
+        issuer:
+          maxLength: 64
+          minLength: 1
+          type: string
+        group_id:
+          maxLength: 36
+          minLength: 1
+          type: string
+        valid:
+          type: boolean
+        whitelist:
+          enum:
+          - ALWAYS
+          - ALLOWED
+          - ALLOWED_OFFLINE
+          - NEVER
+          type: string
+        language:
+          maxLength: 2
+          minLength: 1
+          type: string
+        default_profile_type:
+          enum:
+          - CHEAP
+          - FAST
+          - GREEN
+          - REGULAR
+          type: string
+        energy_contract:
+          $ref: '#/components/schemas/EnergyContract'
+        last_updated:
+          format: date-time
           type: string
       required:
-      - url
-      - version
+      - contract_id
+      - country_code
+      - issuer
+      - last_updated
+      - party_id
+      - type
+      - uid
+      - valid
+      - whitelist
+      type: object
+    AbstractDomainObject:
       type: object
     ClientInfoDTO:
       example:

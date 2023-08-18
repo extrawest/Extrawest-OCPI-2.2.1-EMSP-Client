@@ -3,7 +3,7 @@ package com.extrawest.ocpi.emsp.client.invoker.auth;
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.MultiValueMap;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T10:48:01.857940+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
 public class ApiKeyAuth implements Authentication {
     private final String location;
     private final String paramName;

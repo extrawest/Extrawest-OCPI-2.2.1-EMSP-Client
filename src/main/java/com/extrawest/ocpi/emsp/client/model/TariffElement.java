@@ -28,7 +28,7 @@ import java.util.Objects;
   TariffElement.JSON_PROPERTY_PRICE_COMPONENTS,
   TariffElement.JSON_PROPERTY_RESTRICTIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T10:48:01.857940+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
 public class TariffElement {
   public static final String JSON_PROPERTY_PRICE_COMPONENTS = "price_components";
   private List<PriceComponent> priceComponents;

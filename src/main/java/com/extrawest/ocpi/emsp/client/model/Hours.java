@@ -30,7 +30,7 @@ import java.util.Objects;
   Hours.JSON_PROPERTY_EXCEPTIONAL_OPENINGS,
   Hours.JSON_PROPERTY_EXCEPTIONAL_CLOSINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T10:48:01.857940+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
 public class Hours {
   public static final String JSON_PROPERTY_TWENTYFOURSEVEN = "twentyfourseven";
   private Boolean twentyfourseven;

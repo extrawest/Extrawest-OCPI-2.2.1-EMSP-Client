@@ -30,7 +30,7 @@ import java.util.Objects;
   ChargingProfile.JSON_PROPERTY_MIN_CHARGING_RATE,
   ChargingProfile.JSON_PROPERTY_CHARGING_PROFILE_PERIOD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T10:48:01.857940+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
 public class ChargingProfile {
   public static final String JSON_PROPERTY_START_DATE_TIME = "start_date_time";
   private OffsetDateTime startDateTime;

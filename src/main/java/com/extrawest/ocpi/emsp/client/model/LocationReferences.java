@@ -28,7 +28,7 @@ import java.util.Objects;
   LocationReferences.JSON_PROPERTY_LOCATION_ID,
   LocationReferences.JSON_PROPERTY_EVSE_UIDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T10:48:01.857940+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
 public class LocationReferences {
   public static final String JSON_PROPERTY_LOCATION_ID = "location_id";
   private String locationId;

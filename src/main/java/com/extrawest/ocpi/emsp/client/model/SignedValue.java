@@ -28,7 +28,7 @@ import java.util.Objects;
   SignedValue.JSON_PROPERTY_PLAIN_DATA,
   SignedValue.JSON_PROPERTY_SIGNED_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T10:48:01.857940+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
 public class SignedValue {
   public static final String JSON_PROPERTY_PLAIN_DAT = "plainDat";
   private String plainDat;
