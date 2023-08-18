@@ -3,7 +3,9 @@ name: Publish Snapshot to GitHub Packages
 on:
   push:
     branches:
-      - dev
+      - main
+
+#on: [push]
 
 jobs:
   publish:
