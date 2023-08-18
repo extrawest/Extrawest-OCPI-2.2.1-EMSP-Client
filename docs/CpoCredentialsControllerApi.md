@@ -21,11 +21,11 @@ All URIs are relative to *http://localhost:8080*
 
 ```java
 // Import classes:
-import com.extrawest.ocpp.client.invoker.ApiClient;
-import com.extrawest.ocpp.client.invoker.ApiException;
-import com.extrawest.ocpp.client.invoker.Configuration;
-import com.extrawest.ocpp.client.invoker.models.*;
-import com.extrawest.ocpp.client.api.CpoCredentialsControllerApi;
+import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
+import com.extrawest.ocpi.emsp.client.invoker.ApiException;
+import com.extrawest.ocpi.emsp.client.invoker.Configuration;
+import com.extrawest.ocpi.emsp.client.invoker.models.*;
+import com.extrawest.ocpi.emsp.client.api.CpoCredentialsControllerApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -84,11 +84,11 @@ No authorization required
 
 ```java
 // Import classes:
-import com.extrawest.ocpp.client.invoker.ApiClient;
-import com.extrawest.ocpp.client.invoker.ApiException;
-import com.extrawest.ocpp.client.invoker.Configuration;
-import com.extrawest.ocpp.client.invoker.models.*;
-import com.extrawest.ocpp.client.api.CpoCredentialsControllerApi;
+import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
+import com.extrawest.ocpi.emsp.client.invoker.ApiException;
+import com.extrawest.ocpi.emsp.client.invoker.Configuration;
+import com.extrawest.ocpi.emsp.client.invoker.models.*;
+import com.extrawest.ocpi.emsp.client.api.CpoCredentialsControllerApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -144,11 +144,11 @@ No authorization required
 
 ```java
 // Import classes:
-import com.extrawest.ocpp.client.invoker.ApiClient;
-import com.extrawest.ocpp.client.invoker.ApiException;
-import com.extrawest.ocpp.client.invoker.Configuration;
-import com.extrawest.ocpp.client.invoker.models.*;
-import com.extrawest.ocpp.client.api.CpoCredentialsControllerApi;
+import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
+import com.extrawest.ocpi.emsp.client.invoker.ApiException;
+import com.extrawest.ocpi.emsp.client.invoker.Configuration;
+import com.extrawest.ocpi.emsp.client.invoker.models.*;
+import com.extrawest.ocpi.emsp.client.api.CpoCredentialsControllerApi;
 
 public class Example {
     public static void main(String[] args) {
@@ -207,11 +207,11 @@ No authorization required
 
 ```java
 // Import classes:
-import com.extrawest.ocpp.client.invoker.ApiClient;
-import com.extrawest.ocpp.client.invoker.ApiException;
-import com.extrawest.ocpp.client.invoker.Configuration;
-import com.extrawest.ocpp.client.invoker.models.*;
-import com.extrawest.ocpp.client.api.CpoCredentialsControllerApi;
+import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
+import com.extrawest.ocpi.emsp.client.invoker.ApiException;
+import com.extrawest.ocpi.emsp.client.invoker.Configuration;
+import com.extrawest.ocpi.emsp.client.invoker.models.*;
+import com.extrawest.ocpi.emsp.client.api.CpoCredentialsControllerApi;
 
 public class Example {
     public static void main(String[] args) {
