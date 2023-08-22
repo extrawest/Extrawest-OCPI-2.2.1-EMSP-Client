@@ -37,7 +37,7 @@ Client library for [OCPI eMSP Server](https://github.com/extrawest/Extrawest-OCP
 Description
 =============
 
-With this library, you can easily get started with the Open Charge-Point Interface by making calls to OCPI EMSP Server API. It is a client to OCPI eMSP Server, created using [OCPI Server Library](https://github.com/extrawest/Extrawest-OCPI-2.2.1-EMSP-Server)
+With this library, you can easily get started with the Open Charge-Point Interface by making calls to OCPI EMSP Server API. It is a client to [OCPI eMSP Server](https://github.com/extrawest/Extrawest-OCPI-2.2.1-EMSP-Server), created using OpenAPI Generator
 
 Please note, this is a library and not an application, so there is no main method. 
 
