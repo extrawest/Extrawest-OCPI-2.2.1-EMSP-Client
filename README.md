@@ -24,7 +24,7 @@
 - [Use in Spring Boot App](#using-extrawest-ocpi-221-emsp-client-in-spring-boot-application)
 - [Documentation for API Endpoints](#documentation-for-api-endpoints)
 - [Documentation for Models](#documentation-for-models) 
-- [Documentation for Authorization](#documentation-for-authorization)
+- [Documentation for Authorization](#documentation-for-authentication-and-authorization)
 - [Recommendation](#recommendation)
 - [License](#license)
 - [About Extrawest.com](#about-extrawestcom)
@@ -46,7 +46,7 @@ Currently we support 2.2.1 OCPI version.
 Maven
 =====
 
-Find the maven repo here: https://mvnrepository.com/artifact/com.extrawest
+Find the maven repo here: https://mvnrepository.com/artifact/com.extrawest/Extrawest-OCPI-2.2.1-EMSP-Client
 
 ## Requirements
 
@@ -71,7 +71,6 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.extrawest</groupId>
   <artifactId>extrawest-ocpi-2.2.1-emsp-client</artifactId>
-  <version>0.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -107,8 +106,8 @@ public class ClientInfoControllerApiExample {
         defaultClient.setBasePath("http://localhost:8080");
         
         ClientInfoControllerApi apiInstance = new ClientInfoControllerApi(defaultClient);
-        String countryCode = "countryCode_example"; // String | 
-        String partyId = "partyId_example"; // String | 
+        String countryCode = "countryCode_example";
+        String partyId = "partyId_example";
         try {
             ClientInfoDTO result = apiInstance.getHubClientInfo(countryCode, partyId);
             System.out.println(result);
@@ -163,7 +162,7 @@ public class EmspTariffServiceImpl implements  EmspTariffService {
 ```
 
 Spring Boot application, where we have tested Extrawest-OCPI-2.2.1-EMSP-Client, has below Spring dependencies. In case of library and your project dependencies versions incompatibility, try to add next spring versions into you projects:
-```java
+```bash
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
@@ -261,9 +260,9 @@ Class | Method | HTTP request | Description
 - [TokenDTO](docs/TokenDTO.md)
 - [VersionDetailsResponseDTO](docs/VersionDetailsResponseDTO.md)
 
-## Documentation for Authorization
+## Documentation for Authentication and Authorization
 
-All endpoints do not require authorization.
+All endpoints do not require authorization or authentication.
 
 ## Recommendation
 
