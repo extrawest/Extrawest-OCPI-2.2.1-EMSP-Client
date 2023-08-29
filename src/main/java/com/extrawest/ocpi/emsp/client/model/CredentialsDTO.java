@@ -25,11 +25,11 @@ import java.util.Objects;
  * CredentialsDTO
  */
 @JsonPropertyOrder({
-  CredentialsDTO.JSON_PROPERTY_TOKEN,
-  CredentialsDTO.JSON_PROPERTY_URL,
-  CredentialsDTO.JSON_PROPERTY_ROLES
+        CredentialsDTO.JSON_PROPERTY_TOKEN,
+        CredentialsDTO.JSON_PROPERTY_URL,
+        CredentialsDTO.JSON_PROPERTY_ROLES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class CredentialsDTO {
   public static final String JSON_PROPERTY_TOKEN = "token";
   private String token;

@@ -1,11 +1,11 @@
-# EmspCdrControllerApi
+# EmspCdrApi
 
 All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getCdr**](EmspCdrControllerApi.md#getCdr) | **GET** /emsp/api/2.2.1/cdr/{id} |  |
-| [**postCdr**](EmspCdrControllerApi.md#postCdr) | **POST** /emsp/api/2.2.1/cdr |  |
+| [**getCdr**](EmspCdrApi.md#getCdr) | **GET** /emsp/api/2.2.1/cdr/{id} |  |
+| [**postCdr**](EmspCdrApi.md#postCdr) | **POST** /emsp/api/2.2.1/cdr |  |
 
 
 
@@ -23,20 +23,20 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspCdrControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspCdrApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspCdrControllerApi apiInstance = new EmspCdrControllerApi(defaultClient);
+        EmspCdrApi apiInstance = new EmspCdrApi(defaultClient);
         String id = "id_example"; // String | 
         try {
             CdrDTO result = apiInstance.getCdr(id);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspCdrControllerApi#getCdr");
+            System.err.println("Exception when calling EmspCdrApi#getCdr");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -87,20 +87,20 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspCdrControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspCdrApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspCdrControllerApi apiInstance = new EmspCdrControllerApi(defaultClient);
+        EmspCdrApi apiInstance = new EmspCdrApi(defaultClient);
         CdrDTO cdrDTO = new CdrDTO(); // CdrDTO | 
         try {
             String result = apiInstance.postCdr(cdrDTO);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspCdrControllerApi#postCdr");
+            System.err.println("Exception when calling EmspCdrApi#postCdr");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());

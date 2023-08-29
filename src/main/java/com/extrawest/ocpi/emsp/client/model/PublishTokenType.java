@@ -21,13 +21,13 @@ import java.util.Objects;
  * PublishTokenType
  */
 @JsonPropertyOrder({
-  PublishTokenType.JSON_PROPERTY_UID,
-  PublishTokenType.JSON_PROPERTY_TYPE,
-  PublishTokenType.JSON_PROPERTY_VISUAL_NUMBER,
-  PublishTokenType.JSON_PROPERTY_ISSUER,
-  PublishTokenType.JSON_PROPERTY_GROUP_ID
+        PublishTokenType.JSON_PROPERTY_UID,
+        PublishTokenType.JSON_PROPERTY_TYPE,
+        PublishTokenType.JSON_PROPERTY_VISUAL_NUMBER,
+        PublishTokenType.JSON_PROPERTY_ISSUER,
+        PublishTokenType.JSON_PROPERTY_GROUP_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class PublishTokenType {
   public static final String JSON_PROPERTY_UID = "uid";
   private String uid;

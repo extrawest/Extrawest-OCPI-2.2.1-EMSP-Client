@@ -21,10 +21,10 @@ import java.util.Objects;
  * EnvironmentalImpact
  */
 @JsonPropertyOrder({
-  EnvironmentalImpact.JSON_PROPERTY_CATEGORY,
-  EnvironmentalImpact.JSON_PROPERTY_AMOUNT
+        EnvironmentalImpact.JSON_PROPERTY_CATEGORY,
+        EnvironmentalImpact.JSON_PROPERTY_AMOUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class EnvironmentalImpact {
   /**
    * Gets or Sets category

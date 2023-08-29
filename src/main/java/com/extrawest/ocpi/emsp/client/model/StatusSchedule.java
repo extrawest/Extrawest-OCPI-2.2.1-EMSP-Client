@@ -22,11 +22,11 @@ import java.util.Objects;
  * StatusSchedule
  */
 @JsonPropertyOrder({
-  StatusSchedule.JSON_PROPERTY_PERIOD_BEGIN,
-  StatusSchedule.JSON_PROPERTY_PERIOD_END,
-  StatusSchedule.JSON_PROPERTY_STATUS
+        StatusSchedule.JSON_PROPERTY_PERIOD_BEGIN,
+        StatusSchedule.JSON_PROPERTY_PERIOD_END,
+        StatusSchedule.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class StatusSchedule {
   public static final String JSON_PROPERTY_PERIOD_BEGIN = "period_begin";
   private OffsetDateTime periodBegin;

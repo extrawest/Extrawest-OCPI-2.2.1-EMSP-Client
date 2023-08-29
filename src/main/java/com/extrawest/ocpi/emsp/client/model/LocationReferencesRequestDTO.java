@@ -25,10 +25,10 @@ import java.util.Objects;
  * LocationReferencesRequestDTO
  */
 @JsonPropertyOrder({
-  LocationReferencesRequestDTO.JSON_PROPERTY_LOCATION_ID,
-  LocationReferencesRequestDTO.JSON_PROPERTY_EVSE_UIDS
+        LocationReferencesRequestDTO.JSON_PROPERTY_LOCATION_ID,
+        LocationReferencesRequestDTO.JSON_PROPERTY_EVSE_UIDS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class LocationReferencesRequestDTO {
   public static final String JSON_PROPERTY_LOCATION_ID = "location_id";
   private String locationId;

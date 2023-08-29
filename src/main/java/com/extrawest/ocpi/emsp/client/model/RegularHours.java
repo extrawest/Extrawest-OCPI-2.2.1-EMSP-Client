@@ -23,11 +23,11 @@ import java.util.Objects;
  * RegularHours
  */
 @JsonPropertyOrder({
-  RegularHours.JSON_PROPERTY_WEEKDAY,
-  RegularHours.JSON_PROPERTY_PERIOD_BEGIN,
-  RegularHours.JSON_PROPERTY_PERIOD_END
+        RegularHours.JSON_PROPERTY_WEEKDAY,
+        RegularHours.JSON_PROPERTY_PERIOD_BEGIN,
+        RegularHours.JSON_PROPERTY_PERIOD_END
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class RegularHours {
   public static final String JSON_PROPERTY_WEEKDAY = "weekday";
   private Integer weekday;

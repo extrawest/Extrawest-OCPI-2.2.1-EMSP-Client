@@ -1,13 +1,13 @@
-# EmspCredentialsControllerApi
+# EmspCredentialsApi
 
 All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**deleteCredentials**](EmspCredentialsControllerApi.md#deleteCredentials) | **DELETE** /emsp/api/2.2.1/credentials |  |
-| [**getCredentials**](EmspCredentialsControllerApi.md#getCredentials) | **GET** /emsp/api/2.2.1/credentials |  |
-| [**postCredentials**](EmspCredentialsControllerApi.md#postCredentials) | **POST** /emsp/api/2.2.1/credentials |  |
-| [**putCredentials**](EmspCredentialsControllerApi.md#putCredentials) | **PUT** /emsp/api/2.2.1/credentials |  |
+| [**deleteCredentials**](EmspCredentialsApi.md#deleteCredentials) | **DELETE** /emsp/api/2.2.1/credentials |  |
+| [**getCredentials**](EmspCredentialsApi.md#getCredentials) | **GET** /emsp/api/2.2.1/credentials |  |
+| [**postCredentials**](EmspCredentialsApi.md#postCredentials) | **POST** /emsp/api/2.2.1/credentials |  |
+| [**putCredentials**](EmspCredentialsApi.md#putCredentials) | **PUT** /emsp/api/2.2.1/credentials |  |
 
 
 
@@ -25,19 +25,19 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspCredentialsControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspCredentialsApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspCredentialsControllerApi apiInstance = new EmspCredentialsControllerApi(defaultClient);
+        EmspCredentialsApi apiInstance = new EmspCredentialsApi(defaultClient);
         CredentialsDTO credentialsDTO = new CredentialsDTO(); // CredentialsDTO | 
         try {
             apiInstance.deleteCredentials(credentialsDTO);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspCredentialsControllerApi#deleteCredentials");
+            System.err.println("Exception when calling EmspCredentialsApi#deleteCredentials");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -88,19 +88,19 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspCredentialsControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspCredentialsApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspCredentialsControllerApi apiInstance = new EmspCredentialsControllerApi(defaultClient);
+        EmspCredentialsApi apiInstance = new EmspCredentialsApi(defaultClient);
         try {
             CredentialsDTO result = apiInstance.getCredentials();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspCredentialsControllerApi#getCredentials");
+            System.err.println("Exception when calling EmspCredentialsApi#getCredentials");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -148,19 +148,19 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspCredentialsControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspCredentialsApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspCredentialsControllerApi apiInstance = new EmspCredentialsControllerApi(defaultClient);
+        EmspCredentialsApi apiInstance = new EmspCredentialsApi(defaultClient);
         CredentialsDTO credentialsDTO = new CredentialsDTO(); // CredentialsDTO | 
         try {
             apiInstance.postCredentials(credentialsDTO);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspCredentialsControllerApi#postCredentials");
+            System.err.println("Exception when calling EmspCredentialsApi#postCredentials");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -211,19 +211,19 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspCredentialsControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspCredentialsApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspCredentialsControllerApi apiInstance = new EmspCredentialsControllerApi(defaultClient);
+        EmspCredentialsApi apiInstance = new EmspCredentialsApi(defaultClient);
         CredentialsDTO credentialsDTO = new CredentialsDTO(); // CredentialsDTO | 
         try {
             apiInstance.putCredentials(credentialsDTO);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspCredentialsControllerApi#putCredentials");
+            System.err.println("Exception when calling EmspCredentialsApi#putCredentials");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());

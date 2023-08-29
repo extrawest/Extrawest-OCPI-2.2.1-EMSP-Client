@@ -1,18 +1,18 @@
-# EmspSessionsControllerApi
+# EmspLocationApi
 
 All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getSession**](EmspSessionsControllerApi.md#getSession) | **GET** /emsp/api/2.2.1/sessions |  |
-| [**patchSession**](EmspSessionsControllerApi.md#patchSession) | **PATCH** /emsp/api/2.2.1/sessions |  |
-| [**putSession**](EmspSessionsControllerApi.md#putSession) | **PUT** /emsp/api/2.2.1/sessions |  |
+| [**getLocationEvseController**](EmspLocationApi.md#getLocationEvseController) | **GET** /emsp/api/2.2.1/locations |  |
+| [**patchLocation**](EmspLocationApi.md#patchLocation) | **PATCH** /emsp/api/2.2.1/locations |  |
+| [**pushLocation**](EmspLocationApi.md#pushLocation) | **PUT** /emsp/api/2.2.1/locations |  |
 
 
 
-## getSession
+## getLocationEvseController
 
-> SessionDTO getSession(countryCode, partyId, sessionId)
+> Object getLocationEvseController(countryCode, partyId, locationId, evseUid, connectorId)
 
 
 
@@ -24,22 +24,24 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspSessionsControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspLocationApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspSessionsControllerApi apiInstance = new EmspSessionsControllerApi(defaultClient);
+        EmspLocationApi apiInstance = new EmspLocationApi(defaultClient);
         String countryCode = "countryCode_example"; // String | 
         String partyId = "partyId_example"; // String | 
-        String sessionId = "sessionId_example"; // String | 
+        String locationId = "locationId_example"; // String | 
+        String evseUid = "evseUid_example"; // String | 
+        String connectorId = "connectorId_example"; // String | 
         try {
-            SessionDTO result = apiInstance.getSession(countryCode, partyId, sessionId);
+            Object result = apiInstance.getLocationEvseController(countryCode, partyId, locationId, evseUid, connectorId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspSessionsControllerApi#getSession");
+            System.err.println("Exception when calling EmspLocationApi#getLocationEvseController");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -56,11 +58,13 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **countryCode** | **String**|  | |
 | **partyId** | **String**|  | |
-| **sessionId** | **String**|  | |
+| **locationId** | **String**|  | |
+| **evseUid** | **String**|  | [optional] |
+| **connectorId** | **String**|  | [optional] |
 
 ### Return type
 
-[**SessionDTO**](SessionDTO.md)
+**Object**
 
 ### Authorization
 
@@ -78,9 +82,9 @@ No authorization required
 | **200** | OK |  -  |
 
 
-## patchSession
+## patchLocation
 
-> patchSession(countryCode, partyId, sessionId, sessionDTO)
+> patchLocation(countryCode, partyId, locationId, locationDTO, evseUid, connectorId)
 
 
 
@@ -92,22 +96,24 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspSessionsControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspLocationApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspSessionsControllerApi apiInstance = new EmspSessionsControllerApi(defaultClient);
+        EmspLocationApi apiInstance = new EmspLocationApi(defaultClient);
         String countryCode = "countryCode_example"; // String | 
         String partyId = "partyId_example"; // String | 
-        String sessionId = "sessionId_example"; // String | 
-        SessionDTO sessionDTO = new SessionDTO(); // SessionDTO | 
+        String locationId = "locationId_example"; // String | 
+        LocationDTO locationDTO = new LocationDTO(); // LocationDTO | 
+        String evseUid = "evseUid_example"; // String | 
+        String connectorId = "connectorId_example"; // String | 
         try {
-            apiInstance.patchSession(countryCode, partyId, sessionId, sessionDTO);
+            apiInstance.patchLocation(countryCode, partyId, locationId, locationDTO, evseUid, connectorId);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspSessionsControllerApi#patchSession");
+            System.err.println("Exception when calling EmspLocationApi#patchLocation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -124,8 +130,10 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **countryCode** | **String**|  | |
 | **partyId** | **String**|  | |
-| **sessionId** | **String**|  | |
-| **sessionDTO** | [**SessionDTO**](SessionDTO.md)|  | |
+| **locationId** | **String**|  | |
+| **locationDTO** | [**LocationDTO**](LocationDTO.md)|  | |
+| **evseUid** | **String**|  | [optional] |
+| **connectorId** | **String**|  | [optional] |
 
 ### Return type
 
@@ -147,9 +155,9 @@ No authorization required
 | **200** | OK |  -  |
 
 
-## putSession
+## pushLocation
 
-> putSession(countryCode, partyId, sessionId, sessionDTO)
+> pushLocation(countryCode, partyId, locationId, locationDTO, evseUid, connectorId)
 
 
 
@@ -161,22 +169,24 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspSessionsControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspLocationApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspSessionsControllerApi apiInstance = new EmspSessionsControllerApi(defaultClient);
+        EmspLocationApi apiInstance = new EmspLocationApi(defaultClient);
         String countryCode = "countryCode_example"; // String | 
         String partyId = "partyId_example"; // String | 
-        String sessionId = "sessionId_example"; // String | 
-        SessionDTO sessionDTO = new SessionDTO(); // SessionDTO | 
+        String locationId = "locationId_example"; // String | 
+        LocationDTO locationDTO = new LocationDTO(); // LocationDTO | 
+        String evseUid = "evseUid_example"; // String | 
+        String connectorId = "connectorId_example"; // String | 
         try {
-            apiInstance.putSession(countryCode, partyId, sessionId, sessionDTO);
+            apiInstance.pushLocation(countryCode, partyId, locationId, locationDTO, evseUid, connectorId);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspSessionsControllerApi#putSession");
+            System.err.println("Exception when calling EmspLocationApi#pushLocation");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -193,8 +203,10 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **countryCode** | **String**|  | |
 | **partyId** | **String**|  | |
-| **sessionId** | **String**|  | |
-| **sessionDTO** | [**SessionDTO**](SessionDTO.md)|  | |
+| **locationId** | **String**|  | |
+| **locationDTO** | [**LocationDTO**](LocationDTO.md)|  | |
+| **evseUid** | **String**|  | [optional] |
+| **connectorId** | **String**|  | [optional] |
 
 ### Return type
 

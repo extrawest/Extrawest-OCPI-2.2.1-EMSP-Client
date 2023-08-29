@@ -1,18 +1,18 @@
-# EmspLocationControllerApi
+# EmspTariffApi
 
 All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getLocationEvseController**](EmspLocationControllerApi.md#getLocationEvseController) | **GET** /emsp/api/2.2.1/locations |  |
-| [**patchLocation**](EmspLocationControllerApi.md#patchLocation) | **PATCH** /emsp/api/2.2.1/locations |  |
-| [**pushLocation**](EmspLocationControllerApi.md#pushLocation) | **PUT** /emsp/api/2.2.1/locations |  |
+| [**deleteTariff**](EmspTariffApi.md#deleteTariff) | **DELETE** /emsp/api/2.2.1/tariffs |  |
+| [**getTariff**](EmspTariffApi.md#getTariff) | **GET** /emsp/api/2.2.1/tariffs |  |
+| [**saveTariff**](EmspTariffApi.md#saveTariff) | **PUT** /emsp/api/2.2.1/tariffs |  |
 
 
 
-## getLocationEvseController
+## deleteTariff
 
-> Object getLocationEvseController(countryCode, partyId, locationId, evseUid, connectorId)
+> deleteTariff(countryCode, partyId, tariffId)
 
 
 
@@ -24,24 +24,21 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspLocationControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspTariffApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspLocationControllerApi apiInstance = new EmspLocationControllerApi(defaultClient);
+        EmspTariffApi apiInstance = new EmspTariffApi(defaultClient);
         String countryCode = "countryCode_example"; // String | 
         String partyId = "partyId_example"; // String | 
-        String locationId = "locationId_example"; // String | 
-        String evseUid = "evseUid_example"; // String | 
-        String connectorId = "connectorId_example"; // String | 
+        String tariffId = "tariffId_example"; // String | 
         try {
-            Object result = apiInstance.getLocationEvseController(countryCode, partyId, locationId, evseUid, connectorId);
-            System.out.println(result);
+            apiInstance.deleteTariff(countryCode, partyId, tariffId);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspLocationControllerApi#getLocationEvseController");
+            System.err.println("Exception when calling EmspTariffApi#deleteTariff");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -58,13 +55,79 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **countryCode** | **String**|  | |
 | **partyId** | **String**|  | |
-| **locationId** | **String**|  | |
-| **evseUid** | **String**|  | [optional] |
-| **connectorId** | **String**|  | [optional] |
+| **tariffId** | **String**|  | |
 
 ### Return type
 
-**Object**
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+
+## getTariff
+
+> TariffDTO getTariff(countryCode, partyId, tariffId)
+
+
+
+### Example
+
+```java
+// Import classes:
+import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
+import com.extrawest.ocpi.emsp.client.invoker.ApiException;
+import com.extrawest.ocpi.emsp.client.invoker.Configuration;
+import com.extrawest.ocpi.emsp.client.invoker.models.*;
+import com.extrawest.ocpi.emsp.client.api.EmspTariffApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost:8080");
+
+        EmspTariffApi apiInstance = new EmspTariffApi(defaultClient);
+        String countryCode = "countryCode_example"; // String | 
+        String partyId = "partyId_example"; // String | 
+        String tariffId = "tariffId_example"; // String | 
+        try {
+            TariffDTO result = apiInstance.getTariff(countryCode, partyId, tariffId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling EmspTariffApi#getTariff");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **countryCode** | **String**|  | |
+| **partyId** | **String**|  | |
+| **tariffId** | **String**|  | |
+
+### Return type
+
+[**TariffDTO**](TariffDTO.md)
 
 ### Authorization
 
@@ -82,9 +145,9 @@ No authorization required
 | **200** | OK |  -  |
 
 
-## patchLocation
+## saveTariff
 
-> patchLocation(countryCode, partyId, locationId, locationDTO, evseUid, connectorId)
+> saveTariff(countryCode, partyId, tariffId, tariffDTO)
 
 
 
@@ -96,24 +159,22 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspLocationControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspTariffApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspLocationControllerApi apiInstance = new EmspLocationControllerApi(defaultClient);
+        EmspTariffApi apiInstance = new EmspTariffApi(defaultClient);
         String countryCode = "countryCode_example"; // String | 
         String partyId = "partyId_example"; // String | 
-        String locationId = "locationId_example"; // String | 
-        LocationDTO locationDTO = new LocationDTO(); // LocationDTO | 
-        String evseUid = "evseUid_example"; // String | 
-        String connectorId = "connectorId_example"; // String | 
+        String tariffId = "tariffId_example"; // String | 
+        TariffDTO tariffDTO = new TariffDTO(); // TariffDTO | 
         try {
-            apiInstance.patchLocation(countryCode, partyId, locationId, locationDTO, evseUid, connectorId);
+            apiInstance.saveTariff(countryCode, partyId, tariffId, tariffDTO);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspLocationControllerApi#patchLocation");
+            System.err.println("Exception when calling EmspTariffApi#saveTariff");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -130,83 +191,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **countryCode** | **String**|  | |
 | **partyId** | **String**|  | |
-| **locationId** | **String**|  | |
-| **locationDTO** | [**LocationDTO**](LocationDTO.md)|  | |
-| **evseUid** | **String**|  | [optional] |
-| **connectorId** | **String**|  | [optional] |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-
-## pushLocation
-
-> pushLocation(countryCode, partyId, locationId, locationDTO, evseUid, connectorId)
-
-
-
-### Example
-
-```java
-// Import classes:
-import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
-import com.extrawest.ocpi.emsp.client.invoker.ApiException;
-import com.extrawest.ocpi.emsp.client.invoker.Configuration;
-import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspLocationControllerApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://localhost:8080");
-
-        EmspLocationControllerApi apiInstance = new EmspLocationControllerApi(defaultClient);
-        String countryCode = "countryCode_example"; // String | 
-        String partyId = "partyId_example"; // String | 
-        String locationId = "locationId_example"; // String | 
-        LocationDTO locationDTO = new LocationDTO(); // LocationDTO | 
-        String evseUid = "evseUid_example"; // String | 
-        String connectorId = "connectorId_example"; // String | 
-        try {
-            apiInstance.pushLocation(countryCode, partyId, locationId, locationDTO, evseUid, connectorId);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling EmspLocationControllerApi#pushLocation");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **countryCode** | **String**|  | |
-| **partyId** | **String**|  | |
-| **locationId** | **String**|  | |
-| **locationDTO** | [**LocationDTO**](LocationDTO.md)|  | |
-| **evseUid** | **String**|  | [optional] |
-| **connectorId** | **String**|  | [optional] |
+| **tariffId** | **String**|  | |
+| **tariffDTO** | [**TariffDTO**](TariffDTO.md)|  | |
 
 ### Return type
 
