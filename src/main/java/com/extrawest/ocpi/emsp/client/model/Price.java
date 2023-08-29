@@ -23,10 +23,10 @@ import java.util.Objects;
  * Price
  */
 @JsonPropertyOrder({
-  Price.JSON_PROPERTY_EXCL_VAT,
-  Price.JSON_PROPERTY_INCL_VAT
+        Price.JSON_PROPERTY_EXCL_VAT,
+        Price.JSON_PROPERTY_INCL_VAT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class Price {
   public static final String JSON_PROPERTY_EXCL_VAT = "exclVat";
   private Float exclVat;

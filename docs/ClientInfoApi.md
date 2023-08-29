@@ -1,17 +1,17 @@
-# EmspTokenControllerApi
+# ClientInfoApi
 
 All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getToken**](EmspTokenControllerApi.md#getToken) | **GET** /emsp/api/2.2.1/tokens/{date_from}/{date_to}/{offset}/{limit} |  |
-| [**postToken**](EmspTokenControllerApi.md#postToken) | **POST** /emsp/api/2.2.1/tokens/{token_uid}/{type} |  |
+| [**getHubClientInfo**](ClientInfoApi.md#getHubClientInfo) | **GET** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |  |
+| [**putHubClientInfo**](ClientInfoApi.md#putHubClientInfo) | **PUT** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |  |
 
 
 
-## getToken
+## getHubClientInfo
 
-> List&lt;TokenDTO&gt; getToken(dateFrom, dateTo, offset, limit)
+> ClientInfoDTO getHubClientInfo(countryCode, partyId)
 
 
 
@@ -23,23 +23,21 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspTokenControllerApi;
+import com.extrawest.ocpi.emsp.client.api.ClientInfoApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspTokenControllerApi apiInstance = new EmspTokenControllerApi(defaultClient);
-        OffsetDateTime dateFrom = OffsetDateTime.now(); // OffsetDateTime | 
-        OffsetDateTime dateTo = OffsetDateTime.now(); // OffsetDateTime | 
-        Integer offset = 56; // Integer | 
-        Integer limit = 56; // Integer | 
+        ClientInfoApi apiInstance = new ClientInfoApi(defaultClient);
+        String countryCode = "countryCode_example"; // String | 
+        String partyId = "partyId_example"; // String | 
         try {
-            List<TokenDTO> result = apiInstance.getToken(dateFrom, dateTo, offset, limit);
+            ClientInfoDTO result = apiInstance.getHubClientInfo(countryCode, partyId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspTokenControllerApi#getToken");
+            System.err.println("Exception when calling ClientInfoApi#getHubClientInfo");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -54,14 +52,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **dateFrom** | **OffsetDateTime**|  | |
-| **dateTo** | **OffsetDateTime**|  | |
-| **offset** | **Integer**|  | |
-| **limit** | **Integer**|  | |
+| **countryCode** | **String**|  | |
+| **partyId** | **String**|  | |
 
 ### Return type
 
-[**List&lt;TokenDTO&gt;**](TokenDTO.md)
+[**ClientInfoDTO**](ClientInfoDTO.md)
 
 ### Authorization
 
@@ -79,9 +75,9 @@ No authorization required
 | **200** | OK |  -  |
 
 
-## postToken
+## putHubClientInfo
 
-> AuthorizationInfoResponseDTO postToken(tokenUid, type, locationReferencesRequestDTO)
+> putHubClientInfo(countryCode, partyId)
 
 
 
@@ -93,22 +89,20 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspTokenControllerApi;
+import com.extrawest.ocpi.emsp.client.api.ClientInfoApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspTokenControllerApi apiInstance = new EmspTokenControllerApi(defaultClient);
-        String tokenUid = "tokenUid_example"; // String | 
-        String type = "type_example"; // String | 
-        LocationReferencesRequestDTO locationReferencesRequestDTO = new LocationReferencesRequestDTO(); // LocationReferencesRequestDTO | 
+        ClientInfoApi apiInstance = new ClientInfoApi(defaultClient);
+        String countryCode = "countryCode_example"; // String | 
+        String partyId = "partyId_example"; // String | 
         try {
-            AuthorizationInfoResponseDTO result = apiInstance.postToken(tokenUid, type, locationReferencesRequestDTO);
-            System.out.println(result);
+            apiInstance.putHubClientInfo(countryCode, partyId);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspTokenControllerApi#postToken");
+            System.err.println("Exception when calling ClientInfoApi#putHubClientInfo");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -123,13 +117,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **tokenUid** | **String**|  | |
-| **type** | **String**|  | |
-| **locationReferencesRequestDTO** | [**LocationReferencesRequestDTO**](LocationReferencesRequestDTO.md)|  | |
+| **countryCode** | **String**|  | |
+| **partyId** | **String**|  | |
 
 ### Return type
 
-[**AuthorizationInfoResponseDTO**](AuthorizationInfoResponseDTO.md)
+null (empty response body)
 
 ### Authorization
 
@@ -137,8 +130,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: */*
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 
 ### HTTP response details

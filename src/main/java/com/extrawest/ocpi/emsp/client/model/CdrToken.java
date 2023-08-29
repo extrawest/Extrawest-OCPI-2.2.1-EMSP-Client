@@ -21,13 +21,13 @@ import java.util.Objects;
  * CdrToken
  */
 @JsonPropertyOrder({
-  CdrToken.JSON_PROPERTY_COUNTRY_CODE,
-  CdrToken.JSON_PROPERTY_PARTY_ID,
-  CdrToken.JSON_PROPERTY_UID,
-  CdrToken.JSON_PROPERTY_TYPE,
-  CdrToken.JSON_PROPERTY_CONTRACT_ID
+        CdrToken.JSON_PROPERTY_COUNTRY_CODE,
+        CdrToken.JSON_PROPERTY_PARTY_ID,
+        CdrToken.JSON_PROPERTY_UID,
+        CdrToken.JSON_PROPERTY_TYPE,
+        CdrToken.JSON_PROPERTY_CONTRACT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class CdrToken {
   public static final String JSON_PROPERTY_COUNTRY_CODE = "country_code";
   private String countryCode;

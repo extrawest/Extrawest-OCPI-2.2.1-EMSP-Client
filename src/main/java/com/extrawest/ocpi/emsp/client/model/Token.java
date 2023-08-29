@@ -27,17 +27,17 @@ import java.util.Objects;
   Token.JSON_PROPERTY_UID,
   Token.JSON_PROPERTY_TYPE,
   Token.JSON_PROPERTY_CONTRACT_ID,
-  Token.JSON_PROPERTY_VISUAL_NUMBER,
-  Token.JSON_PROPERTY_ISSUER,
-  Token.JSON_PROPERTY_GROUP_ID,
-  Token.JSON_PROPERTY_VALID,
-  Token.JSON_PROPERTY_WHITELIST,
-  Token.JSON_PROPERTY_LANGUAGE,
-  Token.JSON_PROPERTY_DEFAULT_PROFILE_TYPE,
-  Token.JSON_PROPERTY_ENERGY_CONTRACT,
-  Token.JSON_PROPERTY_LAST_UPDATED
+        Token.JSON_PROPERTY_VISUAL_NUMBER,
+        Token.JSON_PROPERTY_ISSUER,
+        Token.JSON_PROPERTY_GROUP_ID,
+        Token.JSON_PROPERTY_VALID,
+        Token.JSON_PROPERTY_WHITELIST,
+        Token.JSON_PROPERTY_LANGUAGE,
+        Token.JSON_PROPERTY_DEFAULT_PROFILE_TYPE,
+        Token.JSON_PROPERTY_ENERGY_CONTRACT,
+        Token.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class Token {
   public static final String JSON_PROPERTY_COUNTRY_CODE = "country_code";
   private String countryCode;

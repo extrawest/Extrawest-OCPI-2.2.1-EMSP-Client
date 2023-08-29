@@ -12,15 +12,15 @@ import org.springframework.web.client.RestClientException;
 import java.util.Collections;
 import java.util.List;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
-public class EmspCredentialsControllerApi {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+public class EmspCredentialsApi {
     private ApiClient apiClient;
 
-    public EmspCredentialsControllerApi() {
+    public EmspCredentialsApi() {
         this(new ApiClient());
     }
 
-    public EmspCredentialsControllerApi(ApiClient apiClient) {
+    public EmspCredentialsApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 

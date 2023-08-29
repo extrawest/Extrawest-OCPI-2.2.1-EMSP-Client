@@ -27,17 +27,17 @@ import java.util.Objects;
   TokenDTO.JSON_PROPERTY_UID,
   TokenDTO.JSON_PROPERTY_TYPE,
   TokenDTO.JSON_PROPERTY_CONTRACT_ID,
-  TokenDTO.JSON_PROPERTY_VISUAL_NUMBER,
-  TokenDTO.JSON_PROPERTY_ISSUER,
-  TokenDTO.JSON_PROPERTY_GROUP_ID,
-  TokenDTO.JSON_PROPERTY_VALID,
-  TokenDTO.JSON_PROPERTY_WHITELIST,
-  TokenDTO.JSON_PROPERTY_LANGUAGE,
-  TokenDTO.JSON_PROPERTY_DEFAULT_PROFILE_TYPE,
-  TokenDTO.JSON_PROPERTY_ENERGY_CONTRACT,
-  TokenDTO.JSON_PROPERTY_LAST_UPDATED
+        TokenDTO.JSON_PROPERTY_VISUAL_NUMBER,
+        TokenDTO.JSON_PROPERTY_ISSUER,
+        TokenDTO.JSON_PROPERTY_GROUP_ID,
+        TokenDTO.JSON_PROPERTY_VALID,
+        TokenDTO.JSON_PROPERTY_WHITELIST,
+        TokenDTO.JSON_PROPERTY_LANGUAGE,
+        TokenDTO.JSON_PROPERTY_DEFAULT_PROFILE_TYPE,
+        TokenDTO.JSON_PROPERTY_ENERGY_CONTRACT,
+        TokenDTO.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class TokenDTO {
   public static final String JSON_PROPERTY_COUNTRY_CODE = "country_code";
   private String countryCode;

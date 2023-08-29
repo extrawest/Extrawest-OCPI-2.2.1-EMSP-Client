@@ -21,13 +21,13 @@ import java.util.Objects;
  * AuthorizationInfoResponseDTO
  */
 @JsonPropertyOrder({
-  AuthorizationInfoResponseDTO.JSON_PROPERTY_ALLOWED,
-  AuthorizationInfoResponseDTO.JSON_PROPERTY_TOKEN,
-  AuthorizationInfoResponseDTO.JSON_PROPERTY_LOCATION,
-  AuthorizationInfoResponseDTO.JSON_PROPERTY_AUTHORIZATION_REFERENCE,
-  AuthorizationInfoResponseDTO.JSON_PROPERTY_INFO
+        AuthorizationInfoResponseDTO.JSON_PROPERTY_ALLOWED,
+        AuthorizationInfoResponseDTO.JSON_PROPERTY_TOKEN,
+        AuthorizationInfoResponseDTO.JSON_PROPERTY_LOCATION,
+        AuthorizationInfoResponseDTO.JSON_PROPERTY_AUTHORIZATION_REFERENCE,
+        AuthorizationInfoResponseDTO.JSON_PROPERTY_INFO
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T11:17:51.079281+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
 public class AuthorizationInfoResponseDTO {
   /**
    * Gets or Sets allowed

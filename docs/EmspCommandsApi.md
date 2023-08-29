@@ -1,16 +1,16 @@
-# EmspVersionControllerApi
+# EmspCommandsApi
 
 All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getVersionDetails**](EmspVersionControllerApi.md#getVersionDetails) | **GET** /emsp/api/2.2.1/versions/details/{version} |  |
+| [**postCommand**](EmspCommandsApi.md#postCommand) | **POST** /emsp/api/2.2.1/commands/{commandType}/{uniqueId} |  |
 
 
 
-## getVersionDetails
+## postCommand
 
-> VersionDetailsResponseDTO getVersionDetails(version)
+> postCommand(commandType, uniqueId, commandResultRequestDTO)
 
 
 
@@ -22,20 +22,21 @@ import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
 import com.extrawest.ocpi.emsp.client.invoker.ApiException;
 import com.extrawest.ocpi.emsp.client.invoker.Configuration;
 import com.extrawest.ocpi.emsp.client.invoker.models.*;
-import com.extrawest.ocpi.emsp.client.api.EmspVersionControllerApi;
+import com.extrawest.ocpi.emsp.client.api.EmspCommandsApi;
 
 public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
 
-        EmspVersionControllerApi apiInstance = new EmspVersionControllerApi(defaultClient);
-        String version = "2.0"; // String | 
+        EmspCommandsApi apiInstance = new EmspCommandsApi(defaultClient);
+        String commandType = "CANCEL_RESERVATION"; // String | 
+        String uniqueId = "uniqueId_example"; // String | 
+        CommandResultRequestDTO commandResultRequestDTO = new CommandResultRequestDTO(); // CommandResultRequestDTO | 
         try {
-            VersionDetailsResponseDTO result = apiInstance.getVersionDetails(version);
-            System.out.println(result);
+            apiInstance.postCommand(commandType, uniqueId, commandResultRequestDTO);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspVersionControllerApi#getVersionDetails");
+            System.err.println("Exception when calling EmspCommandsApi#postCommand");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -50,11 +51,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **version** | **String**|  | [enum: 2.0, 2.1, 2.1.1, 2.2, 2.2.1] |
+| **commandType** | **String**|  | [enum: CANCEL_RESERVATION, RESERVE_NOW, START_SESSION, STOP_SESSION, UNLOCK_CONNECTOR] |
+| **uniqueId** | **String**|  | |
+| **commandResultRequestDTO** | [**CommandResultRequestDTO**](CommandResultRequestDTO.md)|  | |
 
 ### Return type
 
-[**VersionDetailsResponseDTO**](VersionDetailsResponseDTO.md)
+null (empty response body)
 
 ### Authorization
 
@@ -62,8 +65,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: */*
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 
 ### HTTP response details

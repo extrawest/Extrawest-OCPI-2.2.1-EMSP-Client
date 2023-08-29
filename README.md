@@ -69,9 +69,8 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>com.extrawest</groupId>
-  <artifactId>extrawest-ocpi-2.2.1-emsp-client</artifactId>
-  <scope>compile</scope>
+    <groupId>com.extrawest</groupId>
+    <artifactId>Extrawest-OCPI-2.2.1-EMSP-Client</artifactId>
 </dependency>
 ```
 
@@ -187,28 +186,29 @@ All URIs are relative to *http://localhost:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ClientInfoControllerApi* | [**getHubClientInfo**](docs/ClientInfoControllerApi.md#getHubClientInfo) | **GET** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |
-*ClientInfoControllerApi* | [**putHubClientInfo**](docs/ClientInfoControllerApi.md#putHubClientInfo) | **PUT** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |
-*EmspCdrControllerApi* | [**getCdr**](docs/EmspCdrControllerApi.md#getCdr) | **GET** /emsp/api/2.2.1/cdr/{id} |
-*EmspCdrControllerApi* | [**postCdr**](docs/EmspCdrControllerApi.md#postCdr) | **POST** /emsp/api/2.2.1/cdr |
-*EmspChargingProfilesControllerApi* | [**postChargingProfile**](docs/EmspChargingProfilesControllerApi.md#postChargingProfile) | **POST** /emsp/api/2.2.1/chargingProfiles |
-*EmspChargingProfilesControllerApi* | [**putChargingProfile**](docs/EmspChargingProfilesControllerApi.md#putChargingProfile) | **PUT** /emsp/api/2.2.1/chargingProfiles/{session_id} |
-*EmspCredentialsControllerApi* | [**deleteCredentials**](docs/EmspCredentialsControllerApi.md#deleteCredentials) | **DELETE** /emsp/api/2.2.1/credentials |
-*EmspCredentialsControllerApi* | [**getCredentials**](docs/EmspCredentialsControllerApi.md#getCredentials) | **GET** /emsp/api/2.2.1/credentials |
-*EmspCredentialsControllerApi* | [**postCredentials**](docs/EmspCredentialsControllerApi.md#postCredentials) | **POST** /emsp/api/2.2.1/credentials |
-*EmspCredentialsControllerApi* | [**putCredentials**](docs/EmspCredentialsControllerApi.md#putCredentials) | **PUT** /emsp/api/2.2.1/credentials |
-*EmspLocationControllerApi* | [**getLocationEvseController**](docs/EmspLocationControllerApi.md#getLocationEvseController) | **GET** /emsp/api/2.2.1/locations |
-*EmspLocationControllerApi* | [**patchLocation**](docs/EmspLocationControllerApi.md#patchLocation) | **PATCH** /emsp/api/2.2.1/locations |
-*EmspLocationControllerApi* | [**pushLocation**](docs/EmspLocationControllerApi.md#pushLocation) | **PUT** /emsp/api/2.2.1/locations |
-*EmspSessionsControllerApi* | [**getSession**](docs/EmspSessionsControllerApi.md#getSession) | **GET** /emsp/api/2.2.1/sessions |
-*EmspSessionsControllerApi* | [**patchSession**](docs/EmspSessionsControllerApi.md#patchSession) | **PATCH** /emsp/api/2.2.1/sessions |
-*EmspSessionsControllerApi* | [**putSession**](docs/EmspSessionsControllerApi.md#putSession) | **PUT** /emsp/api/2.2.1/sessions |
-*EmspTariffControllerApi* | [**deleteTariff**](docs/EmspTariffControllerApi.md#deleteTariff) | **DELETE** /emsp/api/2.2.1/tariffs |
-*EmspTariffControllerApi* | [**getTariff**](docs/EmspTariffControllerApi.md#getTariff) | **GET** /emsp/api/2.2.1/tariffs |
-*EmspTariffControllerApi* | [**saveTariff**](docs/EmspTariffControllerApi.md#saveTariff) | **PUT** /emsp/api/2.2.1/tariffs |
-*EmspTokenControllerApi* | [**getToken**](docs/EmspTokenControllerApi.md#getToken) | **GET** /emsp/api/2.2.1/tokens/{date_from}/{date_to}/{offset}/{limit} |
-*EmspTokenControllerApi* | [**postToken**](docs/EmspTokenControllerApi.md#postToken) | **POST** /emsp/api/2.2.1/tokens/{token_uid}/{type} |
-*EmspVersionControllerApi* | [**getVersionDetails**](docs/EmspVersionControllerApi.md#getVersionDetails) | **GET** /emsp/api/2.2.1/versions/details/{version} |
+*ClientInfoApi* | [**getHubClientInfo**](docs/ClientInfoApi.md#getHubClientInfo) | **GET** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |
+*ClientInfoApi* | [**putHubClientInfo**](docs/ClientInfoApi.md#putHubClientInfo) | **PUT** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |
+*EmspCdrApi* | [**getCdr**](docs/EmspCdrApi.md#getCdr) | **GET** /emsp/api/2.2.1/cdr/{id} |
+*EmspCdrApi* | [**postCdr**](docs/EmspCdrApi.md#postCdr) | **POST** /emsp/api/2.2.1/cdr |
+*EmspChargingProfilesApi* | [**postChargingProfile**](docs/EmspChargingProfilesApi.md#postChargingProfile) | **POST** /emsp/api/2.2.1/chargingProfiles |
+*EmspChargingProfilesApi* | [**putChargingProfile**](docs/EmspChargingProfilesApi.md#putChargingProfile) | **PUT** /emsp/api/2.2.1/chargingProfiles/{session_id} |
+*EmspCommandsApi* | [**postCommand**](docs/EmspCommandsApi.md#postCommand) | **POST** /emsp/api/2.2.1/commands/{commandType}/{uniqueId} |
+*EmspCredentialsApi* | [**deleteCredentials**](docs/EmspCredentialsApi.md#deleteCredentials) | **DELETE** /emsp/api/2.2.1/credentials |
+*EmspCredentialsApi* | [**getCredentials**](docs/EmspCredentialsApi.md#getCredentials) | **GET** /emsp/api/2.2.1/credentials |
+*EmspCredentialsApi* | [**postCredentials**](docs/EmspCredentialsApi.md#postCredentials) | **POST** /emsp/api/2.2.1/credentials |
+*EmspCredentialsApi* | [**putCredentials**](docs/EmspCredentialsApi.md#putCredentials) | **PUT** /emsp/api/2.2.1/credentials |
+*EmspLocationApi* | [**getLocationEvseController**](docs/EmspLocationApi.md#getLocationEvseController) | **GET** /emsp/api/2.2.1/locations |
+*EmspLocationApi* | [**patchLocation**](docs/EmspLocationApi.md#patchLocation) | **PATCH** /emsp/api/2.2.1/locations |
+*EmspLocationApi* | [**pushLocation**](docs/EmspLocationApi.md#pushLocation) | **PUT** /emsp/api/2.2.1/locations |
+*EmspSessionsApi* | [**getSession**](docs/EmspSessionsApi.md#getSession) | **GET** /emsp/api/2.2.1/sessions |
+*EmspSessionsApi* | [**patchSession**](docs/EmspSessionsApi.md#patchSession) | **PATCH** /emsp/api/2.2.1/sessions |
+*EmspSessionsApi* | [**putSession**](docs/EmspSessionsApi.md#putSession) | **PUT** /emsp/api/2.2.1/sessions |
+*EmspTariffApi* | [**deleteTariff**](docs/EmspTariffApi.md#deleteTariff) | **DELETE** /emsp/api/2.2.1/tariffs |
+*EmspTariffApi* | [**getTariff**](docs/EmspTariffApi.md#getTariff) | **GET** /emsp/api/2.2.1/tariffs |
+*EmspTariffApi* | [**saveTariff**](docs/EmspTariffApi.md#saveTariff) | **PUT** /emsp/api/2.2.1/tariffs |
+*EmspTokenApi* | [**getToken**](docs/EmspTokenApi.md#getToken) | **GET** /emsp/api/2.2.1/tokens/{date_from}/{date_to}/{offset}/{limit} |
+*EmspTokenApi* | [**postToken**](docs/EmspTokenApi.md#postToken) | **POST** /emsp/api/2.2.1/tokens/{token_uid}/{type} |
+*EmspVersionApi* | [**getVersionDetails**](docs/EmspVersionApi.md#getVersionDetails) | **GET** /emsp/api/2.2.1/versions/details/{version} |
 
 
 ## Documentation for Models
@@ -226,6 +226,7 @@ Class | Method | HTTP request | Description
 - [ChargingProfile](docs/ChargingProfile.md)
 - [ChargingProfilePeriod](docs/ChargingProfilePeriod.md)
 - [ClientInfoDTO](docs/ClientInfoDTO.md)
+- [CommandResultRequestDTO](docs/CommandResultRequestDTO.md)
 - [Connector](docs/Connector.md)
 - [CredentialsDTO](docs/CredentialsDTO.md)
 - [CredentialsRole](docs/CredentialsRole.md)
