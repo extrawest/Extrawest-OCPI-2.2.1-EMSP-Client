@@ -12,9 +12,10 @@ java -jar openapi-generator-cli-6.6.0.jar generate \
 --invoker-package com.extrawest.ocpi.emsp.client.invoker \
 --group-id com.extrawest \
 --artifact-id Extrawest-OCPI-2.2.1-EMSP-Client \
---artifact-version 2023.8.18 \
+--artifact-version 2023.8.29 \
+--additional-properties=useTags=true \
 -g java \
 -p java11=true \
 --library resttemplate \
--o ./openapi-resttemplate-client
+-o ./emsp-resttemplate-client
 ```
