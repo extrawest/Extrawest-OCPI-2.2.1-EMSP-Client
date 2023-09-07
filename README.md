@@ -22,9 +22,9 @@
 - [Installation](#installation)
 - [Getting Started](#getting-started)
 - [Use in Spring Boot App](#using-extrawest-ocpi-221-emsp-client-in-spring-boot-application)
-- [Documentation for API Endpoints](#documentation-for-api-endpoints)
-- [Documentation for Models](#documentation-for-models) 
-- [Documentation for Authorization](#documentation-for-authentication-and-authorization)
+- [API Endpoints](#api-endpoints)
+- [Models](#models) 
+- [Authentication and Authorization](#authentication-and-authorization)
 - [Recommendation](#recommendation)
 - [License](#license)
 - [About Extrawest.com](#about-extrawestcom)
@@ -180,7 +180,7 @@ Spring Boot application, where we have tested Extrawest-OCPI-2.2.1-EMSP-Client, 
         </dependency>
 ```
 
-## Documentation for API Endpoints
+## API Endpoints
 
 All URIs are relative to *http://localhost:8080*
 
@@ -211,7 +211,7 @@ Class | Method | HTTP request | Description
 *EmspVersionApi* | [**getVersionDetails**](docs/EmspVersionApi.md#getVersionDetails) | **GET** /emsp/api/2.2.1/versions/details/{version} |
 
 
-## Documentation for Models
+## Models
 
 - [AbstractProfileResult](docs/AbstractProfileResult.md)
 - [ActiveChargingProfileRequestDTO](docs/ActiveChargingProfileRequestDTO.md)
@@ -261,7 +261,7 @@ Class | Method | HTTP request | Description
 - [TokenDTO](docs/TokenDTO.md)
 - [VersionDetailsResponseDTO](docs/VersionDetailsResponseDTO.md)
 
-## Documentation for Authentication and Authorization
+## Authentication and Authorization
 
 All endpoints do not require authorization or authentication.
 
