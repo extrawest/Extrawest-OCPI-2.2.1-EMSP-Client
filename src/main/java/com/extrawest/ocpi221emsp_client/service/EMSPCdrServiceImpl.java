@@ -4,6 +4,7 @@ import com.extrawest.ocpi.exception.OcpiGeneralClientException;
 import com.extrawest.ocpi.exception.OcpiResourceNotFoundException;
 import com.extrawest.ocpi.model.dto.CdrDTO;
 import com.extrawest.ocpi.model.dto.TariffDTO;
+import com.extrawest.ocpi.model.enums.AuthMethod;
 import com.extrawest.ocpi.service.EMSPCdrService;
 import com.extrawest.ocpi221emsp_client.mapper.CdrMapper;
 import com.extrawest.ocpi221emsp_client.mapper.TariffDocumentMapper;
@@ -15,6 +16,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Slf4j
 @Service
@@ -28,8 +32,8 @@ public class EMSPCdrServiceImpl implements EMSPCdrService {
     @Override
     public CdrDTO getCdr(String id) {
         CdrModel cdrModel = cdrRepository.findById(id)
-                .orElseThrow(() -> new OcpiResourceNotFoundException(String.format("Cdr for url %s, was not found", id)));
-
+                .orElseThrow(() ->
+                        new OcpiResourceNotFoundException(String.format("Cdr for url %s, was not found", id)));
         CdrDTO cdrDTO = cdrMapper.toDto(cdrModel);
         return cdrDTO;
     }
@@ -40,8 +44,8 @@ public class EMSPCdrServiceImpl implements EMSPCdrService {
             getCdr(cdrDTO.getId());
         } catch (OcpiResourceNotFoundException ex) {
             log.info("Cdr not exists, can be created");
-            CdrModel tariffDocument = cdrMapper.toModel(cdrDTO);
-            CdrModel saved = cdrRepository.save(tariffDocument);
+            CdrModel cdrModel = cdrMapper.toModel(cdrDTO);
+            CdrModel saved = cdrRepository.save(cdrModel);
             return saved.getId();
         }
 
