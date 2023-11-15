@@ -5,8 +5,8 @@ import com.extrawest.ocpi.model.dto.response.VersionDetailsResponseDTO;
 import com.extrawest.ocpi.model.enums.ModuleID;
 import com.extrawest.ocpi.model.enums.VersionNumber;
 import com.extrawest.ocpi.service.EMSPVersionService;
+import com.extrawest.ocpi221emsp_client.config.PartyConfig;
 import com.extrawest.ocpi221emsp_client.security.service.JwtService;
-import com.extrawest.ocpi221emsp_client.service.admin.ServerVersionsData;
 import com.extrawest.ocpi221emsp_client.service.admin.TokensValidationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
@@ -35,10 +35,10 @@ import java.util.Map;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
     private final UserDetailsService userDetailsService;
-    private final ServerVersionsData serverVersionsData;
 
     private final EMSPVersionService versionService;
     private final TokensValidationService tokensValidationService;
+    private final PartyConfig partyConfig;
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,
@@ -64,7 +64,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 }
             }
 
-            String uuid = jwtService.extractUUID(jwt);
+            String uuid = jwtService.extractId(jwt);
             if (StringUtils.hasText(uuid) && SecurityContextHolder.getContext().getAuthentication() == null) {
 
                 boolean isValid = tokensValidationService.isValid(jwt);
@@ -116,7 +116,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     }
 
     private boolean isVersionsRequest(HttpServletRequest request) {
-        String versionsUrl = serverVersionsData.getVersionsUrl();
+        String versionsUrl = partyConfig.getVersionsUrl();
         String cleaned = request.getRequestURI().replace("/details", "");
         return versionsUrl.contains(cleaned);
     }

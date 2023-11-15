@@ -1,25 +1,15 @@
 package com.extrawest.ocpi221emsp_client.security.service;
 
-import com.extrawest.ocpi221emsp_client.model.Party;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwtParser;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.io.Serializable;
 import java.security.Key;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 import java.util.function.Function;
 
 @Service
@@ -33,11 +23,7 @@ public class JwtService {
     private static final String TOKEN_A = "TOKEN_A";
     private static final String TOKEN_B = "TOKEN_B";
 
-    public String extractPartyName(String jwtToken) {
-        return extractClaim(jwtToken, Claims::getSubject);
-    }
-
-    public String extractUUID(String jwtToken) {
+    public String extractId(String jwtToken) {
         return extractClaim(jwtToken, Claims::getSubject);
     }
 
@@ -50,44 +36,22 @@ public class JwtService {
         return claimsResolver.apply(claims);
     }
 
-
-    public String generateTokenA(String partyId, String countryCode) {
-        return Jwts.builder()
-                .setClaims(Map.of(TYPE_CLAIM_NAME, TOKEN_A))
-                .setSubject(Party.createPartyName(partyId, countryCode))
-                .setIssuedAt(new Date())
-                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
-                .compact();
-    }
-
-    public String generateTokenA(LocalDateTime localDateTime, UUID uuid) {
-        Map<String, Object> extraClaims = Map.of(
-                TYPE_CLAIM_NAME, TOKEN_A,
-                "timestamp", String.valueOf(localDateTime.toEpochSecond(ZoneOffset.UTC))
-        );
+    public String generateTokenA(String uuid) {
+        Map<String, Object> extraClaims = Map.of(TYPE_CLAIM_NAME, TOKEN_A);
         return generateToken(extraClaims, uuid);
     }
 
-    public String generateTokenB(LocalDateTime localDateTime, UUID uuid) {
-        Map<String, Object> extraClaims = Map.of(
-                TYPE_CLAIM_NAME, TOKEN_B,
-                "timestamp", String.valueOf(localDateTime.toEpochSecond(ZoneOffset.UTC))
-        );
+    public String generateTokenB(String uuid) {
+        Map<String, Object> extraClaims = Map.of(TYPE_CLAIM_NAME, TOKEN_B);
         return generateToken(extraClaims, uuid);
     }
 
-    public String generateToken(Map<String, Object> extraClaims, UUID uuid) {
+    public String generateToken(Map<String, Object> extraClaims, String uuid) {
         return Jwts.builder()
                 .setClaims(extraClaims)
-                .setSubject(uuid.toString())
-                .setIssuedAt(new Date())
+                .setSubject(uuid)
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
-    }
-
-    public boolean isTokenValid(String jwtToken, UserDetails userDetails) {
-        String partyNameFromToken = extractPartyName(jwtToken);
-        return partyNameFromToken.equals(userDetails.getUsername());
     }
 
     private Claims extractAllClaims(String jwtToken) {

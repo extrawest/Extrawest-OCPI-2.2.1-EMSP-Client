@@ -1,6 +1,7 @@
 package com.extrawest.ocpi221emsp_client;
 
 import com.extrawest.ocpi221emsp_client.model.RegisteredParty;
+import com.extrawest.ocpi221emsp_client.model.RegisteredPartyDto;
 import com.extrawest.ocpi221emsp_client.service.admin.RegisteredPartyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,8 @@ public class AdminController {
     private final RegisteredPartyService basicCredentialsService;
 
     @GetMapping
-    public ResponseEntity<RegisteredParty> getCredentialsA() {
-        RegisteredParty credentialsA = basicCredentialsService.generateCredentialsA();
+    public ResponseEntity<RegisteredPartyDto> getCredentialsA() {
+        RegisteredPartyDto credentialsA = basicCredentialsService.generateCredentialsA();
         return ResponseEntity.ok(credentialsA);
     }
 

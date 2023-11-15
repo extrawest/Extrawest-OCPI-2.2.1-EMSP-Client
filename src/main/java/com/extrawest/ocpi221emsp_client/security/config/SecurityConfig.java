@@ -1,7 +1,5 @@
 package com.extrawest.ocpi221emsp_client.security.config;
 
-import com.extrawest.ocpi221emsp_client.model.RegisteredParty;
-import com.extrawest.ocpi221emsp_client.service.PartyService;
 import com.extrawest.ocpi221emsp_client.service.admin.RegisteredPartyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -11,11 +9,8 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import static com.extrawest.ocpi221emsp_client.ExceptionMessage.PARTY_NOT_FOUND;
 
 @Configuration
 @RequiredArgsConstructor
@@ -24,7 +19,7 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return registeredPartyService::findByUuid;
+        return registeredPartyService::findById;
     }
 
     @Bean
