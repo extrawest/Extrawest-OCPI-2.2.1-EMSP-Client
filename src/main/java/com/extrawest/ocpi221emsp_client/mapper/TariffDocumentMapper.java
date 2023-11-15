@@ -11,6 +11,8 @@ public interface TariffDocumentMapper {
     TariffModel toTariffDocument(TariffDTO tariffDTO);
 
     TariffDTO toTariffDTO(TariffModel tariff);
+
     List<TariffDTO> toListTariffDTO(List<TariffModel> tariffs);
+
     List<TariffModel> toListTariff(List<TariffDTO> tariffs);
 }

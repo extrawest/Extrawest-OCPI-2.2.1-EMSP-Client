@@ -10,7 +10,10 @@ import java.util.List;
 @Mapper(componentModel = "spring", uses = ChargingPeriod.class)
 public interface SessionMapper {
     SessionModel toModel(SessionDTO tariffDTO);
+
     SessionDTO toDTO(SessionModel tariff);
+
     List<SessionDTO> toListDTO(List<SessionModel> tariffs);
+
     List<SessionModel> toListModel(List<SessionDTO> tariffs);
 }

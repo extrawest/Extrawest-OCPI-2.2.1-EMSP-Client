@@ -1,7 +1,6 @@
 package com.extrawest.ocpi221emsp_client.service;
 
 import com.extrawest.ocpi.exception.NotEnoughInformationException;
-import com.extrawest.ocpi.exception.OcpiResourceNotFoundException;
 import com.extrawest.ocpi.exception.OcpiUnknownTokenException;
 import com.extrawest.ocpi.model.dto.TokenDTO;
 import com.extrawest.ocpi.model.dto.request.LocationReferences;
@@ -10,7 +9,6 @@ import com.extrawest.ocpi.model.enums.AllowedType;
 import com.extrawest.ocpi.model.enums.TokenType;
 import com.extrawest.ocpi.service.EMSPTokenService;
 import com.extrawest.ocpi221emsp_client.mapper.TokenMapper;
-import com.extrawest.ocpi221emsp_client.model.TariffModel;
 import com.extrawest.ocpi221emsp_client.model.TokenModel;
 import com.extrawest.ocpi221emsp_client.repository.TokenRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +21,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -86,7 +83,7 @@ public class EMSPTokenServiceImpl implements EMSPTokenService {
         }
         Query query = new Query();
 
-        Criteria criteria =  Criteria.where("uid").is(tokenUid);
+        Criteria criteria = Criteria.where("uid").is(tokenUid);
         if (Strings.isBlank(tokenType)) {
             TokenType type = TokenType.valueOf(tokenType);
             criteria = criteria.is(type);
@@ -97,8 +94,7 @@ public class EMSPTokenServiceImpl implements EMSPTokenService {
         if (tokenModels == null) {
             if (Strings.isBlank(tokenType)) {
                 throw new OcpiUnknownTokenException(String.format("Token uid = %s was not found", tokenUid));
-            }
-            else {
+            } else {
                 throw new OcpiUnknownTokenException(String.format("Token uid = %s with type = %s was not found",
                         tokenUid, tokenType));
             }
@@ -112,6 +108,6 @@ public class EMSPTokenServiceImpl implements EMSPTokenService {
             authorizationInfo.setLocation(locationReferences);
         }
         authorizationInfo.setAllowed(AllowedType.ALLOWED);
-       return authorizationInfo;
+        return authorizationInfo;
     }
 }

@@ -4,7 +4,8 @@ import com.extrawest.ocpi.model.enums.TariffType;
 import com.extrawest.ocpi.model.vo.DisplayText;
 import com.extrawest.ocpi.model.vo.EnergyMix;
 import com.extrawest.ocpi.model.vo.Price;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

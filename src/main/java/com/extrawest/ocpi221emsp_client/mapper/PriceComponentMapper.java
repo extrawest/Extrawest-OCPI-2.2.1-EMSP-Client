@@ -9,8 +9,10 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface PriceComponentMapper {
     PriceComponent toModel(PriceComponentDTO dto);
+
     PriceComponentDTO toDto(PriceComponent model);
 
     List<PriceComponent> toModels(List<PriceComponentDTO> dtos);
+
     List<PriceComponentDTO> toDtos(List<PriceComponent> models);
 }

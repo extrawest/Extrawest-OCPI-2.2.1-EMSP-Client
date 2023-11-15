@@ -1,8 +1,6 @@
 package com.extrawest.ocpi221emsp_client.service;
 
-import com.extrawest.ocpi.model.ResponseFormat;
 import com.extrawest.ocpi.model.dto.CredentialsDTO;
-import com.extrawest.ocpi.model.dto.response.VersionResponseDTO;
 import com.extrawest.ocpi.service.EMSPCredentialsService;
 import com.extrawest.ocpi221emsp_client.config.PartyConfig;
 import com.extrawest.ocpi221emsp_client.mapper.CredentialsMapper;
@@ -12,19 +10,11 @@ import com.extrawest.ocpi221emsp_client.repository.CredentialsRepository;
 import com.extrawest.ocpi221emsp_client.security.service.JwtService;
 import com.extrawest.ocpi221emsp_client.service.admin.RegisteredPartyService;
 import com.extrawest.ocpi221emsp_client.service.admin.ServerVersionsData;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.UUID;
-
-import static io.restassured.RestAssured.given;
 
 @Service
 @RequiredArgsConstructor
@@ -38,7 +28,7 @@ public class EMSPCredentialsServiceImpl implements EMSPCredentialsService {
 
     @Override
     public CredentialsDTO getCredentials() {
-       return null;
+        return null;
     }
 
     @Override

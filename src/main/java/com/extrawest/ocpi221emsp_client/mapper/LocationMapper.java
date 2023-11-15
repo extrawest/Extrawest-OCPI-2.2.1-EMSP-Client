@@ -13,7 +13,10 @@ import java.util.List;
         DisplayText.class, Facility.class, Image.class})
 public interface LocationMapper {
     LocationModel toModel(LocationDTO dto);
+
     LocationDTO toDto(LocationModel model);
+
     List<LocationDTO> toListDto(List<LocationModel> models);
+
     List<LocationModel> toListModel(List<LocationDTO> models);
 }

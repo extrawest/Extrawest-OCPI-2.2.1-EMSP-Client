@@ -3,22 +3,14 @@ package com.extrawest.ocpi221emsp_client.service;
 import com.extrawest.ocpi.exception.OcpiGeneralClientException;
 import com.extrawest.ocpi.exception.OcpiResourceNotFoundException;
 import com.extrawest.ocpi.model.dto.CdrDTO;
-import com.extrawest.ocpi.model.dto.TariffDTO;
-import com.extrawest.ocpi.model.enums.AuthMethod;
 import com.extrawest.ocpi.service.EMSPCdrService;
 import com.extrawest.ocpi221emsp_client.mapper.CdrMapper;
-import com.extrawest.ocpi221emsp_client.mapper.TariffDocumentMapper;
 import com.extrawest.ocpi221emsp_client.model.CdrModel;
-import com.extrawest.ocpi221emsp_client.model.TariffModel;
 import com.extrawest.ocpi221emsp_client.repository.CdrRepository;
-import com.extrawest.ocpi221emsp_client.repository.TariffRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Slf4j
 @Service

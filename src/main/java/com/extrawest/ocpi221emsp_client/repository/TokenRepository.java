@@ -10,7 +10,10 @@ import java.util.Optional;
 
 public interface TokenRepository extends MongoRepository<TokenModel, String> {
     Optional<TokenModel> findByUidAndCountryCodeAndPartyId(String id, String countryCode, String partyId);
+
     Page<TokenModel> findByLastUpdatedBetween(LocalDateTime dateFrom, LocalDateTime dateTo, Pageable page);
+
     Page<TokenModel> findByLastUpdatedBefore(LocalDateTime dateTo, Pageable page);
+
     Page<TokenModel> findByLastUpdatedAfter(LocalDateTime dateFrom, Pageable page);
 }

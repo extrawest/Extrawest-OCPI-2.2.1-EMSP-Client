@@ -10,7 +10,10 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface TokenMapper {
     TokenModel toModel(TokenDTO dto);
+
     TokenDTO toDto(TokenModel model);
+
     List<TokenDTO> toListDto(List<TokenModel> models);
+
     List<TokenModel> toListModel(List<TokenDTO> models);
 }

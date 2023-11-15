@@ -44,8 +44,8 @@ public class RegisteredPartyServiceImpl implements RegisteredPartyService, Serve
         String id = jwtService.extractId(jwt);
         RegisteredParty party = this.findById(id);
 
-        if(jwtService.isTokenA(jwt)) {
-            if (party.isInvalidatedA() || !jwt.equals(party.getTokenA())){
+        if (jwtService.isTokenA(jwt)) {
+            if (party.isInvalidatedA() || !jwt.equals(party.getTokenA())) {
                 throw new OcpiGeneralClientException("Invalid token A");
             }
             return true;
@@ -55,7 +55,7 @@ public class RegisteredPartyServiceImpl implements RegisteredPartyService, Serve
             throw new OcpiGeneralClientException("Invalid token B");
         }
 
-      return true;
+        return true;
     }
 
     @Override

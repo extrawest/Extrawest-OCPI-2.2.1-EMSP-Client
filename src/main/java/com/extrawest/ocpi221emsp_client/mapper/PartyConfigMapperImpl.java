@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class PartyConfigMapperImpl implements PartyConfigMapper{
+public class PartyConfigMapperImpl implements PartyConfigMapper {
     @Autowired
     private final PartyConfig partyConfig;
 

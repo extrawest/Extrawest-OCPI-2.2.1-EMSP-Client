@@ -2,8 +2,6 @@ package com.extrawest.ocpi221emsp_client.model;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
@@ -11,11 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Date;
 
 @Document(collection = "parties")
 @Data
@@ -36,6 +31,18 @@ public class Party implements UserDetails {
     private boolean invalidated;
 
 //    private Role role;
+
+    public static String parsePartyId(String partyName) {
+        return partyName.split("/")[0];
+    }
+
+    public static String parseCountryCode(String partyName) {
+        return partyName.split("/")[1];
+    }
+
+    public static String createPartyName(String partyId, String countryCode) {
+        return partyId + "/" + countryCode;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -71,17 +78,5 @@ public class Party implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-    public static String parsePartyId(String partyName) {
-        return partyName.split("/")[0];
-    }
-
-    public static String parseCountryCode(String partyName) {
-        return partyName.split("/")[1];
-    }
-
-    public static String createPartyName(String partyId, String countryCode) {
-        return partyId+"/" + countryCode;
     }
 }

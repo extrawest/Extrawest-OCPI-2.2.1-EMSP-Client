@@ -1,9 +1,7 @@
 package com.extrawest.ocpi221emsp_client.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -60,4 +58,4 @@ public class RegisteredParty implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
- }
+}

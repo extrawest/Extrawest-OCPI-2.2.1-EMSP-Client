@@ -42,7 +42,7 @@ public class SecurityChain {
                                 ex.getMessage()
                         )
                 )
-                .accessDeniedHandler( (request, response, ex) -> response.sendError(
+                .accessDeniedHandler((request, response, ex) -> response.sendError(
                         HttpServletResponse.SC_FORBIDDEN,
                         ex.getMessage()
                 ))

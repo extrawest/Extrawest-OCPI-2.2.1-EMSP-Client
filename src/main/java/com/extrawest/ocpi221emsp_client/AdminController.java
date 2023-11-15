@@ -1,6 +1,5 @@
 package com.extrawest.ocpi221emsp_client;
 
-import com.extrawest.ocpi221emsp_client.model.RegisteredParty;
 import com.extrawest.ocpi221emsp_client.model.RegisteredPartyDto;
 import com.extrawest.ocpi221emsp_client.service.admin.RegisteredPartyService;
 import lombok.RequiredArgsConstructor;

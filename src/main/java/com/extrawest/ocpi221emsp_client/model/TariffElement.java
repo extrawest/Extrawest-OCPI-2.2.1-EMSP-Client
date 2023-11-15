@@ -10,7 +10,7 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
-public class TariffElement{
+public class TariffElement {
     private List<PriceComponent> priceComponents;
     private TariffRestrictions restrictions;
 }

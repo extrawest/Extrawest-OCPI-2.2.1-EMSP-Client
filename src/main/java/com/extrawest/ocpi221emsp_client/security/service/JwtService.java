@@ -1,6 +1,9 @@
 package com.extrawest.ocpi221emsp_client.security.service;
 
-import io.jsonwebtoken.*;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtParser;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,20 +11,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.security.Key;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
 @Service
 public class JwtService {
-    @Value("${jwt.secret.key}")
-    private String secretKey;
+    private static final String TYPE_CLAIM_NAME = "Type";
 //    @Value("${jwt.live.millis}")
 //    private long jwtLiveMillis;
-
-    private static final String TYPE_CLAIM_NAME = "Type";
     private static final String TOKEN_A = "TOKEN_A";
     private static final String TOKEN_B = "TOKEN_B";
+    @Value("${jwt.secret.key}")
+    private String secretKey;
 
     public String extractId(String jwtToken) {
         return extractClaim(jwtToken, Claims::getSubject);
