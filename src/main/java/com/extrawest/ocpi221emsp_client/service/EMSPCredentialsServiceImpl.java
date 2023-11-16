@@ -6,15 +6,16 @@ import com.extrawest.ocpi221emsp_client.config.PartyConfig;
 import com.extrawest.ocpi221emsp_client.mapper.CredentialsMapper;
 import com.extrawest.ocpi221emsp_client.model.CredentialsModel;
 import com.extrawest.ocpi221emsp_client.model.RegisteredParty;
+import com.extrawest.ocpi221emsp_client.model.Role;
 import com.extrawest.ocpi221emsp_client.repository.CredentialsRepository;
+import com.extrawest.ocpi221emsp_client.repository.TokenARepository;
 import com.extrawest.ocpi221emsp_client.security.service.JwtService;
 import com.extrawest.ocpi221emsp_client.service.admin.RegisteredPartyService;
 import com.extrawest.ocpi221emsp_client.service.admin.ServerVersionsData;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -26,6 +27,8 @@ public class EMSPCredentialsServiceImpl implements EMSPCredentialsService {
     private final PartyConfig partyConfig;
     private final RegisteredPartyService registeredPartyService;
 
+    private final TokenARepository tokenARepository;
+
     @Override
     public CredentialsDTO getCredentials() {
         return null;
@@ -34,29 +37,18 @@ public class EMSPCredentialsServiceImpl implements EMSPCredentialsService {
     @Override
     public CredentialsDTO postCredentials(CredentialsDTO credentialsToClient) {
         CredentialsModel model = credentialsMapper.toModel(credentialsToClient);
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserDetails principal = (UserDetails) authentication.getPrincipal();
-        String uuid = principal.getUsername();
-        model.setId(uuid);
         credentialsRepository.save(model);
-
-
-//        Response response = given()
-//                .contentType(ContentType.JSON)
-//                .when()
-//                .get(credentialsToClient.getUrl())
-//                .then()
-//                .extract().response();
-//
-//        System.out.println(response.asString());
 
         //TODO:: send request to client to get versions and endpoints
         //TODO:: store version and endpoints, received from client
+
+        String uuid = UUID.randomUUID().toString();
         String tokenB = jwtService.generateTokenB(uuid);
 
-        RegisteredParty registeredParty = registeredPartyService.findById(uuid);
+        RegisteredParty registeredParty = new RegisteredParty();
+        registeredParty.setId(uuid);
         registeredParty.setTokenB(tokenB);
-        registeredParty.setInvalidatedA(true);
+        registeredParty.setRole(Role.CPO);
         registeredPartyService.save(registeredParty);
 
         CredentialsDTO credentialsToServer = new CredentialsDTO();

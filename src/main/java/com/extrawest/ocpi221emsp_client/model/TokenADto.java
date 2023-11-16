@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class RegisteredPartyDto {
+public class TokenADto {
     private String tokenA;
     private String versionsUrl;
 }

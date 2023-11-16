@@ -7,7 +7,7 @@ import com.extrawest.ocpi.model.enums.VersionNumber;
 import com.extrawest.ocpi.service.EMSPVersionService;
 import com.extrawest.ocpi221emsp_client.config.PartyConfig;
 import com.extrawest.ocpi221emsp_client.security.service.JwtService;
-import com.extrawest.ocpi221emsp_client.service.admin.TokensValidationService;
+import com.extrawest.ocpi221emsp_client.security.service.TokenService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -34,10 +34,10 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
+    private final TokenService tokenService;
     private final UserDetailsService userDetailsService;
 
     private final EMSPVersionService versionService;
-    private final TokensValidationService tokensValidationService;
     private final PartyConfig partyConfig;
 
     @Override
@@ -50,7 +50,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             return;
         }
 
-
         try {
             String authHeader = request.getHeader("Authorization");
             if (authHeader == null || !authHeader.startsWith("Token ")) {
@@ -58,16 +57,32 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
 
             String jwt = extractJwtToken(authHeader);
-            if (jwtService.isTokenA(jwt)) {
+
+            //token A
+            if (tokenService.isValidTokenA(jwt)) {
                 if (!isVersionsRequest(request) && !isCredentialsRequest(request)) {
                     throw new ForbiddenException(String.format("Token A can not be used for %s", request.getServletPath()));
                 }
+                filterChain.doFilter(request, response);
+                if (!isVersionsRequest(request) && isCredentialsRequest(request)) {
+                    tokenService.invalidate(jwt);
+                }
+                return;
+            }
+
+            //token B
+            if (!tokenService.isRegisteredB(jwt)) {
+                throw new ForbiddenException(String.format("Token can not be used for %s", request.getServletPath()));
+            }
+
+            if (!isVersionsRequest(request) && isCredentialsRequest(request)) {
+                throw new ForbiddenException("Already registered");
             }
 
             String uuid = jwtService.extractId(jwt);
             if (StringUtils.hasText(uuid) && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-                boolean isValid = tokensValidationService.isValid(jwt);
+                boolean isValid = tokenService.isRegisteredB(jwt);
                 if (!isValid) {
                     throw new ForbiddenException(String.format("Token can not be used for %s", request.getServletPath()));
                 }
@@ -82,7 +97,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 // Set the authentication in the SecurityContext
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }
-
             filterChain.doFilter(request, response);
 
         } catch (Exception e) {
