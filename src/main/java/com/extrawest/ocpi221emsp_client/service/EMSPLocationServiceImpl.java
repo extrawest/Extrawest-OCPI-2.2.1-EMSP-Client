@@ -1,9 +1,9 @@
 package com.extrawest.ocpi221emsp_client.service;
 
 import com.extrawest.ocpi.exception.OcpiResourceNotFoundException;
-import com.extrawest.ocpi.model.dto.ConnectorDto;
-import com.extrawest.ocpi.model.dto.EVSEDto;
-import com.extrawest.ocpi.model.dto.LocationDto;
+import com.extrawest.ocpi.model.dto.location.Connector;
+import com.extrawest.ocpi.model.dto.location.EVSE;
+import com.extrawest.ocpi.model.dto.location.Location;
 import com.extrawest.ocpi.model.markers.LocationData;
 import com.extrawest.ocpi.service.EMSPLocationService;
 import com.extrawest.ocpi221emsp_client.mapper.LocationMapper;
@@ -22,7 +22,7 @@ public class EMSPLocationServiceImpl implements EMSPLocationService {
     private final LocationMapper locationMapper;
 
     @Override
-    public LocationDto getLocation(String countryCode, String partyId, String locationId) {
+    public Location getLocation(String countryCode, String partyId, String locationId) {
         LocationModel locationModel = locationRepository.findByIdAndCountryCodeAndPartyId(locationId, countryCode, partyId)
                 .orElseThrow(() -> new OcpiResourceNotFoundException(String.format("Location %s for party %s, operates in %s, was not found",
                         locationId, partyId, countryCode)));
@@ -30,17 +30,17 @@ public class EMSPLocationServiceImpl implements EMSPLocationService {
     }
 
     @Override
-    public EVSEDto getEvse(String countryCode, String partyId, String locationId, String evseUid) {
-        LocationDto location = getLocation(countryCode, partyId, locationId);
+    public EVSE getEvse(String countryCode, String partyId, String locationId, String evseUid) {
+        Location location = getLocation(countryCode, partyId, locationId);
         return location.getEvses().stream().filter(e -> e.getUid().equals(evseUid)).findFirst().orElseThrow(() ->
                 new OcpiResourceNotFoundException(String.format("EVSE %s for location %s with party %s, operates in %s, was not found",
                         evseUid, location.getId(), partyId, countryCode)));
     }
 
     @Override
-    public ConnectorDto getConnector(String countryCode, String partyId, String locationId, String evseUid, String connectorId) {
-        EVSEDto evse = getEvse(countryCode, partyId, locationId, evseUid);
-        ConnectorDto connectorModel = evse.getConnectors().stream().filter(connector -> connector.getConnectorId().equals(connectorId)).findFirst().orElseThrow(() ->
+    public Connector getConnector(String countryCode, String partyId, String locationId, String evseUid, String connectorId) {
+        EVSE evse = getEvse(countryCode, partyId, locationId, evseUid);
+        Connector connectorModel = evse.getConnectors().stream().filter(connector -> connector.getConnectorId().equals(connectorId)).findFirst().orElseThrow(() ->
                 new OcpiResourceNotFoundException(String.format("Connector %s for evse %s in location %s with party %s, operates in %s, was not found",
                         connectorId, evse.getUid(), locationId, partyId, countryCode)));
         return connectorModel;
@@ -48,15 +48,15 @@ public class EMSPLocationServiceImpl implements EMSPLocationService {
     }
 
     @Override
-    public LocationDto pushLocation(LocationDto locationDTO, String countryCode, String partyId, String locationId) {
+    public Location pushLocation(Location locationDTO, String countryCode, String partyId, String locationId) {
         LocationModel model = locationMapper.toModel(locationDTO);
         LocationModel saved = locationRepository.save(model);
         return locationMapper.toDto(saved);
     }
 
     @Override
-    public EVSEDto pushEvse(EVSEDto evse, String countryCode, String partyId, String locationId, String evseUid) {
-        LocationDto location = getLocation(countryCode, partyId, locationId);
+    public EVSE pushEvse(EVSE evse, String countryCode, String partyId, String locationId, String evseUid) {
+        Location location = getLocation(countryCode, partyId, locationId);
 
         location.getEvses().replaceAll(e -> e.getUid().equals(evseUid) ? evse : e);
         locationRepository.save(locationMapper.toModel(location));
@@ -64,12 +64,12 @@ public class EMSPLocationServiceImpl implements EMSPLocationService {
     }
 
     @Override
-    public ConnectorDto pushConnector(ConnectorDto connector, String countryCode, String partyId, String locationId, String evseUid, String connectorId) {
+    public Connector pushConnector(Connector connector, String countryCode, String partyId, String locationId, String evseUid, String connectorId) {
         return null;
     }
 
     @Override
-    public LocationData patchLocation(LocationDto locationDTO, String countryCode, String partyId, String locationId, String evseUid, String connectorId) {
+    public LocationData patchLocation(Location locationDTO, String countryCode, String partyId, String locationId, String evseUid, String connectorId) {
         return null;
     }
 }

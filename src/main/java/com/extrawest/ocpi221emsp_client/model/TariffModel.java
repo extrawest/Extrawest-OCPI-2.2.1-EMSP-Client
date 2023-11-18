@@ -1,8 +1,8 @@
 package com.extrawest.ocpi221emsp_client.model;
 
-import com.extrawest.ocpi.model.domain.DisplayText;
-import com.extrawest.ocpi.model.domain.EnergyMix;
-import com.extrawest.ocpi.model.domain.Price;
+import com.extrawest.ocpi.model.dto.DisplayText;
+import com.extrawest.ocpi.model.dto.Price;
+import com.extrawest.ocpi.model.dto.location.EnergyMix;
 import com.extrawest.ocpi.model.enums.TariffType;
 import lombok.Data;
 import lombok.NoArgsConstructor;

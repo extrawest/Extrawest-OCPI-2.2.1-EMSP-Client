@@ -1,6 +1,6 @@
 package com.extrawest.ocpi221emsp_client.model;
 
-import com.extrawest.ocpi.model.domain.TariffRestrictions;
+import com.extrawest.ocpi.model.dto.tariff.TariffRestrictions;
 import lombok.*;
 
 import java.util.List;

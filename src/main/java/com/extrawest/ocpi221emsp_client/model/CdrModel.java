@@ -1,7 +1,11 @@
 package com.extrawest.ocpi221emsp_client.model;
 
-import com.extrawest.ocpi.model.domain.*;
-import com.extrawest.ocpi.model.dto.TariffDto;
+import com.extrawest.ocpi.model.dto.ChargingPeriod;
+import com.extrawest.ocpi.model.dto.Price;
+import com.extrawest.ocpi.model.dto.cdr.CdrLocation;
+import com.extrawest.ocpi.model.dto.cdr.CdrToken;
+import com.extrawest.ocpi.model.dto.cdr.SignedData;
+import com.extrawest.ocpi.model.dto.tariff.Tariff;
 import com.extrawest.ocpi.model.enums.AuthMethod;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,7 +32,7 @@ public class CdrModel {
     private CdrLocation cdrLocation;
     private String meterId;
     private String currency;
-    private List<TariffDto> tariffs;
+    private List<Tariff> tariffs;
     private List<ChargingPeriod> chargingPeriods;
     private SignedData signedData;
     private Price totalCost;

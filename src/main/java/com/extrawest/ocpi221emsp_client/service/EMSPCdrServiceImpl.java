@@ -2,7 +2,7 @@ package com.extrawest.ocpi221emsp_client.service;
 
 import com.extrawest.ocpi.exception.OcpiGeneralClientException;
 import com.extrawest.ocpi.exception.OcpiResourceNotFoundException;
-import com.extrawest.ocpi.model.dto.CDRDto;
+import com.extrawest.ocpi.model.dto.cdr.CDR;
 import com.extrawest.ocpi.service.EMSPCdrService;
 import com.extrawest.ocpi221emsp_client.mapper.CdrMapper;
 import com.extrawest.ocpi221emsp_client.model.CdrModel;
@@ -22,16 +22,16 @@ public class EMSPCdrServiceImpl implements EMSPCdrService {
     private final CdrMapper cdrMapper;
 
     @Override
-    public CDRDto getCdr(String id) {
+    public CDR getCdr(String id) {
         CdrModel cdrModel = cdrRepository.findById(id)
                 .orElseThrow(() ->
                         new OcpiResourceNotFoundException(String.format("Cdr for url %s, was not found", id)));
-        CDRDto cdrDTO = cdrMapper.toDto(cdrModel);
+        CDR cdrDTO = cdrMapper.toDto(cdrModel);
         return cdrDTO;
     }
 
     @Override
-    public String postCdr(CDRDto cdrDTO) {
+    public String postCdr(CDR cdrDTO) {
         try {
             getCdr(cdrDTO.getId());
         } catch (OcpiResourceNotFoundException ex) {

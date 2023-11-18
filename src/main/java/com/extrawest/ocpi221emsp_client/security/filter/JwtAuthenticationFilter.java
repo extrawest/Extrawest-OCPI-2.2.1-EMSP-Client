@@ -1,7 +1,7 @@
 package com.extrawest.ocpi221emsp_client.security.filter;
 
 import com.extrawest.ocpi.exception.OcpiResourceNotFoundException;
-import com.extrawest.ocpi.model.dto.VersionDetailsDto;
+import com.extrawest.ocpi.model.dto.VersionDetails;
 import com.extrawest.ocpi.model.enums.ModuleID;
 import com.extrawest.ocpi.model.enums.VersionNumber;
 import com.extrawest.ocpi.service.EMSPVersionService;
@@ -114,7 +114,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     }
 
     private ModuleID getIdentifier(HttpServletRequest request) {
-        VersionDetailsDto versionDetails = versionService.getVersionDetails(VersionNumber.V_2_2_1);
+        VersionDetails versionDetails = versionService.getVersionDetails(VersionNumber.V_2_2_1);
         String requestURI = request.getRequestURI();
 
         return versionDetails.getEndpoints()

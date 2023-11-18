@@ -1,7 +1,8 @@
 package com.extrawest.ocpi221emsp_client.model;
 
-import com.extrawest.ocpi.model.domain.*;
-import com.extrawest.ocpi.model.dto.EVSEDto;
+import com.extrawest.ocpi.model.dto.BusinessDetails;
+import com.extrawest.ocpi.model.dto.DisplayText;
+import com.extrawest.ocpi.model.dto.location.*;
 import com.extrawest.ocpi.model.enums.Facility;
 import com.extrawest.ocpi.model.enums.ParkingType;
 import lombok.Data;
@@ -31,7 +32,7 @@ public class LocationModel {
     private GeoLocation coordinates;
     private List<AdditionalGeoLocation> relatedLocations;
     private ParkingType parkingType;
-    private List<EVSEDto> evses;
+    private List<EVSE> evses;
     private List<DisplayText> directions;
     private BusinessDetails operator;
     private BusinessDetails subOperator;

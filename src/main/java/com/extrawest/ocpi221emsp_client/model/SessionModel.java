@@ -1,8 +1,8 @@
 package com.extrawest.ocpi221emsp_client.model;
 
-import com.extrawest.ocpi.model.domain.CdrToken;
-import com.extrawest.ocpi.model.domain.ChargingPeriod;
-import com.extrawest.ocpi.model.domain.Price;
+import com.extrawest.ocpi.model.dto.ChargingPeriod;
+import com.extrawest.ocpi.model.dto.Price;
+import com.extrawest.ocpi.model.dto.cdr.CdrToken;
 import com.extrawest.ocpi.model.enums.AuthMethod;
 import com.extrawest.ocpi.model.enums.SessionStatus;
 import lombok.Data;

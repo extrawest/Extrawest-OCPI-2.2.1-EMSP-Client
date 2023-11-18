@@ -1,6 +1,6 @@
 package com.extrawest.ocpi221emsp_client.mapper;
 
-import com.extrawest.ocpi.model.domain.PriceComponent;
+import com.extrawest.ocpi.model.dto.tariff.PriceComponent;
 import com.extrawest.ocpi221emsp_client.model.PriceComponentModel;
 import org.mapstruct.Mapper;
 

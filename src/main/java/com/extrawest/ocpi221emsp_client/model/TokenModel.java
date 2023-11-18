@@ -1,6 +1,6 @@
 package com.extrawest.ocpi221emsp_client.model;
 
-import com.extrawest.ocpi.model.domain.EnergyContract;
+import com.extrawest.ocpi.model.dto.token.EnergyContract;
 import com.extrawest.ocpi.model.enums.ProfileType;
 import com.extrawest.ocpi.model.enums.TokenType;
 import com.extrawest.ocpi.model.enums.WhitelistType;

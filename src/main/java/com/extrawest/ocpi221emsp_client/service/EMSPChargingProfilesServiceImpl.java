@@ -1,8 +1,8 @@
 package com.extrawest.ocpi221emsp_client.service;
 
-import com.extrawest.ocpi.model.domain.charging_profile.ActiveChargingProfile;
-import com.extrawest.ocpi.model.domain.charging_profile.results.AbstractProfileResult;
 import com.extrawest.ocpi.model.dto.ResponseFormat;
+import com.extrawest.ocpi.model.dto.charging_profile.ActiveChargingProfile;
+import com.extrawest.ocpi.model.dto.charging_profile.results.AbstractProfileResult;
 import com.extrawest.ocpi.service.EMSPChargingProfilesService;
 import org.springframework.stereotype.Service;
 
