@@ -1,18 +1,18 @@
 package com.extrawest.ocpi221emsp_client.mapper;
 
-import com.extrawest.ocpi.model.dto.PriceComponentDTO;
-import com.extrawest.ocpi221emsp_client.model.PriceComponent;
+import com.extrawest.ocpi.model.domain.PriceComponent;
+import com.extrawest.ocpi221emsp_client.model.PriceComponentModel;
 import org.mapstruct.Mapper;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface PriceComponentMapper {
-    PriceComponent toModel(PriceComponentDTO dto);
+    PriceComponentModel toModel(PriceComponent dto);
 
-    PriceComponentDTO toDto(PriceComponent model);
+    PriceComponent toDto(PriceComponentModel model);
 
-    List<PriceComponent> toModels(List<PriceComponentDTO> dtos);
+    List<PriceComponentModel> toModels(List<PriceComponent> dtos);
 
-    List<PriceComponentDTO> toDtos(List<PriceComponent> models);
+    List<PriceComponent> toDtos(List<PriceComponentModel> models);
 }

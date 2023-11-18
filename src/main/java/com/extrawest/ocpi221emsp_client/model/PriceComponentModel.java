@@ -11,7 +11,7 @@ import lombok.*;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class PriceComponent {
+public class PriceComponentModel {
     private TariffDimensionType type;
 
     @Digits(integer = Integer.MAX_VALUE, fraction = 4)

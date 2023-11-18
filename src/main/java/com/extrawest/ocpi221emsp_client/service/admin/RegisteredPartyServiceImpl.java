@@ -1,8 +1,8 @@
 package com.extrawest.ocpi221emsp_client.service.admin;
 
+import com.extrawest.ocpi.model.domain.BusinessDetails;
+import com.extrawest.ocpi.model.domain.CredentialsRole;
 import com.extrawest.ocpi.model.enums.Role;
-import com.extrawest.ocpi.model.vo.BusinessDetails;
-import com.extrawest.ocpi.model.vo.CredentialsRole;
 import com.extrawest.ocpi221emsp_client.mapper.TokenAMapperImpl;
 import com.extrawest.ocpi221emsp_client.model.RegisteredParty;
 import com.extrawest.ocpi221emsp_client.model.TokenA;

@@ -1,9 +1,9 @@
 package com.extrawest.ocpi221emsp_client.model;
 
+import com.extrawest.ocpi.model.domain.DisplayText;
+import com.extrawest.ocpi.model.domain.EnergyMix;
+import com.extrawest.ocpi.model.domain.Price;
 import com.extrawest.ocpi.model.enums.TariffType;
-import com.extrawest.ocpi.model.vo.DisplayText;
-import com.extrawest.ocpi.model.vo.EnergyMix;
-import com.extrawest.ocpi.model.vo.Price;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -36,7 +36,7 @@ public class TariffModel {
 
     private Price maxPrice;
 
-    private List<TariffElement> elements;
+    private List<TariffElementModel> elements;
 
     private LocalDateTime startDateTime;
 

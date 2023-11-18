@@ -1,6 +1,6 @@
 package com.extrawest.ocpi221emsp_client.model;
 
-import com.extrawest.ocpi.model.vo.CredentialsRole;
+import com.extrawest.ocpi.model.domain.CredentialsRole;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;

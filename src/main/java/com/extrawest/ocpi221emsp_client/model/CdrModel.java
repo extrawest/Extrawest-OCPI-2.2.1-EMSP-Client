@@ -1,8 +1,8 @@
 package com.extrawest.ocpi221emsp_client.model;
 
-import com.extrawest.ocpi.model.dto.TariffDTO;
+import com.extrawest.ocpi.model.domain.*;
+import com.extrawest.ocpi.model.dto.TariffDto;
 import com.extrawest.ocpi.model.enums.AuthMethod;
-import com.extrawest.ocpi.model.vo.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -28,7 +28,7 @@ public class CdrModel {
     private CdrLocation cdrLocation;
     private String meterId;
     private String currency;
-    private List<TariffDTO> tariffs;
+    private List<TariffDto> tariffs;
     private List<ChargingPeriod> chargingPeriods;
     private SignedData signedData;
     private Price totalCost;

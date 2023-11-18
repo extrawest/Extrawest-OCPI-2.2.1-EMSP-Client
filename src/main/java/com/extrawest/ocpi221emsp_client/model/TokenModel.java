@@ -1,9 +1,9 @@
 package com.extrawest.ocpi221emsp_client.model;
 
+import com.extrawest.ocpi.model.domain.EnergyContract;
 import com.extrawest.ocpi.model.enums.ProfileType;
 import com.extrawest.ocpi.model.enums.TokenType;
 import com.extrawest.ocpi.model.enums.WhitelistType;
-import com.extrawest.ocpi.model.vo.EnergyContract;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;

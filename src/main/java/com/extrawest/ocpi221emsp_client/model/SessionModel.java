@@ -1,10 +1,10 @@
 package com.extrawest.ocpi221emsp_client.model;
 
+import com.extrawest.ocpi.model.domain.CdrToken;
+import com.extrawest.ocpi.model.domain.ChargingPeriod;
+import com.extrawest.ocpi.model.domain.Price;
 import com.extrawest.ocpi.model.enums.AuthMethod;
 import com.extrawest.ocpi.model.enums.SessionStatus;
-import com.extrawest.ocpi.model.vo.CdrToken;
-import com.extrawest.ocpi.model.vo.ChargingPeriod;
-import com.extrawest.ocpi.model.vo.Price;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;

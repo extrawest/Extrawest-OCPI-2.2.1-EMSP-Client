@@ -1,20 +1,20 @@
 package com.extrawest.ocpi221emsp_client.mapper;
 
-import com.extrawest.ocpi.model.dto.CdrDTO;
-import com.extrawest.ocpi.model.dto.TariffDTO;
-import com.extrawest.ocpi.model.vo.ChargingPeriod;
+import com.extrawest.ocpi.model.domain.ChargingPeriod;
+import com.extrawest.ocpi.model.dto.CDRDto;
+import com.extrawest.ocpi.model.dto.TariffDto;
 import com.extrawest.ocpi221emsp_client.model.CdrModel;
 import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {TariffDTO.class, ChargingPeriod.class})
+@Mapper(componentModel = "spring", uses = {TariffDto.class, ChargingPeriod.class})
 public interface CdrMapper {
-    CdrModel toModel(CdrDTO dto);
+    CdrModel toModel(CDRDto dto);
 
-    CdrDTO toDto(CdrModel model);
+    CDRDto toDto(CdrModel model);
 
-    List<CdrDTO> toListDto(List<CdrModel> models);
+    List<CDRDto> toListDto(List<CdrModel> models);
 
-    List<CdrModel> toListModel(List<CdrDTO> models);
+    List<CdrModel> toListModel(List<CDRDto> models);
 }

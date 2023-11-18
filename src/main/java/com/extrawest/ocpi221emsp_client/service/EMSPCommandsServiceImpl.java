@@ -1,6 +1,6 @@
 package com.extrawest.ocpi221emsp_client.service;
 
-import com.extrawest.ocpi.model.dto.request.CommandResult;
+import com.extrawest.ocpi.model.domain.commands.CommandResult;
 import com.extrawest.ocpi.model.enums.CommandType;
 import com.extrawest.ocpi.service.EMSPCommandsService;
 import lombok.extern.slf4j.Slf4j;

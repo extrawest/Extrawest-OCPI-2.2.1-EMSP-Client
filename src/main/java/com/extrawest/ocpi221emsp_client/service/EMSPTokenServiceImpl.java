@@ -2,9 +2,9 @@ package com.extrawest.ocpi221emsp_client.service;
 
 import com.extrawest.ocpi.exception.NotEnoughInformationException;
 import com.extrawest.ocpi.exception.OcpiUnknownTokenException;
-import com.extrawest.ocpi.model.dto.TokenDTO;
-import com.extrawest.ocpi.model.dto.request.LocationReferences;
-import com.extrawest.ocpi.model.dto.response.AuthorizationInfo;
+import com.extrawest.ocpi.model.dto.AuthorizationInfoDto;
+import com.extrawest.ocpi.model.dto.LocationReferencesDto;
+import com.extrawest.ocpi.model.dto.TokenDto;
 import com.extrawest.ocpi.model.enums.AllowedType;
 import com.extrawest.ocpi.model.enums.TokenType;
 import com.extrawest.ocpi.service.EMSPTokenService;
@@ -34,7 +34,7 @@ public class EMSPTokenServiceImpl implements EMSPTokenService {
     private final MongoTemplate mongoTemplate;
 
     @Override
-    public List<TokenDTO> getToken(LocalDateTime dateFrom, LocalDateTime dateTo, Integer offset, Integer limit) {
+    public List<TokenDto> getToken(LocalDateTime dateFrom, LocalDateTime dateTo, Integer offset, Integer limit) {
         Query query = new Query();
 
         Criteria criteria = new Criteria();
@@ -53,8 +53,7 @@ public class EMSPTokenServiceImpl implements EMSPTokenService {
         query.addCriteria(criteria);
 
         List<TokenModel> tokenModels = mongoTemplate.find(query, TokenModel.class);
-        List<TokenDTO> dtos = tokenModels.stream().map(model -> tokenMapper.toDto(model)).collect(Collectors.toList());
-        return dtos;
+        return tokenModels.stream().map(tokenMapper::toDto).collect(Collectors.toList());
     }
 
 
@@ -72,12 +71,11 @@ public class EMSPTokenServiceImpl implements EMSPTokenService {
 
         query.addCriteria(criteria);
 
-        long count = mongoTemplate.count(query, TokenModel.class);
-        return count;
+        return mongoTemplate.count(query, TokenModel.class);
     }
 
     @Override
-    public AuthorizationInfo postToken(String tokenUid, String tokenType, LocationReferences locationReferences) {
+    public AuthorizationInfoDto postToken(String tokenUid, String tokenType, LocationReferencesDto locationReferences) {
         if ((TokenType.RFID.value().equals(tokenType) || Strings.isBlank(tokenType)) && locationReferences == null) {
             throw new NotEnoughInformationException("To authorize RFID token please provide Location References");
         }
@@ -101,8 +99,8 @@ public class EMSPTokenServiceImpl implements EMSPTokenService {
         }
 
         //TODO:: implement authorization logic
-        AuthorizationInfo authorizationInfo = new AuthorizationInfo();
-        TokenDTO tokenDTO = tokenMapper.toDto(tokenModels);
+        AuthorizationInfoDto authorizationInfo = new AuthorizationInfoDto();
+        TokenDto tokenDTO = tokenMapper.toDto(tokenModels);
         authorizationInfo.setToken(tokenDTO);
         if (locationReferences != null) {
             authorizationInfo.setLocation(locationReferences);

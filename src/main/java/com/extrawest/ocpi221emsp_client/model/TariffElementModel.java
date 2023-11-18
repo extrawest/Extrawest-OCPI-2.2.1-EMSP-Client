@@ -1,6 +1,6 @@
 package com.extrawest.ocpi221emsp_client.model;
 
-import com.extrawest.ocpi.model.vo.TariffRestrictions;
+import com.extrawest.ocpi.model.domain.TariffRestrictions;
 import lombok.*;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor
-public class TariffElement {
-    private List<PriceComponent> priceComponents;
+public class TariffElementModel {
+    private List<PriceComponentModel> priceComponents;
     private TariffRestrictions restrictions;
 }
