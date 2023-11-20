@@ -53,7 +53,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         try {
             String authHeader = request.getHeader("Authorization");
             if (authHeader == null || !authHeader.startsWith("Token ")) {
-                throw new ForbiddenException("Header has no token");
+//                throw new ForbiddenException("Header has no token");
+                filterChain.doFilter(request, response);
+                return;
             }
 
             String jwt = extractJwtToken(authHeader);

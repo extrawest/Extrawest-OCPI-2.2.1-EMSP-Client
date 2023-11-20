@@ -27,7 +27,7 @@ public class SecurityChain {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/admin-panel").permitAll()
+                .requestMatchers("/admin-panel", "/swagger-ui").permitAll()
                 .requestMatchers("/emsp/api/versions").permitAll()
                 .requestMatchers("/emsp/api/versions/details**").permitAll()
                 .requestMatchers("/emsp/api/2.2.1/credentials").permitAll()
