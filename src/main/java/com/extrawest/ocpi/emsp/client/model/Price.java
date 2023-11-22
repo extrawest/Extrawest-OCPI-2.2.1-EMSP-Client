@@ -26,13 +26,12 @@ import java.util.Objects;
         Price.JSON_PROPERTY_EXCL_VAT,
         Price.JSON_PROPERTY_INCL_VAT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class Price {
-  public static final String JSON_PROPERTY_EXCL_VAT = "exclVat";
-  private Float exclVat;
-
-  public static final String JSON_PROPERTY_INCL_VAT = "inclVat";
-  private Float inclVat;
+    public static final String JSON_PROPERTY_EXCL_VAT = "excl_vat";
+    public static final String JSON_PROPERTY_INCL_VAT = "incl_vat";
+    private Float exclVat;
+    private Float inclVat;
 
   public Price() {
   }
@@ -47,17 +46,17 @@ public class Price {
    * Get exclVat
    * @return exclVat
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXCL_VAT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_EXCL_VAT)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Float getExclVat() {
     return exclVat;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EXCL_VAT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_EXCL_VAT)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setExclVat(Float exclVat) {
     this.exclVat = exclVat;
   }
@@ -73,17 +72,17 @@ public class Price {
    * Get inclVat
    * @return inclVat
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_INCL_VAT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_INCL_VAT)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Float getInclVat() {
     return inclVat;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_INCL_VAT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_INCL_VAT)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setInclVat(Float inclVat) {
     this.inclVat = inclVat;
   }

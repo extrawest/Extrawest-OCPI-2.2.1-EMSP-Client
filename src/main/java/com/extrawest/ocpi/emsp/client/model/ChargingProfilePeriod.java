@@ -26,7 +26,7 @@ import java.util.Objects;
         ChargingProfilePeriod.JSON_PROPERTY_START_PERIOD,
         ChargingProfilePeriod.JSON_PROPERTY_LIMIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class ChargingProfilePeriod {
   public static final String JSON_PROPERTY_START_PERIOD = "start_period";
   private Integer startPeriod;
@@ -47,17 +47,17 @@ public class ChargingProfilePeriod {
    * Get startPeriod
    * @return startPeriod
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_START_PERIOD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_START_PERIOD)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getStartPeriod() {
     return startPeriod;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_START_PERIOD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_START_PERIOD)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStartPeriod(Integer startPeriod) {
     this.startPeriod = startPeriod;
   }
@@ -73,17 +73,17 @@ public class ChargingProfilePeriod {
    * Get limit
    * @return limit
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LIMIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_LIMIT)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Float getLimit() {
     return limit;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LIMIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_LIMIT)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLimit(Float limit) {
     this.limit = limit;
   }

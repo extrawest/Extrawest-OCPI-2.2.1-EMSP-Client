@@ -24,8 +24,7 @@ import java.util.Objects;
  * Connector
  */
 @JsonPropertyOrder({
-  Connector.JSON_PROPERTY_URL,
-  Connector.JSON_PROPERTY_ID,
+        Connector.JSON_PROPERTY_ID,
         Connector.JSON_PROPERTY_STANDARD,
         Connector.JSON_PROPERTY_FORMAT,
         Connector.JSON_PROPERTY_POWER_TYPE,
@@ -36,11 +35,8 @@ import java.util.Objects;
         Connector.JSON_PROPERTY_TERMS_AND_CONDITIONS,
         Connector.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class Connector {
-  public static final String JSON_PROPERTY_URL = "url";
-  private String url;
-
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
 
@@ -261,32 +257,6 @@ public class Connector {
   public Connector() {
   }
 
-  public Connector url(String url) {
-    
-    this.url = url;
-    return this;
-  }
-
-   /**
-   * Get url
-   * @return url
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getUrl() {
-    return url;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUrl(String url) {
-    this.url = url;
-  }
-
-
   public Connector id(String id) {
     
     this.id = id;
@@ -297,17 +267,17 @@ public class Connector {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_ID)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
     return id;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_ID)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
   }
@@ -323,17 +293,17 @@ public class Connector {
    * Get standard
    * @return standard
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STANDARD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_STANDARD)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public StandardEnum getStandard() {
     return standard;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STANDARD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_STANDARD)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStandard(StandardEnum standard) {
     this.standard = standard;
   }
@@ -349,17 +319,17 @@ public class Connector {
    * Get format
    * @return format
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_FORMAT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_FORMAT)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public FormatEnum getFormat() {
     return format;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FORMAT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_FORMAT)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setFormat(FormatEnum format) {
     this.format = format;
   }
@@ -375,17 +345,17 @@ public class Connector {
    * Get powerType
    * @return powerType
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_POWER_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_POWER_TYPE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public PowerTypeEnum getPowerType() {
     return powerType;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_POWER_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_POWER_TYPE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPowerType(PowerTypeEnum powerType) {
     this.powerType = powerType;
   }
@@ -401,17 +371,17 @@ public class Connector {
    * Get maxVoltage
    * @return maxVoltage
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MAX_VOLTAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_MAX_VOLTAGE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getMaxVoltage() {
     return maxVoltage;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MAX_VOLTAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_MAX_VOLTAGE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMaxVoltage(Integer maxVoltage) {
     this.maxVoltage = maxVoltage;
   }
@@ -427,17 +397,17 @@ public class Connector {
    * Get maxAmperage
    * @return maxAmperage
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MAX_AMPERAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_MAX_AMPERAGE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getMaxAmperage() {
     return maxAmperage;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_MAX_AMPERAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_MAX_AMPERAGE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMaxAmperage(Integer maxAmperage) {
     this.maxAmperage = maxAmperage;
   }
@@ -539,17 +509,17 @@ public class Connector {
    * Get lastUpdated
    * @return lastUpdated
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public OffsetDateTime getLastUpdated() {
     return lastUpdated;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLastUpdated(OffsetDateTime lastUpdated) {
     this.lastUpdated = lastUpdated;
   }
@@ -563,29 +533,27 @@ public class Connector {
       return false;
     }
     Connector connector = (Connector) o;
-    return Objects.equals(this.url, connector.url) &&
-        Objects.equals(this.id, connector.id) &&
-        Objects.equals(this.standard, connector.standard) &&
-        Objects.equals(this.format, connector.format) &&
-        Objects.equals(this.powerType, connector.powerType) &&
-        Objects.equals(this.maxVoltage, connector.maxVoltage) &&
-        Objects.equals(this.maxAmperage, connector.maxAmperage) &&
-        Objects.equals(this.maxElectricPower, connector.maxElectricPower) &&
-        Objects.equals(this.tariffIds, connector.tariffIds) &&
-        Objects.equals(this.termsAndConditions, connector.termsAndConditions) &&
-        Objects.equals(this.lastUpdated, connector.lastUpdated);
+      return Objects.equals(this.id, connector.id) &&
+              Objects.equals(this.standard, connector.standard) &&
+              Objects.equals(this.format, connector.format) &&
+              Objects.equals(this.powerType, connector.powerType) &&
+              Objects.equals(this.maxVoltage, connector.maxVoltage) &&
+              Objects.equals(this.maxAmperage, connector.maxAmperage) &&
+              Objects.equals(this.maxElectricPower, connector.maxElectricPower) &&
+              Objects.equals(this.tariffIds, connector.tariffIds) &&
+              Objects.equals(this.termsAndConditions, connector.termsAndConditions) &&
+              Objects.equals(this.lastUpdated, connector.lastUpdated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, id, standard, format, powerType, maxVoltage, maxAmperage, maxElectricPower, tariffIds, termsAndConditions, lastUpdated);
+      return Objects.hash(id, standard, format, powerType, maxVoltage, maxAmperage, maxElectricPower, tariffIds, termsAndConditions, lastUpdated);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Connector {\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");

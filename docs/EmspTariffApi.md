@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost:8080*
 
 ## deleteTariff
 
-> deleteTariff(countryCode, partyId, tariffId)
+> ResponseFormatTariffDto deleteTariff(countryCode, partyId, tariffId)
 
 
 
@@ -36,7 +36,8 @@ public class Example {
         String partyId = "partyId_example"; // String | 
         String tariffId = "tariffId_example"; // String | 
         try {
-            apiInstance.deleteTariff(countryCode, partyId, tariffId);
+            ResponseFormatTariffDto result = apiInstance.deleteTariff(countryCode, partyId, tariffId);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspTariffApi#deleteTariff");
             System.err.println("Status code: " + e.getCode());
@@ -59,7 +60,7 @@ public class Example {
 
 ### Return type
 
-null (empty response body)
+[**ResponseFormatTariffDto**](ResponseFormatTariffDto.md)
 
 ### Authorization
 
@@ -68,7 +69,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: */*
 
 
 ### HTTP response details
@@ -79,7 +80,7 @@ No authorization required
 
 ## getTariff
 
-> TariffDTO getTariff(countryCode, partyId, tariffId)
+> ResponseFormatTariffDto getTariff(countryCode, partyId, tariffId)
 
 
 
@@ -103,7 +104,7 @@ public class Example {
         String partyId = "partyId_example"; // String | 
         String tariffId = "tariffId_example"; // String | 
         try {
-            TariffDTO result = apiInstance.getTariff(countryCode, partyId, tariffId);
+            ResponseFormatTariffDto result = apiInstance.getTariff(countryCode, partyId, tariffId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspTariffApi#getTariff");
@@ -127,7 +128,7 @@ public class Example {
 
 ### Return type
 
-[**TariffDTO**](TariffDTO.md)
+[**ResponseFormatTariffDto**](ResponseFormatTariffDto.md)
 
 ### Authorization
 
@@ -136,7 +137,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: */*
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -147,7 +148,7 @@ No authorization required
 
 ## saveTariff
 
-> saveTariff(countryCode, partyId, tariffId, tariffDTO)
+> ResponseFormatTariffDto saveTariff(countryCode, partyId, tariffId, tariffDto)
 
 
 
@@ -170,9 +171,10 @@ public class Example {
         String countryCode = "countryCode_example"; // String | 
         String partyId = "partyId_example"; // String | 
         String tariffId = "tariffId_example"; // String | 
-        TariffDTO tariffDTO = new TariffDTO(); // TariffDTO | 
+        TariffDto tariffDto = new TariffDto(); // TariffDto | 
         try {
-            apiInstance.saveTariff(countryCode, partyId, tariffId, tariffDTO);
+            ResponseFormatTariffDto result = apiInstance.saveTariff(countryCode, partyId, tariffId, tariffDto);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspTariffApi#saveTariff");
             System.err.println("Status code: " + e.getCode());
@@ -192,11 +194,11 @@ public class Example {
 | **countryCode** | **String**|  | |
 | **partyId** | **String**|  | |
 | **tariffId** | **String**|  | |
-| **tariffDTO** | [**TariffDTO**](TariffDTO.md)|  | |
+| **tariffDto** | [**TariffDto**](TariffDto.md)|  | |
 
 ### Return type
 
-null (empty response body)
+[**ResponseFormatTariffDto**](ResponseFormatTariffDto.md)
 
 ### Authorization
 
@@ -205,7 +207,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: */*
 
 
 ### HTTP response details

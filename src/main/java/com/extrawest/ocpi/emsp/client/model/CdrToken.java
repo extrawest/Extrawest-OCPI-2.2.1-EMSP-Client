@@ -27,7 +27,7 @@ import java.util.Objects;
         CdrToken.JSON_PROPERTY_TYPE,
         CdrToken.JSON_PROPERTY_CONTRACT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class CdrToken {
   public static final String JSON_PROPERTY_COUNTRY_CODE = "country_code";
   private String countryCode;
@@ -96,17 +96,17 @@ public class CdrToken {
    * Get countryCode
    * @return countryCode
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCountryCode() {
     return countryCode;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCountryCode(String countryCode) {
     this.countryCode = countryCode;
   }
@@ -122,17 +122,17 @@ public class CdrToken {
    * Get partyId
    * @return partyId
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PARTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_PARTY_ID)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPartyId() {
     return partyId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PARTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_PARTY_ID)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPartyId(String partyId) {
     this.partyId = partyId;
   }
@@ -148,17 +148,17 @@ public class CdrToken {
    * Get uid
    * @return uid
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_UID)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUid() {
     return uid;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_UID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_UID)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUid(String uid) {
     this.uid = uid;
   }
@@ -174,17 +174,17 @@ public class CdrToken {
    * Get type
    * @return type
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_TYPE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public TypeEnum getType() {
     return type;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_TYPE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setType(TypeEnum type) {
     this.type = type;
   }
@@ -200,17 +200,17 @@ public class CdrToken {
    * Get contractId
    * @return contractId
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getContractId() {
     return contractId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_CONTRACT_ID)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setContractId(String contractId) {
     this.contractId = contractId;
   }

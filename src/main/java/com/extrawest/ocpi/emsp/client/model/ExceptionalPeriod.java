@@ -27,7 +27,7 @@ import java.util.Objects;
         ExceptionalPeriod.JSON_PROPERTY_PERIOD_BEGIN,
         ExceptionalPeriod.JSON_PROPERTY_PERIOD_END
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class ExceptionalPeriod {
   public static final String JSON_PROPERTY_PERIOD_BEGIN = "period_begin";
   private OffsetDateTime periodBegin;
@@ -48,17 +48,17 @@ public class ExceptionalPeriod {
    * Get periodBegin
    * @return periodBegin
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public OffsetDateTime getPeriodBegin() {
     return periodBegin;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPeriodBegin(OffsetDateTime periodBegin) {
     this.periodBegin = periodBegin;
   }
@@ -74,17 +74,17 @@ public class ExceptionalPeriod {
    * Get periodEnd
    * @return periodEnd
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PERIOD_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_PERIOD_END)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public OffsetDateTime getPeriodEnd() {
     return periodEnd;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PERIOD_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_PERIOD_END)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPeriodEnd(OffsetDateTime periodEnd) {
     this.periodEnd = periodEnd;
   }

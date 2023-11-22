@@ -24,10 +24,10 @@ import java.util.Objects;
  * EVSE
  */
 @JsonPropertyOrder({
-  EVSE.JSON_PROPERTY_UID,
-  EVSE.JSON_PROPERTY_EVSE_ID,
-  EVSE.JSON_PROPERTY_STATUS,
-  EVSE.JSON_PROPERTY_STATUS_SCHEDULE,
+        EVSE.JSON_PROPERTY_UID,
+        EVSE.JSON_PROPERTY_EVSE_ID,
+        EVSE.JSON_PROPERTY_STATUS,
+        EVSE.JSON_PROPERTY_STATUS_SCHEDULE,
         EVSE.JSON_PROPERTY_CAPABILITIES,
         EVSE.JSON_PROPERTY_CONNECTORS,
         EVSE.JSON_PROPERTY_FLOOR_LEVEL,
@@ -38,7 +38,7 @@ import java.util.Objects;
         EVSE.JSON_PROPERTY_IMAGES,
         EVSE.JSON_PROPERTY_LAST_UPDATED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class EVSE {
   public static final String JSON_PROPERTY_UID = "uid";
   private String uid;
@@ -161,8 +161,8 @@ public class EVSE {
   public static final String JSON_PROPERTY_CAPABILITIES = "capabilities";
   private List<CapabilitiesEnum> capabilities;
 
-  public static final String JSON_PROPERTY_CONNECTORS = "connectors";
-  private List<Connector> connectors;
+    public static final String JSON_PROPERTY_CONNECTORS = "connectors";
+    private List<Connector> connectors = new ArrayList<>();
 
   public static final String JSON_PROPERTY_FLOOR_LEVEL = "floor_level";
   private String floorLevel;
@@ -239,17 +239,17 @@ public class EVSE {
    * Get uid
    * @return uid
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_UID)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUid() {
     return uid;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_UID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_UID)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUid(String uid) {
     this.uid = uid;
   }
@@ -291,17 +291,17 @@ public class EVSE {
    * Get status
    * @return status
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_STATUS)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public StatusEnum getStatus() {
     return status;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_STATUS)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStatus(StatusEnum status) {
     this.status = status;
   }
@@ -393,17 +393,17 @@ public class EVSE {
    * Get connectors
    * @return connectors
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONNECTORS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_CONNECTORS)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<Connector> getConnectors() {
     return connectors;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CONNECTORS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_CONNECTORS)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setConnectors(List<Connector> connectors) {
     this.connectors = connectors;
   }
@@ -599,17 +599,17 @@ public class EVSE {
    * Get lastUpdated
    * @return lastUpdated
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public OffsetDateTime getLastUpdated() {
     return lastUpdated;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_LAST_UPDATED)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLastUpdated(OffsetDateTime lastUpdated) {
     this.lastUpdated = lastUpdated;
   }

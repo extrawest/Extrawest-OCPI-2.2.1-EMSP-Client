@@ -1,15 +1,16 @@
 
 
-# SessionDTO
+# SessionDto
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**id** | **String** |  |  |
 |**countryCode** | **String** |  |  |
 |**partyId** | **String** |  |  |
-|**id** | **String** |  |  |
+|**lastUpdated** | **OffsetDateTime** |  |  |
 |**startDateTime** | **OffsetDateTime** |  |  |
 |**endDateTime** | **OffsetDateTime** |  |  [optional] |
 |**kwh** | **Float** |  |  |
@@ -24,7 +25,6 @@
 |**chargingPeriods** | [**List&lt;ChargingPeriod&gt;**](ChargingPeriod.md) |  |  [optional] |
 |**totalCost** | [**Price**](Price.md) |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
-|**lastUpdated** | **OffsetDateTime** |  |  |
 
 
 

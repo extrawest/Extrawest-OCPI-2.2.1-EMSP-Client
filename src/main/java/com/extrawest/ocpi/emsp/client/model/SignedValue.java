@@ -23,16 +23,12 @@ import java.util.Objects;
  * SignedValue
  */
 @JsonPropertyOrder({
-        SignedValue.JSON_PROPERTY_PLAIN_DAT,
         SignedValue.JSON_PROPERTY_NATURE,
         SignedValue.JSON_PROPERTY_PLAIN_DATA,
         SignedValue.JSON_PROPERTY_SIGNED_DATA
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class SignedValue {
-  public static final String JSON_PROPERTY_PLAIN_DAT = "plainDat";
-  private String plainDat;
-
   public static final String JSON_PROPERTY_NATURE = "nature";
   private String nature;
 
@@ -45,32 +41,6 @@ public class SignedValue {
   public SignedValue() {
   }
 
-  public SignedValue plainDat(String plainDat) {
-    
-    this.plainDat = plainDat;
-    return this;
-  }
-
-   /**
-   * Get plainDat
-   * @return plainDat
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PLAIN_DAT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public String getPlainDat() {
-    return plainDat;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_PLAIN_DAT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPlainDat(String plainDat) {
-    this.plainDat = plainDat;
-  }
-
-
   public SignedValue nature(String nature) {
     
     this.nature = nature;
@@ -81,17 +51,17 @@ public class SignedValue {
    * Get nature
    * @return nature
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NATURE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_NATURE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getNature() {
     return nature;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_NATURE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_NATURE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setNature(String nature) {
     this.nature = nature;
   }
@@ -107,17 +77,17 @@ public class SignedValue {
    * Get plainData
    * @return plainData
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PLAIN_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_PLAIN_DATA)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPlainData() {
     return plainData;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PLAIN_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_PLAIN_DATA)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPlainData(String plainData) {
     this.plainData = plainData;
   }
@@ -133,17 +103,17 @@ public class SignedValue {
    * Get signedData
    * @return signedData
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SIGNED_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_SIGNED_DATA)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getSignedData() {
     return signedData;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SIGNED_DATA)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_SIGNED_DATA)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSignedData(String signedData) {
     this.signedData = signedData;
   }
@@ -157,22 +127,20 @@ public class SignedValue {
       return false;
     }
     SignedValue signedValue = (SignedValue) o;
-    return Objects.equals(this.plainDat, signedValue.plainDat) &&
-        Objects.equals(this.nature, signedValue.nature) &&
-        Objects.equals(this.plainData, signedValue.plainData) &&
-        Objects.equals(this.signedData, signedValue.signedData);
+      return Objects.equals(this.nature, signedValue.nature) &&
+              Objects.equals(this.plainData, signedValue.plainData) &&
+              Objects.equals(this.signedData, signedValue.signedData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(plainDat, nature, plainData, signedData);
+      return Objects.hash(nature, plainData, signedData);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignedValue {\n");
-    sb.append("    plainDat: ").append(toIndentedString(plainDat)).append("\n");
     sb.append("    nature: ").append(toIndentedString(nature)).append("\n");
     sb.append("    plainData: ").append(toIndentedString(plainData)).append("\n");
     sb.append("    signedData: ").append(toIndentedString(signedData)).append("\n");

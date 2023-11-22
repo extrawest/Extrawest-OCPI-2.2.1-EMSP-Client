@@ -24,7 +24,7 @@ import java.util.Objects;
         CdrDimension.JSON_PROPERTY_TYPE,
         CdrDimension.JSON_PROPERTY_VOLUME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class CdrDimension {
   /**
    * Gets or Sets type
@@ -102,17 +102,17 @@ public class CdrDimension {
    * Get type
    * @return type
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_TYPE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public TypeEnum getType() {
     return type;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_TYPE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setType(TypeEnum type) {
     this.type = type;
   }
@@ -128,17 +128,17 @@ public class CdrDimension {
    * Get volume
    * @return volume
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VOLUME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_VOLUME)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Float getVolume() {
     return volume;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_VOLUME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_VOLUME)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setVolume(Float volume) {
     this.volume = volume;
   }

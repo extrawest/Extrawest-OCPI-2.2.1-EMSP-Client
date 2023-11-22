@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getCdr**](EmspCdrApi.md#getCdr) | **GET** /emsp/api/2.2.1/cdr/{id} |  |
+| [**getCdr**](EmspCdrApi.md#getCdr) | **GET** /emsp/api/2.2.1/cdr |  |
 | [**postCdr**](EmspCdrApi.md#postCdr) | **POST** /emsp/api/2.2.1/cdr |  |
 
 
 
 ## getCdr
 
-> CdrDTO getCdr(id)
+> ResponseFormatCDRDto getCdr(id)
 
 
 
@@ -33,7 +33,7 @@ public class Example {
         EmspCdrApi apiInstance = new EmspCdrApi(defaultClient);
         String id = "id_example"; // String | 
         try {
-            CdrDTO result = apiInstance.getCdr(id);
+            ResponseFormatCDRDto result = apiInstance.getCdr(id);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspCdrApi#getCdr");
@@ -55,7 +55,7 @@ public class Example {
 
 ### Return type
 
-[**CdrDTO**](CdrDTO.md)
+[**ResponseFormatCDRDto**](ResponseFormatCDRDto.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ No authorization required
 
 ## postCdr
 
-> String postCdr(cdrDTO)
+> ResponseFormatString postCdr(cdRDto)
 
 
 
@@ -95,9 +95,9 @@ public class Example {
         defaultClient.setBasePath("http://localhost:8080");
 
         EmspCdrApi apiInstance = new EmspCdrApi(defaultClient);
-        CdrDTO cdrDTO = new CdrDTO(); // CdrDTO | 
+        CDRDto cdRDto = new CDRDto(); // CDRDto | 
         try {
-            String result = apiInstance.postCdr(cdrDTO);
+            ResponseFormatString result = apiInstance.postCdr(cdRDto);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspCdrApi#postCdr");
@@ -115,11 +115,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **cdrDTO** | [**CdrDTO**](CdrDTO.md)|  | |
+| **cdRDto** | [**CDRDto**](CDRDto.md)|  | |
 
 ### Return type
 
-**String**
+[**ResponseFormatString**](ResponseFormatString.md)
 
 ### Authorization
 

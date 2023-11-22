@@ -31,7 +31,7 @@ import java.util.Objects;
         SignedData.JSON_PROPERTY_SIGNED_VALUES,
         SignedData.JSON_PROPERTY_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class SignedData {
   public static final String JSON_PROPERTY_ENCODING_METHOD = "encoding_method";
   private String encodingMethod;
@@ -42,8 +42,8 @@ public class SignedData {
   public static final String JSON_PROPERTY_PUBLIC_KEY = "public_key";
   private String publicKey;
 
-  public static final String JSON_PROPERTY_SIGNED_VALUES = "signed_values";
-  private List<SignedValue> signedValues;
+    public static final String JSON_PROPERTY_SIGNED_VALUES = "signed_values";
+    private List<SignedValue> signedValues = new ArrayList<>();
 
   public static final String JSON_PROPERTY_URL = "url";
   private String url;
@@ -61,17 +61,17 @@ public class SignedData {
    * Get encodingMethod
    * @return encodingMethod
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ENCODING_METHOD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_ENCODING_METHOD)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getEncodingMethod() {
     return encodingMethod;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ENCODING_METHOD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_ENCODING_METHOD)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setEncodingMethod(String encodingMethod) {
     this.encodingMethod = encodingMethod;
   }
@@ -147,17 +147,17 @@ public class SignedData {
    * Get signedValues
    * @return signedValues
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SIGNED_VALUES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_SIGNED_VALUES)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<SignedValue> getSignedValues() {
     return signedValues;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SIGNED_VALUES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_SIGNED_VALUES)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSignedValues(List<SignedValue> signedValues) {
     this.signedValues = signedValues;
   }

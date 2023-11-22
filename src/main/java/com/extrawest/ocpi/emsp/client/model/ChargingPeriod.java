@@ -30,13 +30,13 @@ import java.util.Objects;
         ChargingPeriod.JSON_PROPERTY_DIMENSIONS,
         ChargingPeriod.JSON_PROPERTY_TARIFF_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class ChargingPeriod {
   public static final String JSON_PROPERTY_START_DATE_TIME = "start_date_time";
   private OffsetDateTime startDateTime;
 
-  public static final String JSON_PROPERTY_DIMENSIONS = "dimensions";
-  private List<CdrDimension> dimensions;
+    public static final String JSON_PROPERTY_DIMENSIONS = "dimensions";
+    private List<CdrDimension> dimensions = new ArrayList<>();
 
   public static final String JSON_PROPERTY_TARIFF_ID = "tariff_id";
   private String tariffId;
@@ -54,17 +54,17 @@ public class ChargingPeriod {
    * Get startDateTime
    * @return startDateTime
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public OffsetDateTime getStartDateTime() {
     return startDateTime;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_START_DATE_TIME)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStartDateTime(OffsetDateTime startDateTime) {
     this.startDateTime = startDateTime;
   }
@@ -88,17 +88,17 @@ public class ChargingPeriod {
    * Get dimensions
    * @return dimensions
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DIMENSIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_DIMENSIONS)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<CdrDimension> getDimensions() {
     return dimensions;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_DIMENSIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_DIMENSIONS)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDimensions(List<CdrDimension> dimensions) {
     this.dimensions = dimensions;
   }

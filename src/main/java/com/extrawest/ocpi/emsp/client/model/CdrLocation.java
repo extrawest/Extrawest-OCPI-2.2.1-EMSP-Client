@@ -21,11 +21,11 @@ import java.util.Objects;
  * CdrLocation
  */
 @JsonPropertyOrder({
-  CdrLocation.JSON_PROPERTY_ID,
-  CdrLocation.JSON_PROPERTY_NAME,
-  CdrLocation.JSON_PROPERTY_ADDRESS,
-  CdrLocation.JSON_PROPERTY_CITY,
-  CdrLocation.JSON_PROPERTY_POSTAL_CODE,
+        CdrLocation.JSON_PROPERTY_ID,
+        CdrLocation.JSON_PROPERTY_NAME,
+        CdrLocation.JSON_PROPERTY_ADDRESS,
+        CdrLocation.JSON_PROPERTY_CITY,
+        CdrLocation.JSON_PROPERTY_POSTAL_CODE,
         CdrLocation.JSON_PROPERTY_STATE,
         CdrLocation.JSON_PROPERTY_COUNTRY,
         CdrLocation.JSON_PROPERTY_COORDINATES,
@@ -36,7 +36,7 @@ import java.util.Objects;
         CdrLocation.JSON_PROPERTY_CONNECTOR_FORMAT,
         CdrLocation.JSON_PROPERTY_CONNECTOR_POWER_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class CdrLocation {
   public static final String JSON_PROPERTY_ID = "id";
   private String id;
@@ -280,17 +280,17 @@ public class CdrLocation {
    * Get id
    * @return id
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_ID)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getId() {
     return id;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_ID)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
   }
@@ -332,17 +332,17 @@ public class CdrLocation {
    * Get address
    * @return address
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_ADDRESS)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getAddress() {
     return address;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ADDRESS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_ADDRESS)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAddress(String address) {
     this.address = address;
   }
@@ -358,17 +358,17 @@ public class CdrLocation {
    * Get city
    * @return city
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_CITY)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCity() {
     return city;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_CITY)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCity(String city) {
     this.city = city;
   }
@@ -436,17 +436,17 @@ public class CdrLocation {
    * Get country
    * @return country
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_COUNTRY)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCountry() {
     return country;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_COUNTRY)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCountry(String country) {
     this.country = country;
   }
@@ -462,17 +462,17 @@ public class CdrLocation {
    * Get coordinates
    * @return coordinates
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COORDINATES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_COORDINATES)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public GeoLocation getCoordinates() {
     return coordinates;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COORDINATES)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_COORDINATES)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCoordinates(GeoLocation coordinates) {
     this.coordinates = coordinates;
   }
@@ -488,17 +488,17 @@ public class CdrLocation {
    * Get evseUid
    * @return evseUid
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EVSE_UID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_EVSE_UID)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getEvseUid() {
     return evseUid;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EVSE_UID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_EVSE_UID)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setEvseUid(String evseUid) {
     this.evseUid = evseUid;
   }
@@ -514,17 +514,17 @@ public class CdrLocation {
    * Get evseId
    * @return evseId
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EVSE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_EVSE_ID)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getEvseId() {
     return evseId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_EVSE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_EVSE_ID)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setEvseId(String evseId) {
     this.evseId = evseId;
   }
@@ -540,17 +540,17 @@ public class CdrLocation {
    * Get connectorId
    * @return connectorId
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CONNECTOR_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_CONNECTOR_ID)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getConnectorId() {
     return connectorId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CONNECTOR_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_CONNECTOR_ID)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setConnectorId(String connectorId) {
     this.connectorId = connectorId;
   }

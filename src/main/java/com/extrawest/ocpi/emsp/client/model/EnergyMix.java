@@ -25,65 +25,36 @@ import java.util.Objects;
  * EnergyMix
  */
 @JsonPropertyOrder({
-        EnergyMix.JSON_PROPERTY_IS_GREEN_ENERGY,
         EnergyMix.JSON_PROPERTY_ENERGY_SOURCES,
         EnergyMix.JSON_PROPERTY_ENVIRON_IMPACT,
         EnergyMix.JSON_PROPERTY_SUPPLIER_NAME,
-        EnergyMix.JSON_PROPERTY_ENERGY_PRODUCT_NAME
+        EnergyMix.JSON_PROPERTY_ENERGY_PRODUCT_NAME,
+        EnergyMix.JSON_PROPERTY_IS_GREEN_ENERGY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class EnergyMix {
-  public static final String JSON_PROPERTY_IS_GREEN_ENERGY = "is_green_energy";
-  private Boolean isGreenEnergy;
-
   public static final String JSON_PROPERTY_ENERGY_SOURCES = "energy_sources";
   private List<EnergySource> energySources;
 
-  public static final String JSON_PROPERTY_ENVIRON_IMPACT = "environ_impact";
-  private List<EnvironmentalImpact> environImpact;
+    public static final String JSON_PROPERTY_ENVIRON_IMPACT = "environ_impact";
+    public static final String JSON_PROPERTY_SUPPLIER_NAME = "supplier_name";
+    public static final String JSON_PROPERTY_ENERGY_PRODUCT_NAME = "energy_product_name";
+    public static final String JSON_PROPERTY_IS_GREEN_ENERGY = "is_green_energy";
+    private List<EnvironmentalImpact> environImpact;
+    private String supplierName;
+    private String energyProductName;
+    private Boolean isGreenEnergy;
 
-  public static final String JSON_PROPERTY_SUPPLIER_NAME = "supplier_name";
-  private String supplierName;
+    public EnergyMix() {
+    }
 
-  public static final String JSON_PROPERTY_ENERGY_PRODUCT_NAME = "energy_product_name";
-  private String energyProductName;
+    public EnergyMix energySources(List<EnergySource> energySources) {
 
-  public EnergyMix() {
-  }
+        this.energySources = energySources;
+        return this;
+    }
 
-  public EnergyMix isGreenEnergy(Boolean isGreenEnergy) {
-    
-    this.isGreenEnergy = isGreenEnergy;
-    return this;
-  }
-
-   /**
-   * Get isGreenEnergy
-   * @return isGreenEnergy
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IS_GREEN_ENERGY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public Boolean getIsGreenEnergy() {
-    return isGreenEnergy;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_IS_GREEN_ENERGY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setIsGreenEnergy(Boolean isGreenEnergy) {
-    this.isGreenEnergy = isGreenEnergy;
-  }
-
-
-  public EnergyMix energySources(List<EnergySource> energySources) {
-    
-    this.energySources = energySources;
-    return this;
-  }
-
-  public EnergyMix addEnergySourcesItem(EnergySource energySourcesItem) {
+    public EnergyMix addEnergySourcesItem(EnergySource energySourcesItem) {
     if (this.energySources == null) {
       this.energySources = new ArrayList<>();
     }
@@ -186,47 +157,74 @@ public class EnergyMix {
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
 
   public String getEnergyProductName() {
-    return energyProductName;
+      return energyProductName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ENERGY_PRODUCT_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEnergyProductName(String energyProductName) {
-    this.energyProductName = energyProductName;
-  }
+    @JsonProperty(JSON_PROPERTY_ENERGY_PRODUCT_NAME)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    public void setEnergyProductName(String energyProductName) {
+        this.energyProductName = energyProductName;
+    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+
+    public EnergyMix isGreenEnergy(Boolean isGreenEnergy) {
+
+        this.isGreenEnergy = isGreenEnergy;
+        return this;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get isGreenEnergy
+     *
+     * @return isGreenEnergy
+     **/
+    @javax.annotation.Nonnull
+    @JsonProperty(JSON_PROPERTY_IS_GREEN_ENERGY)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+    public Boolean getIsGreenEnergy() {
+        return isGreenEnergy;
     }
-    EnergyMix energyMix = (EnergyMix) o;
-    return Objects.equals(this.isGreenEnergy, energyMix.isGreenEnergy) &&
-        Objects.equals(this.energySources, energyMix.energySources) &&
-        Objects.equals(this.environImpact, energyMix.environImpact) &&
-        Objects.equals(this.supplierName, energyMix.supplierName) &&
-        Objects.equals(this.energyProductName, energyMix.energyProductName);
+
+
+    @JsonProperty(JSON_PROPERTY_IS_GREEN_ENERGY)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+    public void setIsGreenEnergy(Boolean isGreenEnergy) {
+        this.isGreenEnergy = isGreenEnergy;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        EnergyMix energyMix = (EnergyMix) o;
+        return Objects.equals(this.energySources, energyMix.energySources) &&
+                Objects.equals(this.environImpact, energyMix.environImpact) &&
+                Objects.equals(this.supplierName, energyMix.supplierName) &&
+                Objects.equals(this.energyProductName, energyMix.energyProductName) &&
+                Objects.equals(this.isGreenEnergy, energyMix.isGreenEnergy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isGreenEnergy, energySources, environImpact, supplierName, energyProductName);
+      return Objects.hash(energySources, environImpact, supplierName, energyProductName, isGreenEnergy);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class EnergyMix {\n");
-    sb.append("    isGreenEnergy: ").append(toIndentedString(isGreenEnergy)).append("\n");
     sb.append("    energySources: ").append(toIndentedString(energySources)).append("\n");
     sb.append("    environImpact: ").append(toIndentedString(environImpact)).append("\n");
     sb.append("    supplierName: ").append(toIndentedString(supplierName)).append("\n");
-    sb.append("    energyProductName: ").append(toIndentedString(energyProductName)).append("\n");
-    sb.append("}");
+      sb.append("    energyProductName: ").append(toIndentedString(energyProductName)).append("\n");
+      sb.append("    isGreenEnergy: ").append(toIndentedString(isGreenEnergy)).append("\n");
+      sb.append("}");
     return sb.toString();
   }
 

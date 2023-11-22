@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**postCommand**](EmspCommandsApi.md#postCommand) | **POST** /emsp/api/2.2.1/commands/{commandType}/{uniqueId} |  |
+| [**postCommand**](EmspCommandsApi.md#postCommand) | **POST** /emsp/api/2.2.1/commands/{command}/{uid} |  |
 
 
 
 ## postCommand
 
-> postCommand(commandType, uniqueId, commandResultRequestDTO)
+> postCommand(command, uid, commandResult)
 
 
 
@@ -30,11 +30,11 @@ public class Example {
         defaultClient.setBasePath("http://localhost:8080");
 
         EmspCommandsApi apiInstance = new EmspCommandsApi(defaultClient);
-        String commandType = "CANCEL_RESERVATION"; // String | 
-        String uniqueId = "uniqueId_example"; // String | 
-        CommandResultRequestDTO commandResultRequestDTO = new CommandResultRequestDTO(); // CommandResultRequestDTO | 
+        String command = "CANCEL_RESERVATION"; // String | 
+        String uid = "uid_example"; // String | 
+        CommandResult commandResult = new CommandResult(); // CommandResult | 
         try {
-            apiInstance.postCommand(commandType, uniqueId, commandResultRequestDTO);
+            apiInstance.postCommand(command, uid, commandResult);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspCommandsApi#postCommand");
             System.err.println("Status code: " + e.getCode());
@@ -51,9 +51,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **commandType** | **String**|  | [enum: CANCEL_RESERVATION, RESERVE_NOW, START_SESSION, STOP_SESSION, UNLOCK_CONNECTOR] |
-| **uniqueId** | **String**|  | |
-| **commandResultRequestDTO** | [**CommandResultRequestDTO**](CommandResultRequestDTO.md)|  | |
+| **command** | **String**|  | [enum: CANCEL_RESERVATION, RESERVE_NOW, START_SESSION, STOP_SESSION, UNLOCK_CONNECTOR] |
+| **uid** | **String**|  | |
+| **commandResult** | [**CommandResult**](CommandResult.md)|  | |
 
 ### Return type
 
