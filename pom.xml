@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.extrawest</groupId>
-	<artifactId>Extrawest-OCPI-2.2.1-EMSP-Client</artifactId>
+	<artifactId>extrawest-ocpi-2.2.1-emsp-client</artifactId>
 	<version>2023.11.21-SNAPSHOT</version>
 
 	<name>Extrawest-OCPI-2.2.1-EMSP-Client</name>
