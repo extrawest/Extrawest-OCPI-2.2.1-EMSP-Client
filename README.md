@@ -152,7 +152,6 @@ public class EmspTariffServiceImpl implements  EmspTariffService {
         }
     }
 }
-
 ```
 
 Spring Boot application, where we have tested Extrawest-OCPI-2.2.1-EMSP-Client, has below Spring dependencies. In case of library and your project dependencies versions incompatibility, try to add next spring versions into you projects:
