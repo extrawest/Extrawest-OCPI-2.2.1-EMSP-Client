@@ -24,7 +24,7 @@ import java.util.Objects;
         EnvironmentalImpact.JSON_PROPERTY_CATEGORY,
         EnvironmentalImpact.JSON_PROPERTY_AMOUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class EnvironmentalImpact {
   /**
    * Gets or Sets category
@@ -80,17 +80,17 @@ public class EnvironmentalImpact {
    * Get category
    * @return category
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CATEGORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_CATEGORY)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public CategoryEnum getCategory() {
     return category;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CATEGORY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_CATEGORY)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCategory(CategoryEnum category) {
     this.category = category;
   }
@@ -106,17 +106,17 @@ public class EnvironmentalImpact {
    * Get amount
    * @return amount
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_AMOUNT)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Float getAmount() {
     return amount;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_AMOUNT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_AMOUNT)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setAmount(Float amount) {
     this.amount = amount;
   }

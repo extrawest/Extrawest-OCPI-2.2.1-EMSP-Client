@@ -22,96 +22,82 @@ import java.util.Objects;
  * StatusSchedule
  */
 @JsonPropertyOrder({
+        StatusSchedule.JSON_PROPERTY_STATUS,
         StatusSchedule.JSON_PROPERTY_PERIOD_BEGIN,
-        StatusSchedule.JSON_PROPERTY_PERIOD_END,
-        StatusSchedule.JSON_PROPERTY_STATUS
+        StatusSchedule.JSON_PROPERTY_PERIOD_END
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class StatusSchedule {
-  public static final String JSON_PROPERTY_PERIOD_BEGIN = "period_begin";
-  private OffsetDateTime periodBegin;
-
-  public static final String JSON_PROPERTY_PERIOD_END = "period_end";
-  private OffsetDateTime periodEnd;
-
-  /**
-   * Gets or Sets status
-   */
-  public enum StatusEnum {
-    AVAILABLE("AVAILABLE"),
-    
-    BLOCKED("BLOCKED"),
-    
-    CHARGING("CHARGING"),
-    
-    INOPERATIVE("INOPERATIVE"),
-    
-    OUTOFORDER("OUTOFORDER"),
-    
-    PLANNED("PLANNED"),
-    
-    REMOVED("REMOVED"),
-    
-    RESERVED("RESERVED"),
-    
-    UNKNOWN("UNKNOWN");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
+    public static final String JSON_PROPERTY_STATUS = "status";
+    public static final String JSON_PROPERTY_PERIOD_BEGIN = "period_begin";
+    public static final String JSON_PROPERTY_PERIOD_END = "period_end";
+    private StatusEnum status;
+    private OffsetDateTime periodBegin;
+    private OffsetDateTime periodEnd;
+    public StatusSchedule() {
     }
 
-    @JsonValue
-    public String getValue() {
-      return value;
+    public StatusSchedule status(StatusEnum status) {
+
+        this.status = status;
+        return this;
     }
 
-    @Override
-    public String toString() {
-      return String.valueOf(value);
+    /**
+     * Get status
+     *
+     * @return status
+     **/
+    @javax.annotation.Nonnull
+    @JsonProperty(JSON_PROPERTY_STATUS)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+
+    public StatusEnum getStatus() {
+        return status;
     }
 
-    @JsonCreator
-    public static StatusEnum fromValue(String value) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    @JsonProperty(JSON_PROPERTY_STATUS)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
+    public void setStatus(StatusEnum status) {
+        this.status = status;
     }
-  }
 
-  public static final String JSON_PROPERTY_STATUS = "status";
-  private StatusEnum status;
+    public StatusSchedule periodBegin(OffsetDateTime periodBegin) {
 
-  public StatusSchedule() {
-  }
+        this.periodBegin = periodBegin;
+        return this;
+    }
 
-  public StatusSchedule periodBegin(OffsetDateTime periodBegin) {
-    
-    this.periodBegin = periodBegin;
-    return this;
-  }
-
-   /**
-   * Get periodBegin
-   * @return periodBegin
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    /**
+     * Get periodBegin
+     * @return periodBegin
+     **/
+    @javax.annotation.Nonnull
+    @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public OffsetDateTime getPeriodBegin() {
     return periodBegin;
-  }
+    }
 
-
-  @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPeriodBegin(OffsetDateTime periodBegin) {
     this.periodBegin = periodBegin;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      StatusSchedule statusSchedule = (StatusSchedule) o;
+      return Objects.equals(this.status, statusSchedule.status) &&
+              Objects.equals(this.periodBegin, statusSchedule.periodBegin) &&
+              Objects.equals(this.periodEnd, statusSchedule.periodEnd);
   }
 
 
@@ -140,60 +126,69 @@ public class StatusSchedule {
     this.periodEnd = periodEnd;
   }
 
-
-  public StatusSchedule status(StatusEnum status) {
-    
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * Get status
-   * @return status
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public StatusEnum getStatus() {
-    return status;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_STATUS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStatus(StatusEnum status) {
-    this.status = status;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    StatusSchedule statusSchedule = (StatusSchedule) o;
-    return Objects.equals(this.periodBegin, statusSchedule.periodBegin) &&
-        Objects.equals(this.periodEnd, statusSchedule.periodEnd) &&
-        Objects.equals(this.status, statusSchedule.status);
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(periodBegin, periodEnd, status);
+      return Objects.hash(status, periodBegin, periodEnd);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StatusSchedule {\n");
-    sb.append("    periodBegin: ").append(toIndentedString(periodBegin)).append("\n");
+      sb.append("class StatusSchedule {\n");
+      sb.append("    status: ").append(toIndentedString(status)).append("\n");
+      sb.append("    periodBegin: ").append(toIndentedString(periodBegin)).append("\n");
     sb.append("    periodEnd: ").append(toIndentedString(periodEnd)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
+  }
+
+  /**
+   * Gets or Sets status
+   */
+  public enum StatusEnum {
+    AVAILABLE("AVAILABLE"),
+
+    BLOCKED("BLOCKED"),
+
+    CHARGING("CHARGING"),
+
+    INOPERATIVE("INOPERATIVE"),
+
+    OUTOFORDER("OUTOFORDER"),
+
+    PLANNED("PLANNED"),
+
+    REMOVED("REMOVED"),
+
+    RESERVED("RESERVED"),
+
+    UNKNOWN("UNKNOWN");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (b.value.equals(value)) {
+            return b;
+        }
+      }
+        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
   }
 
   /**

@@ -6,7 +6,7 @@ import org.springframework.util.MultiValueMap;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class HttpBasicAuth implements Authentication {
     private String username;
     private String password;

@@ -27,7 +27,7 @@ import java.util.Objects;
         RegularHours.JSON_PROPERTY_PERIOD_BEGIN,
         RegularHours.JSON_PROPERTY_PERIOD_END
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class RegularHours {
   public static final String JSON_PROPERTY_WEEKDAY = "weekday";
   private Integer weekday;
@@ -47,21 +47,24 @@ public class RegularHours {
     return this;
   }
 
-   /**
-   * Get weekday
-   * @return weekday
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WEEKDAY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    /**
+     * Get weekday
+     * minimum: 1
+     * maximum: 7
+     *
+     * @return weekday
+     **/
+    @javax.annotation.Nonnull
+    @JsonProperty(JSON_PROPERTY_WEEKDAY)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Integer getWeekday() {
     return weekday;
-  }
+    }
 
 
-  @JsonProperty(JSON_PROPERTY_WEEKDAY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_WEEKDAY)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setWeekday(Integer weekday) {
     this.weekday = weekday;
   }
@@ -76,18 +79,18 @@ public class RegularHours {
    /**
    * Get periodBegin
    * @return periodBegin
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    **/
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPeriodBegin() {
     return periodBegin;
-  }
+   }
 
 
-  @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_PERIOD_BEGIN)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPeriodBegin(String periodBegin) {
     this.periodBegin = periodBegin;
   }
@@ -102,18 +105,18 @@ public class RegularHours {
    /**
    * Get periodEnd
    * @return periodEnd
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PERIOD_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    **/
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_PERIOD_END)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPeriodEnd() {
     return periodEnd;
-  }
+   }
 
 
-  @JsonProperty(JSON_PROPERTY_PERIOD_END)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_PERIOD_END)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPeriodEnd(String periodEnd) {
     this.periodEnd = periodEnd;
   }

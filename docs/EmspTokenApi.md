@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:8080*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getToken**](EmspTokenApi.md#getToken) | **GET** /emsp/api/2.2.1/tokens/{date_from}/{date_to}/{offset}/{limit} |  |
-| [**postToken**](EmspTokenApi.md#postToken) | **POST** /emsp/api/2.2.1/tokens/{token_uid}/{type} |  |
+| [**getTokens**](EmspTokenApi.md#getTokens) | **GET** /emsp/api/2.2.1/tokens |  |
+| [**postToken**](EmspTokenApi.md#postToken) | **POST** /emsp/api/2.2.1/tokens/{token_uid}/authorize |  |
 
 
 
-## getToken
+## getTokens
 
-> List&lt;TokenDTO&gt; getToken(dateFrom, dateTo, offset, limit)
+> ResponseFormatListTokenDto getTokens(dateFrom, dateTo, offset, limit)
 
 
 
@@ -33,13 +33,13 @@ public class Example {
         EmspTokenApi apiInstance = new EmspTokenApi(defaultClient);
         OffsetDateTime dateFrom = OffsetDateTime.now(); // OffsetDateTime | 
         OffsetDateTime dateTo = OffsetDateTime.now(); // OffsetDateTime | 
-        Integer offset = 56; // Integer | 
+        Integer offset = 0; // Integer | 
         Integer limit = 56; // Integer | 
         try {
-            List<TokenDTO> result = apiInstance.getToken(dateFrom, dateTo, offset, limit);
+            ResponseFormatListTokenDto result = apiInstance.getTokens(dateFrom, dateTo, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling EmspTokenApi#getToken");
+            System.err.println("Exception when calling EmspTokenApi#getTokens");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -54,14 +54,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **dateFrom** | **OffsetDateTime**|  | |
-| **dateTo** | **OffsetDateTime**|  | |
-| **offset** | **Integer**|  | |
-| **limit** | **Integer**|  | |
+| **dateFrom** | **OffsetDateTime**|  | [optional] |
+| **dateTo** | **OffsetDateTime**|  | [optional] |
+| **offset** | **Integer**|  | [optional] [default to 0] |
+| **limit** | **Integer**|  | [optional] |
 
 ### Return type
 
-[**List&lt;TokenDTO&gt;**](TokenDTO.md)
+[**ResponseFormatListTokenDto**](ResponseFormatListTokenDto.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ No authorization required
 
 ## postToken
 
-> AuthorizationInfoResponseDTO postToken(tokenUid, type, locationReferencesRequestDTO)
+> ResponseFormatAuthorizationInfoDto postToken(tokenUid, locationReferencesDto, type)
 
 
 
@@ -102,10 +102,10 @@ public class Example {
 
         EmspTokenApi apiInstance = new EmspTokenApi(defaultClient);
         String tokenUid = "tokenUid_example"; // String | 
+        LocationReferencesDto locationReferencesDto = new LocationReferencesDto(); // LocationReferencesDto | 
         String type = "type_example"; // String | 
-        LocationReferencesRequestDTO locationReferencesRequestDTO = new LocationReferencesRequestDTO(); // LocationReferencesRequestDTO | 
         try {
-            AuthorizationInfoResponseDTO result = apiInstance.postToken(tokenUid, type, locationReferencesRequestDTO);
+            ResponseFormatAuthorizationInfoDto result = apiInstance.postToken(tokenUid, locationReferencesDto, type);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspTokenApi#postToken");
@@ -124,12 +124,12 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **tokenUid** | **String**|  | |
-| **type** | **String**|  | |
-| **locationReferencesRequestDTO** | [**LocationReferencesRequestDTO**](LocationReferencesRequestDTO.md)|  | |
+| **locationReferencesDto** | [**LocationReferencesDto**](LocationReferencesDto.md)|  | |
+| **type** | **String**|  | [optional] |
 
 ### Return type
 
-[**AuthorizationInfoResponseDTO**](AuthorizationInfoResponseDTO.md)
+[**ResponseFormatAuthorizationInfoDto**](ResponseFormatAuthorizationInfoDto.md)
 
 ### Authorization
 

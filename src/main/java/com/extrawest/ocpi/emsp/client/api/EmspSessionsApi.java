@@ -1,7 +1,8 @@
 package com.extrawest.ocpi.emsp.client.api;
 
 import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
-import com.extrawest.ocpi.emsp.client.model.SessionDTO;
+import com.extrawest.ocpi.emsp.client.model.ResponseFormatSessionDto;
+import com.extrawest.ocpi.emsp.client.model.SessionDto;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
@@ -12,7 +13,7 @@ import org.springframework.web.client.RestClientException;
 import java.util.Collections;
 import java.util.List;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class EmspSessionsApi {
     private ApiClient apiClient;
 
@@ -33,37 +34,36 @@ public class EmspSessionsApi {
     }
 
     /**
-     * 
-     * 
      * <p><b>200</b> - OK
-     * @param countryCode  (required)
-     * @param partyId  (required)
-     * @param sessionId  (required)
-     * @return SessionDTO
+     *
+     * @param countryCode (required)
+     * @param partyId     (required)
+     * @param sessionId   (required)
+     * @return ResponseFormatSessionDto
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public SessionDTO getSession(String countryCode, String partyId, String sessionId) throws RestClientException {
+    public ResponseFormatSessionDto getSession(String countryCode, String partyId, String sessionId) throws RestClientException {
         return getSessionWithHttpInfo(countryCode, partyId, sessionId).getBody();
     }
 
     /**
-     * 
-     * 
+     *
+     *
      * <p><b>200</b> - OK
      * @param countryCode  (required)
      * @param partyId  (required)
      * @param sessionId  (required)
-     * @return ResponseEntity&lt;SessionDTO&gt;
+     * @return ResponseEntity&lt;ResponseFormatSessionDto&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<SessionDTO> getSessionWithHttpInfo(String countryCode, String partyId, String sessionId) throws RestClientException {
+    public ResponseEntity<ResponseFormatSessionDto> getSessionWithHttpInfo(String countryCode, String partyId, String sessionId) throws RestClientException {
         Object localVarPostBody = null;
-        
+
         // verify the required parameter 'countryCode' is set
         if (countryCode == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'countryCode' when calling getSession");
         }
-        
+
         // verify the required parameter 'partyId' is set
         if (partyId == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'partyId' when calling getSession");
@@ -93,57 +93,58 @@ public class EmspSessionsApi {
 
         String[] localVarAuthNames = new String[] {  };
 
-        ParameterizedTypeReference<SessionDTO> localReturnType = new ParameterizedTypeReference<SessionDTO>() {};
+        ParameterizedTypeReference<ResponseFormatSessionDto> localReturnType = new ParameterizedTypeReference<ResponseFormatSessionDto>() {
+        };
         return apiClient.invokeAPI("/emsp/api/2.2.1/sessions", HttpMethod.GET, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
     /**
-     * 
-     * 
+     *
+     *
      * <p><b>200</b> - OK
      * @param countryCode  (required)
      * @param partyId  (required)
      * @param sessionId  (required)
-     * @param sessionDTO  (required)
+     * @param sessionDto  (required)
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public void patchSession(String countryCode, String partyId, String sessionId, SessionDTO sessionDTO) throws RestClientException {
-        patchSessionWithHttpInfo(countryCode, partyId, sessionId, sessionDTO);
+    public void patchSession(String countryCode, String partyId, String sessionId, SessionDto sessionDto) throws RestClientException {
+        patchSessionWithHttpInfo(countryCode, partyId, sessionId, sessionDto);
     }
 
     /**
-     * 
-     * 
+     *
+     *
      * <p><b>200</b> - OK
      * @param countryCode  (required)
      * @param partyId  (required)
      * @param sessionId  (required)
-     * @param sessionDTO  (required)
+     * @param sessionDto  (required)
      * @return ResponseEntity&lt;Void&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<Void> patchSessionWithHttpInfo(String countryCode, String partyId, String sessionId, SessionDTO sessionDTO) throws RestClientException {
-        Object localVarPostBody = sessionDTO;
-        
+    public ResponseEntity<Void> patchSessionWithHttpInfo(String countryCode, String partyId, String sessionId, SessionDto sessionDto) throws RestClientException {
+        Object localVarPostBody = sessionDto;
+
         // verify the required parameter 'countryCode' is set
         if (countryCode == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'countryCode' when calling patchSession");
         }
-        
+
         // verify the required parameter 'partyId' is set
         if (partyId == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'partyId' when calling patchSession");
         }
-        
+
         // verify the required parameter 'sessionId' is set
         if (sessionId == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'sessionId' when calling patchSession");
         }
-        
-        // verify the required parameter 'sessionDTO' is set
-        if (sessionDTO == null) {
-            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'sessionDTO' when calling patchSession");
+
+        // verify the required parameter 'sessionDto' is set
+        if (sessionDto == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'sessionDto' when calling patchSession");
         }
-        
+
 
         final MultiValueMap<String, String> localVarQueryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders localVarHeaderParams = new HttpHeaders();
@@ -167,53 +168,54 @@ public class EmspSessionsApi {
         return apiClient.invokeAPI("/emsp/api/2.2.1/sessions", HttpMethod.PATCH, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
     /**
-     * 
-     * 
+     *
+     *
      * <p><b>200</b> - OK
      * @param countryCode  (required)
      * @param partyId  (required)
      * @param sessionId  (required)
-     * @param sessionDTO  (required)
+     * @param sessionDto  (required)
+     * @return ResponseFormatSessionDto
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public void putSession(String countryCode, String partyId, String sessionId, SessionDTO sessionDTO) throws RestClientException {
-        putSessionWithHttpInfo(countryCode, partyId, sessionId, sessionDTO);
+    public ResponseFormatSessionDto putSession(String countryCode, String partyId, String sessionId, SessionDto sessionDto) throws RestClientException {
+        return putSessionWithHttpInfo(countryCode, partyId, sessionId, sessionDto).getBody();
     }
 
     /**
-     * 
-     * 
+     *
+     *
      * <p><b>200</b> - OK
      * @param countryCode  (required)
      * @param partyId  (required)
      * @param sessionId  (required)
-     * @param sessionDTO  (required)
-     * @return ResponseEntity&lt;Void&gt;
+     * @param sessionDto  (required)
+     * @return ResponseEntity&lt;ResponseFormatSessionDto&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<Void> putSessionWithHttpInfo(String countryCode, String partyId, String sessionId, SessionDTO sessionDTO) throws RestClientException {
-        Object localVarPostBody = sessionDTO;
-        
+    public ResponseEntity<ResponseFormatSessionDto> putSessionWithHttpInfo(String countryCode, String partyId, String sessionId, SessionDto sessionDto) throws RestClientException {
+        Object localVarPostBody = sessionDto;
+
         // verify the required parameter 'countryCode' is set
         if (countryCode == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'countryCode' when calling putSession");
         }
-        
+
         // verify the required parameter 'partyId' is set
         if (partyId == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'partyId' when calling putSession");
         }
-        
+
         // verify the required parameter 'sessionId' is set
         if (sessionId == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'sessionId' when calling putSession");
         }
-        
-        // verify the required parameter 'sessionDTO' is set
-        if (sessionDTO == null) {
-            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'sessionDTO' when calling putSession");
+
+        // verify the required parameter 'sessionDto' is set
+        if (sessionDto == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'sessionDto' when calling putSession");
         }
-        
+
 
         final MultiValueMap<String, String> localVarQueryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders localVarHeaderParams = new HttpHeaders();
@@ -224,16 +226,19 @@ public class EmspSessionsApi {
         localVarQueryParams.putAll(apiClient.parameterToMultiValueMap(null, "party_id", partyId));
         localVarQueryParams.putAll(apiClient.parameterToMultiValueMap(null, "session_id", sessionId));
 
-        final String[] localVarAccepts = {  };
+        final String[] localVarAccepts = {
+                "*/*"
+        };
         final List<MediaType> localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        final String[] localVarContentTypes = { 
-            "application/json"
-         };
+        final String[] localVarContentTypes = {
+                "application/json"
+        };
         final MediaType localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[]{};
 
-        ParameterizedTypeReference<Void> localReturnType = new ParameterizedTypeReference<Void>() {};
+        ParameterizedTypeReference<ResponseFormatSessionDto> localReturnType = new ParameterizedTypeReference<ResponseFormatSessionDto>() {
+        };
         return apiClient.invokeAPI("/emsp/api/2.2.1/sessions", HttpMethod.PUT, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
 }

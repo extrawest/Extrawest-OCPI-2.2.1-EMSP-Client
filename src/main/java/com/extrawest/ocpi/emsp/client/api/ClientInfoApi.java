@@ -1,7 +1,7 @@
 package com.extrawest.ocpi.emsp.client.api;
 
 import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
-import com.extrawest.ocpi.emsp.client.model.ClientInfoDTO;
+import com.extrawest.ocpi.emsp.client.model.ClientInfoDto;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class ClientInfoApi {
     private ApiClient apiClient;
 
@@ -34,35 +34,34 @@ public class ClientInfoApi {
     }
 
     /**
-     * 
-     * 
      * <p><b>200</b> - OK
-     * @param countryCode  (required)
-     * @param partyId  (required)
-     * @return ClientInfoDTO
+     *
+     * @param countryCode (required)
+     * @param partyId     (required)
+     * @return ClientInfoDto
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ClientInfoDTO getHubClientInfo(String countryCode, String partyId) throws RestClientException {
+    public ClientInfoDto getHubClientInfo(String countryCode, String partyId) throws RestClientException {
         return getHubClientInfoWithHttpInfo(countryCode, partyId).getBody();
     }
 
     /**
-     * 
-     * 
+     *
+     *
      * <p><b>200</b> - OK
      * @param countryCode  (required)
      * @param partyId  (required)
-     * @return ResponseEntity&lt;ClientInfoDTO&gt;
+     * @return ResponseEntity&lt;ClientInfoDto&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<ClientInfoDTO> getHubClientInfoWithHttpInfo(String countryCode, String partyId) throws RestClientException {
+    public ResponseEntity<ClientInfoDto> getHubClientInfoWithHttpInfo(String countryCode, String partyId) throws RestClientException {
         Object localVarPostBody = null;
-        
+
         // verify the required parameter 'countryCode' is set
         if (countryCode == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'countryCode' when calling getHubClientInfo");
         }
-        
+
         // verify the required parameter 'partyId' is set
         if (partyId == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'partyId' when calling getHubClientInfo");
@@ -87,7 +86,8 @@ public class ClientInfoApi {
 
         String[] localVarAuthNames = new String[] {  };
 
-        ParameterizedTypeReference<ClientInfoDTO> localReturnType = new ParameterizedTypeReference<ClientInfoDTO>() {};
+        ParameterizedTypeReference<ClientInfoDto> localReturnType = new ParameterizedTypeReference<ClientInfoDto>() {
+        };
         return apiClient.invokeAPI("/api/2.2.1/hubClientInfo/{country_code}/{party_id}", HttpMethod.GET, uriVariables, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
     /**

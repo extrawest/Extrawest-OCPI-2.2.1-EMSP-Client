@@ -25,7 +25,7 @@ import java.util.Objects;
         Endpoint.JSON_PROPERTY_ROLE,
         Endpoint.JSON_PROPERTY_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class Endpoint {
   /**
    * Gets or Sets identifier
@@ -133,17 +133,17 @@ public class Endpoint {
    * Get identifier
    * @return identifier
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_IDENTIFIER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_IDENTIFIER)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public IdentifierEnum getIdentifier() {
     return identifier;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_IDENTIFIER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_IDENTIFIER)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIdentifier(IdentifierEnum identifier) {
     this.identifier = identifier;
   }
@@ -159,17 +159,17 @@ public class Endpoint {
    * Get role
    * @return role
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_ROLE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public RoleEnum getRole() {
     return role;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_ROLE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRole(RoleEnum role) {
     this.role = role;
   }
@@ -185,17 +185,17 @@ public class Endpoint {
    * Get url
    * @return url
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_URL)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getUrl() {
     return url;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_URL)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUrl(String url) {
     this.url = url;
   }

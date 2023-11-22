@@ -25,29 +25,55 @@ import java.util.Objects;
  * TariffElement
  */
 @JsonPropertyOrder({
-        TariffElement.JSON_PROPERTY_PRICE_COMPONENTS,
-        TariffElement.JSON_PROPERTY_RESTRICTIONS
+        TariffElement.JSON_PROPERTY_RESTRICTIONS,
+        TariffElement.JSON_PROPERTY_PRICE_COMPONENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class TariffElement {
-  public static final String JSON_PROPERTY_PRICE_COMPONENTS = "price_components";
-  private List<PriceComponent> priceComponents;
+    public static final String JSON_PROPERTY_RESTRICTIONS = "restrictions";
+    public static final String JSON_PROPERTY_PRICE_COMPONENTS = "price_components";
+    private TariffRestrictions restrictions;
+    private List<PriceComponent> priceComponents = new ArrayList<>();
 
-  public static final String JSON_PROPERTY_RESTRICTIONS = "restrictions";
-  private TariffRestrictions restrictions;
+    public TariffElement() {
+    }
 
-  public TariffElement() {
-  }
+    public TariffElement restrictions(TariffRestrictions restrictions) {
 
-  public TariffElement priceComponents(List<PriceComponent> priceComponents) {
-    
-    this.priceComponents = priceComponents;
-    return this;
-  }
+        this.restrictions = restrictions;
+        return this;
+    }
 
-  public TariffElement addPriceComponentsItem(PriceComponent priceComponentsItem) {
-    if (this.priceComponents == null) {
-      this.priceComponents = new ArrayList<>();
+    /**
+     * Get restrictions
+     *
+     * @return restrictions
+     **/
+    @javax.annotation.Nullable
+    @JsonProperty(JSON_PROPERTY_RESTRICTIONS)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+
+    public TariffRestrictions getRestrictions() {
+        return restrictions;
+    }
+
+
+    @JsonProperty(JSON_PROPERTY_RESTRICTIONS)
+    @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    public void setRestrictions(TariffRestrictions restrictions) {
+        this.restrictions = restrictions;
+    }
+
+
+    public TariffElement priceComponents(List<PriceComponent> priceComponents) {
+
+        this.priceComponents = priceComponents;
+        return this;
+    }
+
+    public TariffElement addPriceComponentsItem(PriceComponent priceComponentsItem) {
+        if (this.priceComponents == null) {
+            this.priceComponents = new ArrayList<>();
     }
     this.priceComponents.add(priceComponentsItem);
     return this;
@@ -56,73 +82,47 @@ public class TariffElement {
    /**
    * Get priceComponents
    * @return priceComponents
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PRICE_COMPONENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    **/
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_PRICE_COMPONENTS)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public List<PriceComponent> getPriceComponents() {
     return priceComponents;
-  }
+   }
 
 
-  @JsonProperty(JSON_PROPERTY_PRICE_COMPONENTS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_PRICE_COMPONENTS)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPriceComponents(List<PriceComponent> priceComponents) {
     this.priceComponents = priceComponents;
   }
 
-
-  public TariffElement restrictions(TariffRestrictions restrictions) {
-    
-    this.restrictions = restrictions;
-    return this;
-  }
-
-   /**
-   * Get restrictions
-   * @return restrictions
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESTRICTIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
-  public TariffRestrictions getRestrictions() {
-    return restrictions;
-  }
-
-
-  @JsonProperty(JSON_PROPERTY_RESTRICTIONS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRestrictions(TariffRestrictions restrictions) {
-    this.restrictions = restrictions;
-  }
-
   @Override
   public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    TariffElement tariffElement = (TariffElement) o;
-    return Objects.equals(this.priceComponents, tariffElement.priceComponents) &&
-        Objects.equals(this.restrictions, tariffElement.restrictions);
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      TariffElement tariffElement = (TariffElement) o;
+      return Objects.equals(this.restrictions, tariffElement.restrictions) &&
+              Objects.equals(this.priceComponents, tariffElement.priceComponents);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(priceComponents, restrictions);
+      return Objects.hash(restrictions, priceComponents);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TariffElement {\n");
-    sb.append("    priceComponents: ").append(toIndentedString(priceComponents)).append("\n");
-    sb.append("    restrictions: ").append(toIndentedString(restrictions)).append("\n");
-    sb.append("}");
+      sb.append("    restrictions: ").append(toIndentedString(restrictions)).append("\n");
+      sb.append("    priceComponents: ").append(toIndentedString(priceComponents)).append("\n");
+      sb.append("}");
     return sb.toString();
   }
 

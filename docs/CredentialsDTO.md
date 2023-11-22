@@ -1,6 +1,6 @@
 
 
-# CredentialsDTO
+# CredentialsDto
 
 
 ## Properties

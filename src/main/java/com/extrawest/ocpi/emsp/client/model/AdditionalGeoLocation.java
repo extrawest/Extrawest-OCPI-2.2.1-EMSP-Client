@@ -27,7 +27,7 @@ import java.util.Objects;
         AdditionalGeoLocation.JSON_PROPERTY_LONGITUDE,
         AdditionalGeoLocation.JSON_PROPERTY_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class AdditionalGeoLocation {
   public static final String JSON_PROPERTY_LATITUDE = "latitude";
   private String latitude;
@@ -51,9 +51,9 @@ public class AdditionalGeoLocation {
    * Get latitude
    * @return latitude
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LATITUDE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_LATITUDE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getLatitude() {
     return latitude;
@@ -61,7 +61,7 @@ public class AdditionalGeoLocation {
 
 
   @JsonProperty(JSON_PROPERTY_LATITUDE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLatitude(String latitude) {
     this.latitude = latitude;
   }
@@ -77,9 +77,9 @@ public class AdditionalGeoLocation {
    * Get longitude
    * @return longitude
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LONGITUDE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_LONGITUDE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getLongitude() {
     return longitude;
@@ -87,7 +87,7 @@ public class AdditionalGeoLocation {
 
 
   @JsonProperty(JSON_PROPERTY_LONGITUDE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLongitude(String longitude) {
     this.longitude = longitude;
   }

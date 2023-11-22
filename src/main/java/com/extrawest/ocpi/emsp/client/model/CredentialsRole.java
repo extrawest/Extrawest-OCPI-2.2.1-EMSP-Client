@@ -26,7 +26,7 @@ import java.util.Objects;
         CredentialsRole.JSON_PROPERTY_PARTY_ID,
         CredentialsRole.JSON_PROPERTY_COUNTRY_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class CredentialsRole {
   /**
    * Gets or Sets role
@@ -98,17 +98,17 @@ public class CredentialsRole {
    * Get role
    * @return role
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_ROLE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public RoleEnum getRole() {
     return role;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_ROLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_ROLE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setRole(RoleEnum role) {
     this.role = role;
   }
@@ -124,17 +124,17 @@ public class CredentialsRole {
    * Get businessDetails
    * @return businessDetails
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BUSINESS_DETAILS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_BUSINESS_DETAILS)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public BusinessDetails getBusinessDetails() {
     return businessDetails;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BUSINESS_DETAILS)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_BUSINESS_DETAILS)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setBusinessDetails(BusinessDetails businessDetails) {
     this.businessDetails = businessDetails;
   }
@@ -150,17 +150,17 @@ public class CredentialsRole {
    * Get partyId
    * @return partyId
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PARTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_PARTY_ID)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getPartyId() {
     return partyId;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PARTY_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_PARTY_ID)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPartyId(String partyId) {
     this.partyId = partyId;
   }
@@ -176,17 +176,17 @@ public class CredentialsRole {
    * Get countryCode
    * @return countryCode
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getCountryCode() {
     return countryCode;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_COUNTRY_CODE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCountryCode(String countryCode) {
     this.countryCode = countryCode;
   }

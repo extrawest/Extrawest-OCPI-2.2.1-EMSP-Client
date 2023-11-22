@@ -1,6 +1,6 @@
 
 
-# CdrDTO
+# CDRDto
 
 
 ## Properties
@@ -8,12 +8,13 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** |  |  |
-|**currency** | **String** |  |  [optional] |
-|**tariffs** | [**List&lt;Tariff&gt;**](Tariff.md) |  |  [optional] |
+|**currency** | **String** |  |  |
+|**tariffs** | [**List&lt;TariffDto&gt;**](TariffDto.md) |  |  [optional] |
 |**remark** | **String** |  |  [optional] |
 |**credit** | **Boolean** |  |  [optional] |
-|**countryCode** | **String** |  |  [optional] |
-|**partyId** | **String** |  |  [optional] |
+|**countryCode** | **String** |  |  |
+|**partyId** | **String** |  |  |
+|**lastUpdated** | **OffsetDateTime** |  |  |
 |**startDateTime** | **OffsetDateTime** |  |  |
 |**endDateTime** | **OffsetDateTime** |  |  |
 |**sessionId** | **String** |  |  [optional] |
@@ -36,7 +37,6 @@
 |**invoiceReferenceId** | **String** |  |  [optional] |
 |**creditReferenceId** | **String** |  |  [optional] |
 |**homeChargingCompensation** | **Boolean** |  |  [optional] |
-|**lastUpdated** | **OffsetDateTime** |  |  |
 
 
 

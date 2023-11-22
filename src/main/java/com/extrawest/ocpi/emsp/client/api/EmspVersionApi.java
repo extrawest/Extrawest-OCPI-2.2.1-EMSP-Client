@@ -1,7 +1,8 @@
 package com.extrawest.ocpi.emsp.client.api;
 
 import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
-import com.extrawest.ocpi.emsp.client.model.VersionDetailsResponseDTO;
+import com.extrawest.ocpi.emsp.client.model.ResponseFormatListVersionDto;
+import com.extrawest.ocpi.emsp.client.model.ResponseFormatVersionDetailsDto;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
@@ -9,11 +10,10 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClientException;
 
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class EmspVersionApi {
     private ApiClient apiClient;
 
@@ -34,52 +34,90 @@ public class EmspVersionApi {
     }
 
     /**
-     * 
-     * 
      * <p><b>200</b> - OK
-     * @param version  (required)
-     * @return VersionDetailsResponseDTO
+     *
+     * @param version (required)
+     * @return ResponseFormatVersionDetailsDto
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public VersionDetailsResponseDTO getVersionDetails(String version) throws RestClientException {
+    public ResponseFormatVersionDetailsDto getVersionDetails(String version) throws RestClientException {
         return getVersionDetailsWithHttpInfo(version).getBody();
     }
 
     /**
-     * 
-     * 
+     *
+     *
      * <p><b>200</b> - OK
      * @param version  (required)
-     * @return ResponseEntity&lt;VersionDetailsResponseDTO&gt;
+     * @return ResponseEntity&lt;ResponseFormatVersionDetailsDto&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<VersionDetailsResponseDTO> getVersionDetailsWithHttpInfo(String version) throws RestClientException {
+    public ResponseEntity<ResponseFormatVersionDetailsDto> getVersionDetailsWithHttpInfo(String version) throws RestClientException {
         Object localVarPostBody = null;
-        
+
         // verify the required parameter 'version' is set
         if (version == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'version' when calling getVersionDetails");
         }
-        
-        // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("version", version);
+
 
         final MultiValueMap<String, String> localVarQueryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders localVarHeaderParams = new HttpHeaders();
         final MultiValueMap<String, String> localVarCookieParams = new LinkedMultiValueMap<String, String>();
         final MultiValueMap<String, Object> localVarFormParams = new LinkedMultiValueMap<String, Object>();
 
-        final String[] localVarAccepts = { 
-            "*/*"
-         };
+        localVarQueryParams.putAll(apiClient.parameterToMultiValueMap(null, "version", version));
+
+        final String[] localVarAccepts = {
+                "*/*"
+        };
         final List<MediaType> localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        final String[] localVarContentTypes = {  };
+        final String[] localVarContentTypes = {};
         final MediaType localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[]{};
 
-        ParameterizedTypeReference<VersionDetailsResponseDTO> localReturnType = new ParameterizedTypeReference<VersionDetailsResponseDTO>() {};
-        return apiClient.invokeAPI("/emsp/api/2.2.1/versions/details/{version}", HttpMethod.GET, uriVariables, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
+        ParameterizedTypeReference<ResponseFormatVersionDetailsDto> localReturnType = new ParameterizedTypeReference<ResponseFormatVersionDetailsDto>() {
+        };
+        return apiClient.invokeAPI("/emsp/api/versions/details", HttpMethod.GET, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
+    }
+
+    /**
+     * <p><b>200</b> - OK
+     *
+     * @return ResponseFormatListVersionDto
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseFormatListVersionDto getVersions() throws RestClientException {
+        return getVersionsWithHttpInfo().getBody();
+    }
+
+    /**
+     * <p><b>200</b> - OK
+     *
+     * @return ResponseEntity&lt;ResponseFormatListVersionDto&gt;
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public ResponseEntity<ResponseFormatListVersionDto> getVersionsWithHttpInfo() throws RestClientException {
+        Object localVarPostBody = null;
+
+
+        final MultiValueMap<String, String> localVarQueryParams = new LinkedMultiValueMap<String, String>();
+        final HttpHeaders localVarHeaderParams = new HttpHeaders();
+        final MultiValueMap<String, String> localVarCookieParams = new LinkedMultiValueMap<String, String>();
+        final MultiValueMap<String, Object> localVarFormParams = new LinkedMultiValueMap<String, Object>();
+
+        final String[] localVarAccepts = {
+                "*/*"
+        };
+        final List<MediaType> localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        final String[] localVarContentTypes = {};
+        final MediaType localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+        String[] localVarAuthNames = new String[]{};
+
+        ParameterizedTypeReference<ResponseFormatListVersionDto> localReturnType = new ParameterizedTypeReference<ResponseFormatListVersionDto>() {
+        };
+        return apiClient.invokeAPI("/emsp/api/versions", HttpMethod.GET, Collections.<String, Object>emptyMap(), localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
 }

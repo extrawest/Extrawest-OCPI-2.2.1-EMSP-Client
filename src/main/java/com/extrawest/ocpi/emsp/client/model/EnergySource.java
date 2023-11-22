@@ -24,7 +24,7 @@ import java.util.Objects;
         EnergySource.JSON_PROPERTY_SOURCE,
         EnergySource.JSON_PROPERTY_PERCENTAGE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class EnergySource {
   /**
    * Gets or Sets source
@@ -92,17 +92,17 @@ public class EnergySource {
    * Get source
    * @return source
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SOURCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_SOURCE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public SourceEnum getSource() {
     return source;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SOURCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_SOURCE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSource(SourceEnum source) {
     this.source = source;
   }
@@ -114,21 +114,24 @@ public class EnergySource {
     return this;
   }
 
-   /**
-   * Get percentage
-   * @return percentage
-  **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PERCENTAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    /**
+     * Get percentage
+     * minimum: 0
+     * maximum: 100
+     *
+     * @return percentage
+     **/
+    @javax.annotation.Nonnull
+    @JsonProperty(JSON_PROPERTY_PERCENTAGE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Float getPercentage() {
     return percentage;
-  }
+    }
 
 
-  @JsonProperty(JSON_PROPERTY_PERCENTAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_PERCENTAGE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPercentage(Float percentage) {
     this.percentage = percentage;
   }

@@ -1,6 +1,6 @@
 
 
-# ClientInfoDTO
+# ClientInfoDto
 
 
 ## Properties

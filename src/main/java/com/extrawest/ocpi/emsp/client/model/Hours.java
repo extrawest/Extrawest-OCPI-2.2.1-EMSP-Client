@@ -30,7 +30,7 @@ import java.util.Objects;
         Hours.JSON_PROPERTY_EXCEPTIONAL_OPENINGS,
         Hours.JSON_PROPERTY_EXCEPTIONAL_CLOSINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class Hours {
   public static final String JSON_PROPERTY_TWENTYFOURSEVEN = "twentyfourseven";
   private Boolean twentyfourseven;
@@ -57,17 +57,17 @@ public class Hours {
    * Get twentyfourseven
    * @return twentyfourseven
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TWENTYFOURSEVEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_TWENTYFOURSEVEN)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public Boolean getTwentyfourseven() {
     return twentyfourseven;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TWENTYFOURSEVEN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_TWENTYFOURSEVEN)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTwentyfourseven(Boolean twentyfourseven) {
     this.twentyfourseven = twentyfourseven;
   }

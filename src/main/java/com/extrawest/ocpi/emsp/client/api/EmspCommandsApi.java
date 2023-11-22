@@ -1,7 +1,7 @@
 package com.extrawest.ocpi.emsp.client.api;
 
 import com.extrawest.ocpi.emsp.client.invoker.ApiClient;
-import com.extrawest.ocpi.emsp.client.model.CommandResultRequestDTO;
+import com.extrawest.ocpi.emsp.client.model.CommandResult;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.util.LinkedMultiValueMap;
@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class EmspCommandsApi {
     private ApiClient apiClient;
 
@@ -36,46 +36,46 @@ public class EmspCommandsApi {
     /**
      * <p><b>200</b> - OK
      *
-     * @param commandType             (required)
-     * @param uniqueId                (required)
-     * @param commandResultRequestDTO (required)
+     * @param command       (required)
+     * @param uid           (required)
+     * @param commandResult (required)
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public void postCommand(String commandType, String uniqueId, CommandResultRequestDTO commandResultRequestDTO) throws RestClientException {
-        postCommandWithHttpInfo(commandType, uniqueId, commandResultRequestDTO);
+    public void postCommand(String command, String uid, CommandResult commandResult) throws RestClientException {
+        postCommandWithHttpInfo(command, uid, commandResult);
     }
 
     /**
      * <p><b>200</b> - OK
      *
-     * @param commandType             (required)
-     * @param uniqueId                (required)
-     * @param commandResultRequestDTO (required)
+     * @param command       (required)
+     * @param uid           (required)
+     * @param commandResult (required)
      * @return ResponseEntity&lt;Void&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<Void> postCommandWithHttpInfo(String commandType, String uniqueId, CommandResultRequestDTO commandResultRequestDTO) throws RestClientException {
-        Object localVarPostBody = commandResultRequestDTO;
+    public ResponseEntity<Void> postCommandWithHttpInfo(String command, String uid, CommandResult commandResult) throws RestClientException {
+        Object localVarPostBody = commandResult;
 
-        // verify the required parameter 'commandType' is set
-        if (commandType == null) {
-            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'commandType' when calling postCommand");
+        // verify the required parameter 'command' is set
+        if (command == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'command' when calling postCommand");
         }
 
-        // verify the required parameter 'uniqueId' is set
-        if (uniqueId == null) {
-            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'uniqueId' when calling postCommand");
+        // verify the required parameter 'uid' is set
+        if (uid == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'uid' when calling postCommand");
         }
 
-        // verify the required parameter 'commandResultRequestDTO' is set
-        if (commandResultRequestDTO == null) {
-            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'commandResultRequestDTO' when calling postCommand");
+        // verify the required parameter 'commandResult' is set
+        if (commandResult == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'commandResult' when calling postCommand");
         }
 
         // create path and map variables
         final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("commandType", commandType);
-        uriVariables.put("uniqueId", uniqueId);
+        uriVariables.put("command", command);
+        uriVariables.put("uid", uid);
 
         final MultiValueMap<String, String> localVarQueryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders localVarHeaderParams = new HttpHeaders();
@@ -93,6 +93,6 @@ public class EmspCommandsApi {
 
         ParameterizedTypeReference<Void> localReturnType = new ParameterizedTypeReference<Void>() {
         };
-        return apiClient.invokeAPI("/emsp/api/2.2.1/commands/{commandType}/{uniqueId}", HttpMethod.POST, uriVariables, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
+        return apiClient.invokeAPI("/emsp/api/2.2.1/commands/{command}/{uid}", HttpMethod.POST, uriVariables, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
     }
 }

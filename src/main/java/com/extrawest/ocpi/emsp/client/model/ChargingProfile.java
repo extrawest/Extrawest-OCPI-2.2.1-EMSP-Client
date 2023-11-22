@@ -30,7 +30,7 @@ import java.util.Objects;
         ChargingProfile.JSON_PROPERTY_MIN_CHARGING_RATE,
         ChargingProfile.JSON_PROPERTY_CHARGING_PROFILE_PERIOD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class ChargingProfile {
   public static final String JSON_PROPERTY_START_DATE_TIME = "start_date_time";
   private OffsetDateTime startDateTime;
@@ -147,17 +147,17 @@ public class ChargingProfile {
    * Get chargingRateUnit
    * @return chargingRateUnit
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CHARGING_RATE_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_CHARGING_RATE_UNIT)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public ChargingRateUnitEnum getChargingRateUnit() {
     return chargingRateUnit;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CHARGING_RATE_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_CHARGING_RATE_UNIT)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setChargingRateUnit(ChargingRateUnitEnum chargingRateUnit) {
     this.chargingRateUnit = chargingRateUnit;
   }

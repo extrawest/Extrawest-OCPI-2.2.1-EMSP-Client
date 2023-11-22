@@ -26,7 +26,7 @@ import java.util.Objects;
         EnergyContract.JSON_PROPERTY_SUPPLIER_NAME,
         EnergyContract.JSON_PROPERTY_CONTRACT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class EnergyContract {
   public static final String JSON_PROPERTY_SUPPLIER_NAME = "supplier_name";
   private String supplierName;
@@ -47,17 +47,17 @@ public class EnergyContract {
    * Get supplierName
    * @return supplierName
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SUPPLIER_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_SUPPLIER_NAME)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getSupplierName() {
     return supplierName;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_SUPPLIER_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_SUPPLIER_NAME)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSupplierName(String supplierName) {
     this.supplierName = supplierName;
   }

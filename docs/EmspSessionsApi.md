@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost:8080*
 
 ## getSession
 
-> SessionDTO getSession(countryCode, partyId, sessionId)
+> ResponseFormatSessionDto getSession(countryCode, partyId, sessionId)
 
 
 
@@ -36,7 +36,7 @@ public class Example {
         String partyId = "partyId_example"; // String | 
         String sessionId = "sessionId_example"; // String | 
         try {
-            SessionDTO result = apiInstance.getSession(countryCode, partyId, sessionId);
+            ResponseFormatSessionDto result = apiInstance.getSession(countryCode, partyId, sessionId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspSessionsApi#getSession");
@@ -60,7 +60,7 @@ public class Example {
 
 ### Return type
 
-[**SessionDTO**](SessionDTO.md)
+[**ResponseFormatSessionDto**](ResponseFormatSessionDto.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ No authorization required
 
 ## patchSession
 
-> patchSession(countryCode, partyId, sessionId, sessionDTO)
+> patchSession(countryCode, partyId, sessionId, sessionDto)
 
 
 
@@ -103,9 +103,9 @@ public class Example {
         String countryCode = "countryCode_example"; // String | 
         String partyId = "partyId_example"; // String | 
         String sessionId = "sessionId_example"; // String | 
-        SessionDTO sessionDTO = new SessionDTO(); // SessionDTO | 
+        SessionDto sessionDto = new SessionDto(); // SessionDto | 
         try {
-            apiInstance.patchSession(countryCode, partyId, sessionId, sessionDTO);
+            apiInstance.patchSession(countryCode, partyId, sessionId, sessionDto);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspSessionsApi#patchSession");
             System.err.println("Status code: " + e.getCode());
@@ -125,7 +125,7 @@ public class Example {
 | **countryCode** | **String**|  | |
 | **partyId** | **String**|  | |
 | **sessionId** | **String**|  | |
-| **sessionDTO** | [**SessionDTO**](SessionDTO.md)|  | |
+| **sessionDto** | [**SessionDto**](SessionDto.md)|  | |
 
 ### Return type
 
@@ -149,7 +149,7 @@ No authorization required
 
 ## putSession
 
-> putSession(countryCode, partyId, sessionId, sessionDTO)
+> ResponseFormatSessionDto putSession(countryCode, partyId, sessionId, sessionDto)
 
 
 
@@ -172,9 +172,10 @@ public class Example {
         String countryCode = "countryCode_example"; // String | 
         String partyId = "partyId_example"; // String | 
         String sessionId = "sessionId_example"; // String | 
-        SessionDTO sessionDTO = new SessionDTO(); // SessionDTO | 
+        SessionDto sessionDto = new SessionDto(); // SessionDto | 
         try {
-            apiInstance.putSession(countryCode, partyId, sessionId, sessionDTO);
+            ResponseFormatSessionDto result = apiInstance.putSession(countryCode, partyId, sessionId, sessionDto);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspSessionsApi#putSession");
             System.err.println("Status code: " + e.getCode());
@@ -194,11 +195,11 @@ public class Example {
 | **countryCode** | **String**|  | |
 | **partyId** | **String**|  | |
 | **sessionId** | **String**|  | |
-| **sessionDTO** | [**SessionDTO**](SessionDTO.md)|  | |
+| **sessionDto** | [**SessionDto**](SessionDto.md)|  | |
 
 ### Return type
 
-null (empty response body)
+[**ResponseFormatSessionDto**](ResponseFormatSessionDto.md)
 
 ### Authorization
 
@@ -207,7 +208,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: */*
 
 
 ### HTTP response details

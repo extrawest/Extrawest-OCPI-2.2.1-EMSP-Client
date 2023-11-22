@@ -27,7 +27,7 @@ import java.util.Objects;
         PublishTokenType.JSON_PROPERTY_ISSUER,
         PublishTokenType.JSON_PROPERTY_GROUP_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class PublishTokenType {
   public static final String JSON_PROPERTY_UID = "uid";
   private String uid;

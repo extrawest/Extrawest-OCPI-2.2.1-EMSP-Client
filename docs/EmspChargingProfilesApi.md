@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost:8080*
 
 ## postChargingProfile
 
-> ResponseFormat postChargingProfile(abstractProfileResult)
+> ResponseFormatObject postChargingProfile(abstractProfileResult)
 
 
 
@@ -33,7 +33,7 @@ public class Example {
         EmspChargingProfilesApi apiInstance = new EmspChargingProfilesApi(defaultClient);
         AbstractProfileResult abstractProfileResult = new AbstractProfileResult(); // AbstractProfileResult | 
         try {
-            ResponseFormat result = apiInstance.postChargingProfile(abstractProfileResult);
+            ResponseFormatObject result = apiInstance.postChargingProfile(abstractProfileResult);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspChargingProfilesApi#postChargingProfile");
@@ -55,7 +55,7 @@ public class Example {
 
 ### Return type
 
-[**ResponseFormat**](ResponseFormat.md)
+[**ResponseFormatObject**](ResponseFormatObject.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ No authorization required
 
 ## putChargingProfile
 
-> ResponseFormat putChargingProfile(sessionId, activeChargingProfileRequestDTO)
+> ResponseFormatObject putChargingProfile(sessionId, activeChargingProfile)
 
 
 
@@ -96,9 +96,9 @@ public class Example {
 
         EmspChargingProfilesApi apiInstance = new EmspChargingProfilesApi(defaultClient);
         String sessionId = "sessionId_example"; // String | 
-        ActiveChargingProfileRequestDTO activeChargingProfileRequestDTO = new ActiveChargingProfileRequestDTO(); // ActiveChargingProfileRequestDTO | 
+        ActiveChargingProfile activeChargingProfile = new ActiveChargingProfile(); // ActiveChargingProfile | 
         try {
-            ResponseFormat result = apiInstance.putChargingProfile(sessionId, activeChargingProfileRequestDTO);
+            ResponseFormatObject result = apiInstance.putChargingProfile(sessionId, activeChargingProfile);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling EmspChargingProfilesApi#putChargingProfile");
@@ -117,11 +117,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **sessionId** | **String**|  | |
-| **activeChargingProfileRequestDTO** | [**ActiveChargingProfileRequestDTO**](ActiveChargingProfileRequestDTO.md)|  | |
+| **activeChargingProfile** | [**ActiveChargingProfile**](ActiveChargingProfile.md)|  | |
 
 ### Return type
 
-[**ResponseFormat**](ResponseFormat.md)
+[**ResponseFormatObject**](ResponseFormatObject.md)
 
 ### Authorization
 

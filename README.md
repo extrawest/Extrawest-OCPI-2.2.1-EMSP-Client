@@ -93,25 +93,20 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.extrawest.ocpp.client.invoker.*;
-import com.extrawest.ocpp.client.invoker.auth.*;
-import com.extrawest.ocpp.client.model.*;
-import com.extrawest.ocpp.client.api.ClientInfoControllerApi;
-
-public class ClientInfoControllerApiExample {
+public class ClientInfoApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost:8080");
-        
-        ClientInfoControllerApi apiInstance = new ClientInfoControllerApi(defaultClient);
+
+        ClientInfoApi apiInstance = new ClientInfoApi(defaultClient);
         String countryCode = "countryCode_example";
         String partyId = "partyId_example";
         try {
-            ClientInfoDTO result = apiInstance.getHubClientInfo(countryCode, partyId);
+            ClientInfoDto result = apiInstance.getHubClientInfo(countryCode, partyId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ClientInfoControllerApi#getHubClientInfo");
+            System.err.println("Exception when calling ClientInfoApi#getHubClientInfo");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -149,7 +144,7 @@ public class EmspTariffServiceImpl implements  EmspTariffService {
     private EmspTariffControllerApi emspTariffControllerApi;
 
     @Override
-    public TariffDTO getTariff() {
+    public TariffDto getTariff() {
         try {
             return emspTariffControllerApi.getTariff("countryCode", "partyId", "tariffId");
         } catch (RestClientException e) {
@@ -157,7 +152,6 @@ public class EmspTariffServiceImpl implements  EmspTariffService {
         }
     }
 }
-
 ```
 
 Spring Boot application, where we have tested Extrawest-OCPI-2.2.1-EMSP-Client, has below Spring dependencies. In case of library and your project dependencies versions incompatibility, try to add next spring versions into you projects:
@@ -184,51 +178,57 @@ Spring Boot application, where we have tested Extrawest-OCPI-2.2.1-EMSP-Client, 
 
 All URIs are relative to *http://localhost:8080*
 
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*ClientInfoApi* | [**getHubClientInfo**](docs/ClientInfoApi.md#getHubClientInfo) | **GET** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |
-*ClientInfoApi* | [**putHubClientInfo**](docs/ClientInfoApi.md#putHubClientInfo) | **PUT** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |
-*EmspCdrApi* | [**getCdr**](docs/EmspCdrApi.md#getCdr) | **GET** /emsp/api/2.2.1/cdr/{id} |
-*EmspCdrApi* | [**postCdr**](docs/EmspCdrApi.md#postCdr) | **POST** /emsp/api/2.2.1/cdr |
-*EmspChargingProfilesApi* | [**postChargingProfile**](docs/EmspChargingProfilesApi.md#postChargingProfile) | **POST** /emsp/api/2.2.1/chargingProfiles |
-*EmspChargingProfilesApi* | [**putChargingProfile**](docs/EmspChargingProfilesApi.md#putChargingProfile) | **PUT** /emsp/api/2.2.1/chargingProfiles/{session_id} |
-*EmspCommandsApi* | [**postCommand**](docs/EmspCommandsApi.md#postCommand) | **POST** /emsp/api/2.2.1/commands/{commandType}/{uniqueId} |
-*EmspCredentialsApi* | [**deleteCredentials**](docs/EmspCredentialsApi.md#deleteCredentials) | **DELETE** /emsp/api/2.2.1/credentials |
-*EmspCredentialsApi* | [**getCredentials**](docs/EmspCredentialsApi.md#getCredentials) | **GET** /emsp/api/2.2.1/credentials |
-*EmspCredentialsApi* | [**postCredentials**](docs/EmspCredentialsApi.md#postCredentials) | **POST** /emsp/api/2.2.1/credentials |
-*EmspCredentialsApi* | [**putCredentials**](docs/EmspCredentialsApi.md#putCredentials) | **PUT** /emsp/api/2.2.1/credentials |
-*EmspLocationApi* | [**getLocationEvseController**](docs/EmspLocationApi.md#getLocationEvseController) | **GET** /emsp/api/2.2.1/locations |
-*EmspLocationApi* | [**patchLocation**](docs/EmspLocationApi.md#patchLocation) | **PATCH** /emsp/api/2.2.1/locations |
-*EmspLocationApi* | [**pushLocation**](docs/EmspLocationApi.md#pushLocation) | **PUT** /emsp/api/2.2.1/locations |
-*EmspSessionsApi* | [**getSession**](docs/EmspSessionsApi.md#getSession) | **GET** /emsp/api/2.2.1/sessions |
-*EmspSessionsApi* | [**patchSession**](docs/EmspSessionsApi.md#patchSession) | **PATCH** /emsp/api/2.2.1/sessions |
-*EmspSessionsApi* | [**putSession**](docs/EmspSessionsApi.md#putSession) | **PUT** /emsp/api/2.2.1/sessions |
-*EmspTariffApi* | [**deleteTariff**](docs/EmspTariffApi.md#deleteTariff) | **DELETE** /emsp/api/2.2.1/tariffs |
-*EmspTariffApi* | [**getTariff**](docs/EmspTariffApi.md#getTariff) | **GET** /emsp/api/2.2.1/tariffs |
-*EmspTariffApi* | [**saveTariff**](docs/EmspTariffApi.md#saveTariff) | **PUT** /emsp/api/2.2.1/tariffs |
-*EmspTokenApi* | [**getToken**](docs/EmspTokenApi.md#getToken) | **GET** /emsp/api/2.2.1/tokens/{date_from}/{date_to}/{offset}/{limit} |
-*EmspTokenApi* | [**postToken**](docs/EmspTokenApi.md#postToken) | **POST** /emsp/api/2.2.1/tokens/{token_uid}/{type} |
-*EmspVersionApi* | [**getVersionDetails**](docs/EmspVersionApi.md#getVersionDetails) | **GET** /emsp/api/2.2.1/versions/details/{version} |
-
+| Class                     | Method | HTTP request |
+|---------------------------| ------------- | ------------- |
+| *ClientInfoApi*           | [**getHubClientInfo**](docs/ClientInfoApi.md#getHubClientInfo) | **GET** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |
+| *ClientInfoApi*           | [**putHubClientInfo**](docs/ClientInfoApi.md#putHubClientInfo) | **PUT** /api/2.2.1/hubClientInfo/{country_code}/{party_id} |
+| *EmspCdrApi*              | [**getCdr**](docs/EmspCdrApi.md#getCdr) | **GET** /emsp/api/2.2.1/cdr |
+| *EmspCdrApi*              | [**postCdr**](docs/EmspCdrApi.md#postCdr) | **POST** /emsp/api/2.2.1/cdr |
+| *EmspChargingProfilesApi* | [**postChargingProfile**](docs/EmspChargingProfilesApi.md#postChargingProfile) | **POST** /emsp/api/2.2.1/chargingProfiles |
+| *EmspChargingProfilesApi* | [**putChargingProfile**](docs/EmspChargingProfilesApi.md#putChargingProfile) | **PUT** /emsp/api/2.2.1/chargingProfiles/{session_id} |
+| *EmspCommandsApi*         | [**postCommand**](docs/EmspCommandsApi.md#postCommand) | **POST** /emsp/api/2.2.1/commands/{command}/{uid} |
+| *EmspCredentialsApi*      | [**deleteCredentials**](docs/EmspCredentialsApi.md#deleteCredentials) | **DELETE** /emsp/api/2.2.1/credentials |
+| *EmspCredentialsApi*      | [**getCredentials**](docs/EmspCredentialsApi.md#getCredentials) | **GET** /emsp/api/2.2.1/credentials |
+| *EmspCredentialsApi*      | [**postCredentials**](docs/EmspCredentialsApi.md#postCredentials) | **POST** /emsp/api/2.2.1/credentials |
+| *EmspCredentialsApi*      | [**putCredentials**](docs/EmspCredentialsApi.md#putCredentials) | **PUT** /emsp/api/2.2.1/credentials |
+| *EmspLocationApi*         | [**getConnector**](docs/EmspLocationApi.md#getConnector) | **GET** /emsp/api/2.2.1/locations/{country_code}/{party_id}/{location_id}/{evse_uid}/{connector_id} |
+| *EmspLocationApi*         | [**getEvse**](docs/EmspLocationApi.md#getEvse) | **GET** /emsp/api/2.2.1/locations/{country_code}/{party_id}/{location_id}/{evse_uid} |
+| *EmspLocationApi*         | [**getLocation**](docs/EmspLocationApi.md#getLocation) | **GET** /emsp/api/2.2.1/locations/{country_code}/{party_id}/{location_id} |
+| *EmspLocationApi*         | [**patchConnector**](docs/EmspLocationApi.md#patchConnector) | **PATCH** /emsp/api/2.2.1/locations/{country_code}/{party_id}/{location_id}/{evse_uid}/{connector_id} |
+| *EmspLocationApi*         | [**patchEvse**](docs/EmspLocationApi.md#patchEvse) | **PATCH** /emsp/api/2.2.1/locations/{country_code}/{party_id}/{location_id}/{evse_uid} |
+| *EmspLocationApi*         | [**patchLocation**](docs/EmspLocationApi.md#patchLocation) | **PATCH** /emsp/api/2.2.1/locations/{country_code}/{party_id}/{location_id} |
+| *EmspLocationApi*         | [**pushConnector**](docs/EmspLocationApi.md#pushConnector) | **PUT** /emsp/api/2.2.1/locations/{country_code}/{party_id}/{location_id}/{evse_uid}/{connector_id} |
+| *EmspLocationApi*         | [**pushEvse**](docs/EmspLocationApi.md#pushEvse) | **PUT** /emsp/api/2.2.1/locations/{country_code}/{party_id}/{location_id}/{evse_uid} |
+| *EmspLocationApi*         | [**pushLocation**](docs/EmspLocationApi.md#pushLocation) | **PUT** /emsp/api/2.2.1/locations/{country_code}/{party_id}/{location_id} |
+| *EmspSessionsApi*         | [**getSession**](docs/EmspSessionsApi.md#getSession) | **GET** /emsp/api/2.2.1/sessions |
+| *EmspSessionsApi*         | [**patchSession**](docs/EmspSessionsApi.md#patchSession) | **PATCH** /emsp/api/2.2.1/sessions |
+| *EmspSessionsApi*         | [**putSession**](docs/EmspSessionsApi.md#putSession) | **PUT** /emsp/api/2.2.1/sessions |
+| *EmspTariffApi*           | [**deleteTariff**](docs/EmspTariffApi.md#deleteTariff) | **DELETE** /emsp/api/2.2.1/tariffs |
+| *EmspTariffApi*           | [**getTariff**](docs/EmspTariffApi.md#getTariff) | **GET** /emsp/api/2.2.1/tariffs |
+| *EmspTariffApi*           | [**saveTariff**](docs/EmspTariffApi.md#saveTariff) | **PUT** /emsp/api/2.2.1/tariffs |
+| *EmspTokenApi*            | [**getTokens**](docs/EmspTokenApi.md#getTokens) | **GET** /emsp/api/2.2.1/tokens |
+| *EmspTokenApi*            | [**postToken**](docs/EmspTokenApi.md#postToken) | **POST** /emsp/api/2.2.1/tokens/{token_uid}/authorize |
+| *EmspVersionApi*          | [**getVersionDetails**](docs/EmspVersionApi.md#getVersionDetails) | **GET** /emsp/api/versions/details |
+|  *EmspVersionApi*         | [**getVersions**](docs/EmspVersionApi.md#getVersions) | **GET** /emsp/api/versions |
 
 ## Models
 
 - [AbstractProfileResult](docs/AbstractProfileResult.md)
-- [ActiveChargingProfileRequestDTO](docs/ActiveChargingProfileRequestDTO.md)
+- [ActiveChargingProfile](docs/ActiveChargingProfile.md)
 - [AdditionalGeoLocation](docs/AdditionalGeoLocation.md)
-- [AuthorizationInfoResponseDTO](docs/AuthorizationInfoResponseDTO.md)
+- [AuthorizationInfoDto](docs/AuthorizationInfoDto.md)
 - [BusinessDetails](docs/BusinessDetails.md)
-- [CdrDTO](docs/CdrDTO.md)
+- [CDRDto](docs/CDRDto.md)
 - [CdrDimension](docs/CdrDimension.md)
 - [CdrLocation](docs/CdrLocation.md)
 - [CdrToken](docs/CdrToken.md)
 - [ChargingPeriod](docs/ChargingPeriod.md)
 - [ChargingProfile](docs/ChargingProfile.md)
 - [ChargingProfilePeriod](docs/ChargingProfilePeriod.md)
-- [ClientInfoDTO](docs/ClientInfoDTO.md)
-- [CommandResultRequestDTO](docs/CommandResultRequestDTO.md)
+- [ClientInfoDto](docs/ClientInfoDto.md)
+- [CommandResult](docs/CommandResult.md)
 - [Connector](docs/Connector.md)
-- [CredentialsDTO](docs/CredentialsDTO.md)
+- [CredentialsDto](docs/CredentialsDto.md)
 - [CredentialsRole](docs/CredentialsRole.md)
 - [DisplayText](docs/DisplayText.md)
 - [EVSE](docs/EVSE.md)
@@ -241,25 +241,33 @@ Class | Method | HTTP request | Description
 - [GeoLocation](docs/GeoLocation.md)
 - [Hours](docs/Hours.md)
 - [Image](docs/Image.md)
-- [LocationDTO](docs/LocationDTO.md)
-- [LocationReferences](docs/LocationReferences.md)
-- [LocationReferencesRequestDTO](docs/LocationReferencesRequestDTO.md)
+- [Location](docs/Location.md)
+- [LocationReferencesDto](docs/LocationReferencesDto.md)
 - [Price](docs/Price.md)
 - [PriceComponent](docs/PriceComponent.md)
 - [PublishTokenType](docs/PublishTokenType.md)
 - [RegularHours](docs/RegularHours.md)
-- [ResponseFormat](docs/ResponseFormat.md)
-- [SessionDTO](docs/SessionDTO.md)
+- [ResponseFormatAuthorizationInfoDto](docs/ResponseFormatAuthorizationInfoDto.md)
+- [ResponseFormatCDRDto](docs/ResponseFormatCDRDto.md)
+- [ResponseFormatCredentialsDto](docs/ResponseFormatCredentialsDto.md)
+- [ResponseFormatListTokenDto](docs/ResponseFormatListTokenDto.md)
+- [ResponseFormatListVersionDto](docs/ResponseFormatListVersionDto.md)
+- [ResponseFormatLocationData](docs/ResponseFormatLocationData.md)
+- [ResponseFormatObject](docs/ResponseFormatObject.md)
+- [ResponseFormatSessionDto](docs/ResponseFormatSessionDto.md)
+- [ResponseFormatString](docs/ResponseFormatString.md)
+- [ResponseFormatTariffDto](docs/ResponseFormatTariffDto.md)
+- [ResponseFormatVersionDetailsDto](docs/ResponseFormatVersionDetailsDto.md)
+- [SessionDto](docs/SessionDto.md)
 - [SignedData](docs/SignedData.md)
 - [SignedValue](docs/SignedValue.md)
 - [StatusSchedule](docs/StatusSchedule.md)
-- [Tariff](docs/Tariff.md)
-- [TariffDTO](docs/TariffDTO.md)
+- [TariffDto](docs/TariffDto.md)
 - [TariffElement](docs/TariffElement.md)
 - [TariffRestrictions](docs/TariffRestrictions.md)
-- [Token](docs/Token.md)
-- [TokenDTO](docs/TokenDTO.md)
-- [VersionDetailsResponseDTO](docs/VersionDetailsResponseDTO.md)
+- [TokenDto](docs/TokenDto.md)
+- [VersionDetailsDto](docs/VersionDetailsDto.md)
+- [VersionDto](docs/VersionDto.md)
 
 ## Authentication and Authorization
 

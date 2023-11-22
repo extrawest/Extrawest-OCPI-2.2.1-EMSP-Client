@@ -26,7 +26,7 @@ import java.util.Objects;
         DisplayText.JSON_PROPERTY_LANGUAGE,
         DisplayText.JSON_PROPERTY_TEXT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-30T00:02:35.798322+03:00[Europe/Kiev]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-22T18:56:56.429779+02:00[Europe/Kiev]")
 public class DisplayText {
   public static final String JSON_PROPERTY_LANGUAGE = "language";
   private String language;
@@ -47,17 +47,17 @@ public class DisplayText {
    * Get language
    * @return language
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LANGUAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_LANGUAGE)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getLanguage() {
     return language;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LANGUAGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_LANGUAGE)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLanguage(String language) {
     this.language = language;
   }
@@ -73,17 +73,17 @@ public class DisplayText {
    * Get text
    * @return text
   **/
-  @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+   @javax.annotation.Nonnull
+   @JsonProperty(JSON_PROPERTY_TEXT)
+   @JsonInclude(value = JsonInclude.Include.ALWAYS)
 
   public String getText() {
     return text;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+    @JsonProperty(JSON_PROPERTY_TEXT)
+    @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setText(String text) {
     this.text = text;
   }
