@@ -1,6 +1,6 @@
 package com.extrawest.ocpi221emsp_client.service;
 
-import com.extrawest.ocpi.model.dto.Credentials;
+import com.extrawest.ocpi.model.dto.CredentialsDto;
 import com.extrawest.ocpi.service.EMSPCredentialsService;
 import com.extrawest.ocpi221emsp_client.config.PartyConfig;
 import com.extrawest.ocpi221emsp_client.mapper.CredentialsMapper;
@@ -30,12 +30,12 @@ public class EMSPCredentialsServiceImpl implements EMSPCredentialsService {
     private final TokenARepository tokenARepository;
 
     @Override
-    public Credentials getCredentials() {
+    public CredentialsDto getCredentials() {
         return null;
     }
 
     @Override
-    public Credentials postCredentials(Credentials credentialsToClient) {
+    public CredentialsDto postCredentials(CredentialsDto credentialsToClient) {
         CredentialsModel model = credentialsMapper.toModel(credentialsToClient);
         credentialsRepository.save(model);
 
@@ -51,7 +51,7 @@ public class EMSPCredentialsServiceImpl implements EMSPCredentialsService {
         registeredParty.setRole(Role.CPO);
         registeredPartyService.save(registeredParty);
 
-        Credentials credentialsToServer = new Credentials();
+        CredentialsDto credentialsToServer = new CredentialsDto();
         credentialsToServer.setUrl(partyConfig.getVersionsUrl());
         credentialsToServer.setToken(tokenB);
         credentialsToServer.setRoles(serverVersionsData.getVersionsRole());
@@ -59,12 +59,12 @@ public class EMSPCredentialsServiceImpl implements EMSPCredentialsService {
     }
 
     @Override
-    public void putCredentials(Credentials credentialsDTO) {
+    public void putCredentials(CredentialsDto credentialsDTO) {
 
     }
 
     @Override
-    public void deleteCredentials(Credentials credentialsDTO) {
+    public void deleteCredentials(CredentialsDto credentialsDTO) {
 
     }
 }

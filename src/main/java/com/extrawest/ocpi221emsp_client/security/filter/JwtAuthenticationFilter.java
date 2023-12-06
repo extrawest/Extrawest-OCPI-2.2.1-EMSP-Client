@@ -1,7 +1,9 @@
 package com.extrawest.ocpi221emsp_client.security.filter;
 
+import com.extrawest.ocpi.exception.MethodNotAllowedException;
 import com.extrawest.ocpi.exception.OcpiResourceNotFoundException;
-import com.extrawest.ocpi.model.dto.VersionDetails;
+import com.extrawest.ocpi.model.dto.Endpoint;
+import com.extrawest.ocpi.model.dto.VersionDetailsDto;
 import com.extrawest.ocpi.model.enums.ModuleID;
 import com.extrawest.ocpi.model.enums.VersionNumber;
 import com.extrawest.ocpi.service.EMSPVersionService;
@@ -29,6 +31,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.extrawest.ocpi221emsp_client.ExceptionMessage.NOT_IMPLEMENTED_ENDPOINT;
 
 @Component
 @RequiredArgsConstructor
@@ -78,7 +82,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
 
             if (!isVersionsRequest(request) && isCredentialsRequest(request)) {
-                throw new ForbiddenException("Already registered");
+                throw new MethodNotAllowedException("Already registered");
             }
 
             String uuid = jwtService.extractId(jwt);
@@ -99,8 +103,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 // Set the authentication in the SecurityContext
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }
-            filterChain.doFilter(request, response);
 
+            filterChain.doFilter(request, response);
         } catch (Exception e) {
             response.setHeader("error", e.getMessage());
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
@@ -115,20 +119,20 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         return authHeader.substring(6);
     }
 
-    private ModuleID getIdentifier(HttpServletRequest request) {
-        VersionDetails versionDetails = versionService.getVersionDetails(VersionNumber.V_2_2_1);
-        String requestURI = request.getRequestURI();
+    private Endpoint getEndpoint(ModuleID identifier) {
+        VersionDetailsDto versionDetails = versionService.getVersionDetails(VersionNumber.V_2_2_1);
 
         return versionDetails.getEndpoints()
                 .stream()
-                .filter(endpoint -> endpoint.getUrl().contains(requestURI))
-                .findFirst().orElseThrow(OcpiResourceNotFoundException::new)
-                .getIdentifier();
+                .filter(endpoint -> identifier.equals(endpoint.getIdentifier()))
+                .findFirst().orElseThrow(() ->
+                        new OcpiResourceNotFoundException(String.format(NOT_IMPLEMENTED_ENDPOINT, identifier)));
     }
 
     private boolean isCredentialsRequest(HttpServletRequest request) {
-        ModuleID identifier = getIdentifier(request);
-        return ModuleID.CREDENTIALS.equals(identifier);
+        Endpoint endpoint = getEndpoint(ModuleID.CREDENTIALS);
+        String requestURI = request.getRequestURI();
+        return endpoint.getUrl().contains(requestURI);
     }
 
     private boolean isVersionsRequest(HttpServletRequest request) {

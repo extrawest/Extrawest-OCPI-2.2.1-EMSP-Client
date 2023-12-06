@@ -1,7 +1,7 @@
 package com.extrawest.ocpi221emsp_client.mapper;
 
 import com.extrawest.ocpi.model.dto.ChargingPeriod;
-import com.extrawest.ocpi.model.dto.Session;
+import com.extrawest.ocpi.model.dto.SessionDto;
 import com.extrawest.ocpi221emsp_client.model.SessionModel;
 import org.mapstruct.Mapper;
 
@@ -9,11 +9,11 @@ import java.util.List;
 
 @Mapper(componentModel = "spring", uses = ChargingPeriod.class)
 public interface SessionMapper {
-    SessionModel toModel(Session tariffDTO);
+    SessionModel toModel(SessionDto tariffDTO);
 
-    Session toDTO(SessionModel tariff);
+    SessionDto toDTO(SessionModel tariff);
 
-    List<Session> toListDTO(List<SessionModel> tariffs);
+    List<SessionDto> toListDTO(List<SessionModel> tariffs);
 
-    List<SessionModel> toListModel(List<Session> tariffs);
+    List<SessionModel> toListModel(List<SessionDto> tariffs);
 }

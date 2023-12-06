@@ -1,8 +1,8 @@
 package com.extrawest.ocpi221emsp_client.service;
 
 import com.extrawest.ocpi.model.dto.Endpoint;
-import com.extrawest.ocpi.model.dto.Version;
-import com.extrawest.ocpi.model.dto.VersionDetails;
+import com.extrawest.ocpi.model.dto.VersionDetailsDto;
+import com.extrawest.ocpi.model.dto.VersionDto;
 import com.extrawest.ocpi.model.enums.InterfaceRole;
 import com.extrawest.ocpi.model.enums.ModuleID;
 import com.extrawest.ocpi.model.enums.VersionNumber;
@@ -20,16 +20,16 @@ import java.util.List;
 public class EMSPVersionServiceImpl implements EMSPVersionService {
 
     @Override
-    public List<Version> getVersions() {
+    public List<VersionDto> getVersions() {
         String uri = getBaseUrl();
 
-        List<Version> versions = new ArrayList<>();
+        List<VersionDto> versions = new ArrayList<>();
 
-        Version version_2_2_1 = new Version();
+        VersionDto version_2_2_1 = new VersionDto();
         version_2_2_1.setVersion(VersionNumber.V_2_2_1);
         version_2_2_1.setUrl(uri + "/emsp/api/versions/details?version=2.2.1");
 
-        Version version_2_1 = new Version();
+        VersionDto version_2_1 = new VersionDto();
         version_2_1.setVersion(VersionNumber.V_2_1);
         version_2_1.setUrl(uri + "/emsp/api/versions/details?version=2.1");
 
@@ -39,8 +39,8 @@ public class EMSPVersionServiceImpl implements EMSPVersionService {
     }
 
     @Override
-    public VersionDetails getVersionDetails(VersionNumber version) {
-        VersionDetails versionDetails = new VersionDetails();
+    public VersionDetailsDto getVersionDetails(VersionNumber version) {
+        VersionDetailsDto versionDetails = new VersionDetailsDto();
         versionDetails.setVersion(VersionNumber.V_2_2_1);
 
         List<Endpoint> endpoints = new ArrayList<>();

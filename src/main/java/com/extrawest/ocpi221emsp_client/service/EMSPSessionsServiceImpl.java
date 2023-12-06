@@ -1,7 +1,7 @@
 package com.extrawest.ocpi221emsp_client.service;
 
 import com.extrawest.ocpi.exception.OcpiResourceNotFoundException;
-import com.extrawest.ocpi.model.dto.Session;
+import com.extrawest.ocpi.model.dto.SessionDto;
 import com.extrawest.ocpi.service.EMSPSessionsService;
 import com.extrawest.ocpi221emsp_client.mapper.SessionMapper;
 import com.extrawest.ocpi221emsp_client.model.SessionModel;
@@ -19,7 +19,7 @@ public class EMSPSessionsServiceImpl implements EMSPSessionsService {
     private final SessionMapper sessionMapper;
 
     @Override
-    public Session getSession(String countryCode, String partyId, String sessionId) {
+    public SessionDto getSession(String countryCode, String partyId, String sessionId) {
         SessionModel session = sessionRepository.findByIdAndCountryCodeAndPartyId(sessionId, countryCode, partyId)
                 .orElseThrow(() -> new OcpiResourceNotFoundException(String.format("Session %s for party %s, operates in %s, was not found",
                         sessionId, partyId, countryCode)));
@@ -28,14 +28,14 @@ public class EMSPSessionsServiceImpl implements EMSPSessionsService {
     }
 
     @Override
-    public Session putSession(Session sessionDTO, String countryCode, String partyId, String sessionId) {
+    public SessionDto putSession(SessionDto sessionDTO, String countryCode, String partyId, String sessionId) {
         SessionModel tariffDocument = sessionMapper.toModel(sessionDTO);
         SessionModel saved = sessionRepository.save(tariffDocument);
         return sessionMapper.toDTO(saved);
     }
 
     @Override
-    public void patchSession(Session sessionDTO, String countryCode, String partyId, String sessionId) {
-
+    public SessionDto patchSession(SessionDto sessionDTO, String countryCode, String partyId, String sessionId) {
+        return null;
     }
 }

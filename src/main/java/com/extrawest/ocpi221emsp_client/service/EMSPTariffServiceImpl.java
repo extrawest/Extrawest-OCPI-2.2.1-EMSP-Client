@@ -1,7 +1,7 @@
 package com.extrawest.ocpi221emsp_client.service;
 
 import com.extrawest.ocpi.exception.OcpiResourceNotFoundException;
-import com.extrawest.ocpi.model.dto.tariff.Tariff;
+import com.extrawest.ocpi.model.dto.tariff.TariffDto;
 import com.extrawest.ocpi.service.EMSPTariffService;
 import com.extrawest.ocpi221emsp_client.mapper.TariffDocumentMapper;
 import com.extrawest.ocpi221emsp_client.model.TariffModel;
@@ -21,7 +21,7 @@ public class EMSPTariffServiceImpl implements EMSPTariffService {
     private final TariffDocumentMapper tariffDocumentMapper;
 
     @Override
-    public Tariff getTariff(String countryCode, String partyId, String tariffId) {
+    public TariffDto getTariff(String countryCode, String partyId, String tariffId) {
         TariffModel tariffDocument = tariffRepository.findByIdAndCountryCodeAndPartyId(tariffId, countryCode, partyId)
                 .orElseThrow(() -> new OcpiResourceNotFoundException(String.format("Tariff %s for party %s, operates in %s, was not found",
                         tariffId, partyId, countryCode)));
@@ -30,7 +30,7 @@ public class EMSPTariffServiceImpl implements EMSPTariffService {
     }
 
     @Override
-    public Tariff saveTariff(Tariff tariffDTO, String countryCode, String partyId, String tariffId) {
+    public TariffDto saveTariff(TariffDto tariffDTO, String countryCode, String partyId, String tariffId) {
         TariffModel tariffDocument = tariffDocumentMapper.toTariffDocument(tariffDTO);
         TariffModel saved = tariffRepository.save(tariffDocument);
         return tariffDocumentMapper.toTariffDTO(saved);

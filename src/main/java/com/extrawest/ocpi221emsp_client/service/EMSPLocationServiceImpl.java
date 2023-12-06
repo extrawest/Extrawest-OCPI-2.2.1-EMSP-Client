@@ -69,7 +69,17 @@ public class EMSPLocationServiceImpl implements EMSPLocationService {
     }
 
     @Override
-    public LocationData patchLocation(Location locationDTO, String countryCode, String partyId, String locationId, String evseUid, String connectorId) {
+    public Location patchLocation(Location locationDTO, String countryCode, String partyId, String locationId) {
+        return null;
+    }
+
+    @Override
+    public EVSE patchEvse(EVSE evse, String countryCode, String partyId, String locationId, String evseUid) {
+        return null;
+    }
+
+    @Override
+    public Connector patchConnector(Connector connector, String countryCode, String partyId, String locationId, String evseUid, String connectorId) {
         return null;
     }
 }
